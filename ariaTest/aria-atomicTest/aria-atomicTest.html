@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Aria-Atomic Test</title>
+		<!-- <script src="/scripts/nordburg_common.js" type="text/javascript"></script> -->
+		<link rel="Stylesheet" type="text/css" href="aria-atomicTest.css">
+	</head>
+	<body>
+		<h1>Aria-Atomic Test Page</h1>
+
+		<div>
+			<p>Keep pressing the button to add new content to the window.  Listen with a SR to see what happens.</p>
+		</div>
+		<section>
+			<h2>Aria-Atomic is true</h2>
+			<div id="trueDiv" class="chatwindow" aria-live="polite" aria-atomic="true" tabindex="0">
+			</div>
+			<div class="fieldHolder">
+				<label for="trueTxt">How can I help you?</label>
+				<input id="trueTxt" size="30">
+			</div>
+			<button id="trueAddBtn">Ask</button>
+		</section>
+		<section>
+			<h2>Aria-Atomic is false</h2>
+			<div id="falseDiv" class="chatwindow" aria-live="polite" aria-atomic="false" tabindex="0">
+			</div>
+			<div class="fieldHolder">
+				<label for="falseTxt">How can I help you?</label>
+				<input id="falseTxt" size="30">
+			</div>
+			<button id="falseAddBtn">Ask</button>
+		</section>
+		<section>
+			<h2>Aria-Atomic is absent</h2>
+			<div id="absentDiv" class="chatwindow" aria-live="polite" tabindex="0">
+			</div>
+			<div class="fieldHolder">
+				<label for="absentTxt">How can I help you?</label>
+				<input id="absentTxt" size="30">
+			</div>
+			<button id="absentAddBtn">Ask</button>
+		</section>
+		<script src="aria-atomicTest.js" type="text/javascript"></script>
+	</body>
+</html>
