@@ -40,7 +40,7 @@ function addContent (ev) {
 	youSaidSpan.appendChild(document.createTextNode("You said "));
 
 	let yourQuestionP = document.createElement("p");
-	//yourQuestionP.setAttribute("tabindex", "0");
+	yourQuestionP.setAttribute("tabindex", "0");
 	//yourQuestionP.setAttribute("aria-label", "You said");  // <-- This ain't workin' in either Chrome or Firefox
 	yourQuestionP.setAttribute("class", "convoBit myBit");
 	
@@ -56,7 +56,7 @@ function addContent (ev) {
 		compySaidSpan.appendChild(document.createTextNode("Computer said "));
 
 		let resp = document.createElement("p");
-		//resp.setAttribute("tabindex", "0");
+		resp.setAttribute("tabindex", "0");
 		//resp.setAttribute("aria-label", "Compy said");
 		resp.setAttribute("class", "convoBit compyBit");
 		resp.appendChild(compySaidSpan);
