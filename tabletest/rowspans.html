@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Table with rowspans Test</title>
+		<style>
+			table, td, th {
+				border: inset #808080 thin;
+			}
+			th {font-weight: bold;}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Table with rowspans Test</h1>
+		</header>
+		<main>
+		<h2>Table part</h2>
+		<table class="table table-bordered">
+			<caption class="text-left">This is the table caption</caption>
+			<thead>
+				<tr>
+					<th scope="col">Action</th>
+					<th scope="col">Claim status</th>
+					<th scope="col">Complete the applicable tasks:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="2"><p>Adjudicating something</p></td>
+					<td rowspan="2"><p>All</p></td>
+					<td><p>Do this avtivity first</p></td>
+				</tr>
+				<tr>
+					<td><p>This follows the above activity</p></td>
+				</tr>
+				<tr>
+					<td rowspan="6"><p>Implementing something</p></td>
+					<td rowspan="3"><p>Active or terminated</p></td>
+					<td><p>Implementing client name</p></td>
+				</tr>
+				<tr>
+					<td><p>Implementing client address</p></td>
+				</tr>
+				<tr>
+					<td><p>Implementing client contact details</p></td>
+				</tr>
+				<tr>
+					<td rowspan="3"><p>Active Only</p></td>
+					<td><p>Task one</p></td>
+				</tr>
+				<tr>
+					<td><p>Task two</p></td>
+				</tr>
+				<tr>
+					<td><p>Task three </p></td>
+				</tr>
+			</tbody>
+			</table>
+		</main>
+	</body>
+</html>

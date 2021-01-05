@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sort Test Page</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	</head>
+	<body>
+		<header>
+		<h1>Events Test Page</h1>
+		</header>
+		<div id="mainContent">
+			<h2 tabindex="0">First part</h2>
+			<div id="exampleExam">
+			<form action="#" method="GET">
+				<fieldset>
+					<legend>Choose 1:</legend>
+					<div id="exampleQuestionChoices">
+						<label for="r1"><input type="radio" name="test" id="r1"> This is option 1</label><br>
+						<label for="r2"><input type="radio" name="test" id="r2"> This is option 2</label><br>
+						<label for="r3"><input type="radio" name="test" id="r3"> This is option 3</label><br>
+						<label for="r4"><input type="radio" name="test" id="r4"> This is option 4</label><br>
+					</div>
+				</fieldset>
+			</form>
+			</div>
+			<div id="afterPart" tabindex="0">After part</div>
+		</div>
+		<footer>
+			
+		</footer>
+		<script type="text/javascript" src="/jquery/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript">
+			var dirty=false;
+		$(document).ready(function() {
+
+				//alert ("Document is ready.");
+		});
+		$('#exampleExam #exampleQuestionChoices').on('mouseup',function(e){
+			dirty=true;
+			var target = e.target;
+			var output = ""; //target;
+			for (k in target) {
+				//output += k + ",\n";
+			}
+			//alert ("Clicked! " + output);
+			$('#afterPart').focus();
+			alert ("element: " + document.activeElement);
+		});
+		$('#afterPart').on('focus', function(e) {
+				if (dirty) $('#exampleQuestionChoices').html("");
+		});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>ASP .NET Form Submit</title>
+		<link rel="stylesheet" href="form.css" type="text/css">
+	</head>
+
+	<body>
+		<h1>ASP .NET Form Submit</h1>
+		<!--#include virtual="/formtest/leftMenu.html" -->
+
+		<div id="contentPane">
+			<form action="" method="get" id="myForm">
+				<div>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" tabindex="0">
+					<br>
+					<label for="roField"></label>
+					<p tabindex="0">This is information.</p>
+					<br>
+					<label><input type="checkbox" name="chk1" id="chk1" readonly="true"> Checkbox test</label>
+					<br>
+					<textarea readonly>
+This is more information.
+</textarea><br>
+					<input type="submit" value="Submit" tabindex="0">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

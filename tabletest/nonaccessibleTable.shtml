@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>Table Test</title>
+		<link type="text/css" rel="stylesheet" href="base.css">
+	</head>
+	<body>
+		<h1>Table Test Page 1</h1>
+		<div>
+			<p>This page has a table with no headers or scopes.</p>
+		</div>
+		<!--#include virtual="/tabletest/leftMenu.html" -->
+		<div id="contentPane">
+			<table summary="This is an example of a non-accessible table.">
+				<tr>
+					<th>Col 1</th>
+					<th>Col 2</th>
+				</tr>
+				<tr>
+					<td>1, 1</td>
+					<td>1, 2</td>
+				</tr>
+				<tr>
+					<td>2, 1</td>
+					<td>2, 2</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

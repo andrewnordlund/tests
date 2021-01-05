@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Slider Testing Page</title>
+		<script src="slider.js" type="text/Javascript"></script>
+		<style type="text/css">
+.fieldHolder {
+	border: thin solid black;
+	width: 50%;
+}
+
+.fa-caret-down:before{content:"\f0d7"}
+.fa-caret-up:before{content:"\f0d8"}
+
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 1.13em;
+}
+details, #screenshots {/*display: none;*/}
+		</style>
+	</head>
+	<body>
+		<header><h1>Slider Test</h1></header>
+
+		<main>
+		<section>
+		<h2>Slider Tests</h2>
+		<form method="GET" action="slider.html">
+
+		<div class="fieldHolder1">
+			<label for="testRange1">Basic slider</label><br>
+			<input type="range" id="testRange1" name="testRange1">
+		</div>
+		<details>
+			<summary>Screen Readers Results</summary>
+			<dl>
+				<dt>JAWS</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Basic slider. Left Right Slider 50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>50, 49, 48</q></p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Basic slider. Left Right Slider 50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>50, 49, 48</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Basic slider. Left Right Slider 50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>50, 49, 48</q></p></dd>
+				</dl>
+				</dd>
+				<dt>NVDA</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Basic slider slider. 50.</q><br>When using arrow keys: <q>50, 49, 48</q></p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Basic slider slider. 50.</q><br>When using arrow keys: <q>50, 49, 48</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Basic slider slider editable. 50.</q><br>When using arrow keys I hear no response whatsoever.</p></dd>
+				</dl>
+				</dd>
+				<dt>iOS Voice Over</dt>
+				<dd>
+				<dl>
+					<dt>Safari, Firefox, and Chrome</dt>
+					<dd><q>Test option with option label. Label option. Popup button. Double-tap to activate the picker.</q></dd>
+					<dt>Opera Mini</dt>
+					<dd>Voice Over does not work on Opera Mini.</dd>
+				</dl>
+				</dd>
+
+			</dl>
+		</details>
+		<div class="fieldHolder2">
+			<label for="testRange2">Slider with output</label><br>
+			<input type="range" id="testRange2" name="testRange2">
+			<output for="testRange2" id="testRange2Out"></output>
+		</div>
+		<details>
+			<summary>Screen Readers Results</summary>
+			<dl>
+				<dt>JAWS</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Slider with output. Left Right Slider. Use <kbd>JAWS key plus Alt + M</kbd> to move the controled element.  50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>50, 49, 48</q>.</p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Slider with output. Left Right Slider 50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>49, 48, 47</q> (ie: what the value is after I press the arrow key), but the output doesn't update.</p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Slider with output. Left Right Slider 50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>50, 49, 48</q> (ie: what the value was before I press the arrow key).</p></dd>
+				</dl>
+				</dd>
+				<dt>NVDA</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Slider with output slider. 50.</q><br>When using arrow keys: <q>50 50, 49 49, 48 48</q>.</p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Slider with output slider. 50.</q><br>When using arrow keys: <q>50, 49, 48</q>, but the output doesn't update.</p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Slider with output slider editable. Slider with output.</q><br>When using arrow keys I hear each numbertwice.</p></dd>
+				</dl>
+				</dd>
+				<dt>iOS Voice Over</dt>
+				<dd>
+				<dl>
+					<dt>Safari, Firefox, and Chrome</dt>
+					<dd><q>Test option with option label. Label option. Popup button. Double-tap to activate the picker.</q></dd>
+					<dt>Opera Mini</dt>
+					<dd>Voice Over does not work on Opera Mini.</dd>
+				</dl>
+				</dd>
+
+			</dl>
+		</details>
+		<div class="fieldHolder2">
+			<label for="testRange3">Slider with output live region</label><br>
+			<input type="range" id="testRange3" name="testRange3">
+			<output for="testRange3" id="testRange3Out" aria-live="polite"></output>
+		</div>
+		<details>
+			<summary>Screen Readers Results</summary>
+			<dl>
+				<dt>JAWS</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Slider with output live region. Left Right Slider. Use <kbd>JAWS key plus Alt + M</kbd> to move the controled element.  50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>50, 49, 48</q>.Then each number is read again a second after I let go of the arrow key.</p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Slider with output live region. Left Right Slider 50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>49, 48, 47</q> (ie: what the value is after I press the arrow key), but the output doesn't update.</p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Slider with output live region. Left Right Slider 50. To increase or decrease use the arrow keys.</q><br>When using arrow keys: <q>50, 49, 48</q> (ie: what the value was before I press the arrow key).</p></dd>
+				</dl>
+				</dd>
+				<dt>NVDA</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Slider with output live region slider. 50.</q><br>When using arrow keys: <q>50 50, 49 49, 48 48</q>.</p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Slider with output live region slider. 50.</q><br>When using arrow keys: <q>50, 49, 48</q>, but the output doesn't update.</p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Slider with output live region slider editable. Slider with output live region.</q><br>When using arrow keys I hear each numbertwice, regardless if <code>aria-live="polite"</code> is in the <code>&lt;output&gt;</code> or not.</p></dd>
+				</dl>
+				</dd>
+				<dt>iOS Voice Over</dt>
+				<dd>
+				<dl>
+					<dt>Safari, Firefox, and Chrome</dt>
+					<dd><q>Test option with option label. Label option. Popup button. Double-tap to activate the picker.</q></dd>
+					<dt>Opera Mini</dt>
+					<dd>Voice Over does not work on Opera Mini.</dd>
+				</dl>
+				</dd>
+
+			</dl>
+		</details>
+		</form>
+		</section>
+		<!-- 
+		<section id="screenshots">
+		<h2>Screenshots</h2>
+		<dl>
+			<dt>Firefox</dt>
+			<dd><img src="Firefox-dropdown.png" alt="Option labels shown as blank. Optgroup only showing upon expansion."></dd>
+			<dt>Internet Explorer 11</dt>
+			<dd><img src="IE-dropdown.png" alt="Option labels shown. Optgroup label shown upon expansion."></dd>
+			<dt>Opera 43</dt>
+			<dd><img src="Opera-dropdown.png" alt="Option labels shown. Optgroup label shown upon expansion."></dd>
+			<dt>iOS (Firefox, Safari, and Chrome.  All look the same.)
+			<dd><img src="ios-browsers-dropdown.png" alt="Option labels shown. Optgroup label shown upon expansion."></dd>
+			<dt>iOS (Opera Mini)
+			<dd><img src="ios-opera-dropdown.png" alt="Option labels nor optgroup labels shown."></dd>
+		</dl>
+		</section>
+		-->
+		</main>
+		<script type="text/javascript">
+init();
+		</script>
+	</body>
+</html>

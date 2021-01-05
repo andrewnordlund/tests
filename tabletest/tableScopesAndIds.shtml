@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>Table Test</title>
+		<!--#include virtual="/tabletest/css.html" -->
+	</head>
+	<body>
+		<h1>Table Test Page 1</h1>
+		<p>This page has a table with no headers or scopes.</p>
+		<!--#include virtual="/tabletest/leftMenu.html" -->
+		<div id="contentPane">
+			<table summary="this table sucks!">
+				<tr>
+					<th id="col1" scope="col">Col 1</th>
+					<th id="col2" scope="col">Col 2</th>
+				</tr>
+				<tr>
+					<td headers="col1">1, 1</td>
+					<td headers="col2">1, 2</td>
+				</tr>
+				<tr>
+					<td headers="col1">2, 1</td>
+					<td headers="col2">2, 2</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

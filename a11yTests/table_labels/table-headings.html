@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Table Header Test Page</title>
+	</head>
+	<body>
+		<header>
+		<h1>Table Header Test Page</h1>
+		</header>
+		<main>
+			<form>
+				<div class="tableHolder">
+					<table>
+						<caption>Table With Single Headers With Scope</caption>
+						<thead>
+						<tr>
+							<th id="header1" scope="col">Header 1</th>
+							<th id="header2" scope="col">Header 2</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><input type="text"></td>
+							<td><input type="text"></td>
+						</tr>
+						<tr>
+							<td><input type="text"></td>
+							<td><input type="text"></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>	
+				<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>NVDA</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Safari, Firefox, and Chrome</dt>
+						<dd><q>Header 1. Text Field. Double-tap to edit.</q>  Then, upon doing that, <q>Insertion point at end.</q>  Then when hitting the <kbd>Next</kbd> button: <q>Text field. Is editing. Character mode. Insertion point at start.</q></dd>
+						<dt>Opera Mini</dt>
+						<dd>Abosultely nothing</dd>
+					</dl>
+					</dd>
+					<dt>OS X Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><q>Text. Blank.</q></dd>
+						<dt>Chrome</dt>
+						<dd><q>Edit text. Blank.</q></dd>
+						<dt>Safari</dt>
+						<dd><q>Edit text. Blank.</q></dd>
+						<dt>Opera</dt>
+						<dd><q>Edit text. Blank.</q></dd>
+					</dl>
+					</dd>
+				</dl>
+			</details>
+
+			<div class="tableHolder">
+				<table>
+					<caption>Table With Single Headers With ID/Headers</caption>
+					<thead>
+					<tr>
+						<th id="header1">Header 1</th>
+						<th id="header2">Header 2</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><input type="text" headers="header1"></td>
+						<td><input type="text" headers="header2"></td>
+					</tr>
+					<tr>
+						<td><input type="text" headers="header1"></td>
+						<td><input type="text" headers="header2"></td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>NVDA</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Safari, Firefox, and Chrome</dt>
+						<dd><q>Header B. Header A. Text Field. Double-tap to edit.</q> Then when doing that: <q>Insertion point at end.</q>  Then when hitting the <kbd>Next</kbd> button: <q>Text field. Is editing. Character mode. Insertion point at start.</q></dd>
+						<dt>Opera Mini</dt>
+						<dd>Abosultely nothing</dd>
+					</dl>
+					</dd>
+					<dt>OS X Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><q>Text. Blank.</q></dd>
+						<dt>Chrome</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Safari</dt>
+						<dd><q>Edit text. Blank.</q></dd>
+						<dt>Opera</dt>
+						<dd><q>Edit text. Blank.</q></dd>
+					</dl>
+					</dd>
+				</dl>
+			</details>
+
+			<div class="tableHolder">
+				<table>
+					<caption>Table With Double Headers With Scope</caption>
+					<thead>
+					<tr>
+						<td></td>
+						<th id="header1" scope="col">Header 1</th>
+						<th id="header2" scope="col">Header 2</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th id="headerA" scope="row">Header A</th>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<th id="headerB" scope="row">Header B</th>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>NVDA</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Safari, Firefox, and Chrome</dt>
+						<dd><q>Header B. Header A. Text Field. Double-tap to edit.</q> Then when doing that: <q>Insertion point at end.</q>  Then when hitting the <kbd>Next</kbd> button: <q>Text field. Is editing. Character mode. Insertion point at start.</q></dd>
+						<dt>Opera Mini</dt>
+						<dd>Abosultely nothing</dd>
+					</dl>
+					</dd>
+					<dt>OS X Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><q>Text. Blank.</q></dd>
+						<dt>Chrome</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Safari</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Opera</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+					</dl>
+					</dd>
+				</dl>
+			</details>
+
+			<div class="tableHolder">
+				<table>
+					<caption>Table With Double Headers With ID/Headers</caption>
+					<thead>
+					<tr>
+						<td></td>
+						<th id="header1">Header 1</th>
+						<th id="header2">Header 2</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th id="headerA">Header A</th>
+						<td><input type="text" headers="header1 headerA"></td>
+						<td><input type="text" headers="header2 headerA"></td>
+					</tr>
+					<tr>
+						<th id="headerB">Header B</th>
+						<td><input type="text" headers="header1 headerB"></td>
+						<td><input type="text" headers="header2 headerB"></td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>NVDA</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Safari, Firefox, and Chrome</dt>
+						<dd><q>Header B. Header A. Text Field. Double-tap to edit.</q> Then when doing that: <q>Insertion point at end.</q>  Then when hitting the <kbd>Next</kbd> button: <q>Text field. Is editing. Character mode. Insertion point at start.</q></dd>
+						<dt>Opera Mini</dt>
+						<dd>Abosultely nothing</dd>
+					</dl>
+					</dd>
+					<dt>OS X Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><q>Text. Blank.</q></dd>
+						<dt>Chrome</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Safari</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Opera</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+					</dl>
+					</dd>
+				</dl>
+			</details>
+			<div class="tableHolder">
+				<table>
+					<caption>Table With Single Headers With Neither ID/Headers Nor Scope</caption>
+					<thead>
+					<tr>
+						<th id="header1">Header 1</th>
+						<th id="header2">Header 2</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>NVDA</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Safari, Firefox, and Chrome</dt>
+						<dd><q>Text Field. Double-tap to edit.</q> Then when doing that: <q>Insertion point at end.</q>  Then when hitting the <kbd>Next</kbd> button: <q>Text field. Is editing. Character mode. Insertion point at start.</q></dd>
+						<dt>Opera Mini</dt>
+						<dd>Abosultely nothing</dd>
+					</dl>
+					</dd>
+					<dt>OS X Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><q>Text. Blank.</q></dd>
+						<dt>Chrome</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Safari</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Opera</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+					</dl>
+					</dd>
+				</dl>
+			</details>
+			<div class="tableHolder">
+				<table>
+					<caption>Table With Double Headers With Neither ID/Headers Nor Scope</caption>
+					<thead>
+					<tr>
+						<td></td>
+						<th id="header1">Header 1</th>
+						<th id="header2">Header 2</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th id="headerA">Header A</th>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<th id="headerB">Header B</th>
+						<td><input type="text"></td>
+						<td><input type="text"></td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>NVDA</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Internet Explorer 11</dt>
+						<dd><p><q></q></p></dd>
+						<dt>Opera 43</dt>
+						<dd><p><q></q></p></dd>
+					</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Safari, Firefox, and Chrome</dt>
+						<dd><q>Header B. Header A. Text Field. Double-tap to edit.</q> Then when doing that: <q>Insertion point at end.</q>  Then when hitting the <kbd>Next</kbd> button: <q>Text field. Is editing. Character mode. Insertion point at start.</q></dd>
+						<dt>Opera Mini</dt>
+						<dd>Abosultely nothing</dd>
+					</dl>
+					</dd>
+					<dt>OS X Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd><q></q></dd>
+						<dt>Chrome</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Safari</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+						<dt>Opera</dt>
+						<dd><q>Edit Text. Blank.</q></dd>
+					</dl>
+					</dd>
+				</dl>
+			</details>
+
+
+		</form>
+		<h2>Notes</h2>
+		<ul>
+			<li>In Firefox on Mac OS X, with double headers, VoiceOver reads the caption of the table in every single cell.</li>
+		</ul>
+		</main>
+	
+
+	</body>
+</html>

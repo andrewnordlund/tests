@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>ASP .NET Form Submit</title>
+		<link rel="stylesheet" href="form.css" type="text/css">
+	</head>
+
+	<body>
+		<h1>ASP .NET Form Submit</h1>
+		<!--#include virtual="/formtest/leftMenu.html" -->
+
+		<div id="contentPane">
+			<form action="" method="get" id="myForm">
+				<p>This form doesn't need a submit button.</p>
+			</form>
+		</div>
+	</body>
+</html>

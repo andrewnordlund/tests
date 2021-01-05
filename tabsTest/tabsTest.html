@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Tabs Test</title>
+		<!-- <script src="/scripts/nordburg_common.js" type="text/javascript"></script> -->
+		<link rel="Stylesheet" type="text/css" href="tabsTest.css">
+	</head>
+	<body>
+		<h1>Add a Field accessibly</h1>
+
+		<div>
+			<p>Please fill out the below form.  Notice what happens when you select "Yes" in the first dropdown.  I've provided two methods.</p>
+		</div>
+
+		<div id="results">
+			<ul id="tableList">
+				<li class="tableHolderLi" id="friendsHolderLi">
+					<a class="tableListHeader" id="friendsTitleHeader" href="#">Friends</a>
+				</li>
+				<li class="tableHolderLi" id="sleepingFriendsHolderLi">
+					<a class="tableListHeader" id="sleepingFriendsTitleHeader" href="#">Unactive Friends</a>
+				</li>
+				<li class="tableHolderLi" id="defriendsHolderLi">
+					<a class="tableListHeader" id="defriendsTitleHeader" href="#">deFriends</a>
+				</li>
+			</ul>
+			<div id="friendsHolder" class="tableHolder hidden">
+				<p>Friends</p>
+			</div>
+			<div id="sleepingFriendsHolder" class="tableHolder hidden">
+				<p>Sleeping Friends</p>
+			</div>
+			<div id="defriendsHolder" class="tableHolder hidden">
+				<p>deFriends</p>
+			</div>
+
+		</div>
+		<script src="tabsTest.js" type="text/javascript"></script>
+	</body>
+</html>
