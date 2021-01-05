@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>XML Test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript">
+			function init() {
+				var actionBtn = document.getElementById("action");
+				if (actionBtn) {
+					actionBtn.addEventListener("click", createXML, false);
+				} else {
+					alert ("Didn't get action btn.");
+				}
+			}
+function createXML () {
+	var urlList = [
+	{"url" : "http://www.nordburg.ca", "order" : 0},
+	{"url" : "http://www.mrfalcon.ca", "order" : 1},
+		];
+	var xmlFile = document.implementation.createDocument("", "pages", null);
+	for (var k = 0; k < urlList.length; k++) {
+			var page = xmlFile.createElement("page");
+			page.setAttribute("url", urlList[k]["url"]);
+			page.setAttribute("order", k);
+			//var title = xmlFile.createElement("title");
+			//page.appendChild(title);
+			xmlFile.documentElement.appendChild(page);
+
+		}
+	var results = document.getElementById("results");
+	var serializer = new XMLSerializer();
+
+	var output = serializer.serializeToString(xmlFile);
+	output = output.replace(/</g, "&lt;");
+	output = output.replace(/>/g, "&gt;");
+	results.innerHTML = output;
+
+}
+		</script>
+	</head>
+	<body>
+		<h1>This is a test of creating XML</h1>
+		<input type="button" id="action" value="Click Me">
+		<div id="results">
+		</div>
+		<script type="text/javascript">
+window.addEventListener("load", init, false);
+		</script>
+	</body>
+</html>

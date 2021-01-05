@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Invisible Text Test Page</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+		<style type="text/css">
+			.noteSpan, .note {
+			}
+			.noteSpan {
+				width: 5em;
+			}
+			p {
+				margin: 0;
+				padding: 0;
+			}
+			.note {
+				width: 0;
+				height: 0;
+				overflow: hidden;
+				display: block;
+				border: none;
+			}
+			.noteHolder {
+				margin-bottom: 0.75em;
+				height: 1em;
+				width: 5em;
+				position: relative;
+			}
+			.noteHolder:focus, .noteHolder:hover {
+				/*height: inherit;*/
+				width: inherit;
+			}
+			.noteHolder:focus .note, .noteHolder:hover .note {
+				border: thin solid black;
+				background-color: #EEEEFF;
+				position: relative;
+				top: -5px;
+				left: 100px;
+				width: 20em;
+				height: 6em;
+				overflow: visible;
+			}
+			.font0 {
+				font-size: 0;
+			}
+			.screen-reader-text {
+				position: absolute !important;
+				height: 1px; width: 1px; 
+				overflow: hidden;
+				clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+				clip: rect(1px, 1px, 1px, 1px);
+				clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+			}
+			.wb-inv {
+				clip: rect(1px, 1px, 1px, 1px);
+				height: 1px;
+				margin: 0;
+				overflow: hidden;
+				position: absolute;
+				width: 1px;
+			}
+			.hidden	{
+				/* From WebAIM as the most recommended method: https://webaim.org/techniques/css/invisiblecontent/ */
+				position:absolute;
+				left:-10000px;
+				top:auto;
+				width:1px;
+				height:1px;
+				overflow:hidden;
+			}
+		</style>
+ 
+	</head>
+	<body>
+		<header>
+			<h1>Invisible Text Test Page</h1>
+		</header>
+ 
+		<div id="mainContent">
+			<h2>Check out these popups</h2>
+			<div class="noteHolder" tabindex="0">
+				<div class="noteSpan" id="noteSpan1">Note 1</div>
+				<div class="note" id="note1"><p>This is a an explanation of the first note.  It should be read by a screen reader, but remain invisible to sighted-users unless hovering over the Note thing above.</p></div>
+			</div>
+			<div class="noteHolder" tabindex="0">
+				<div class="noteSpan" id="noteSpan2">Note 2</div>
+				<div class="note" id="note2"><p>This is a an explanation of the second note.  It should be read by a screen reader, but remain invisible to sighted-users unless hovering over the Note thing above.</p></div>
+			</div>
+			<div>
+				<p class="font0">This is text using font size 0.</p>
+				<div>
+					<label class="font0" for="txt1">An invisible label</label><input id="txt1">
+				</div>
+				<div>
+					<input type="reset">
+				</div>
+			</div>
+			<div>
+				<p class="screen-reader-text">This is using Snook's screen reader text class.</p>
+				<p class="wb-inv">This is using WET's wb-inv class.</p>
+			</div>
+		</div>
+	</body>
+</html>
+
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>CSS Test Page</title>
+		<link rel="Stylesheet" type="text/css" href="cssTest.css">
+
+		<style type="text/css">
+
+		</style>
+
+	</head>
+	<body>
+		<header>
+		<h1>CSS Test Page</h1>
+		</header>
+		<div id="mainContent">
+		<dl>
+			<dt class="">Agreement Number</dt>
+			<dd class="">0524611</dd>
+			<dt class="cr">Effective Date:</dt>
+			<dd class="">2008-10-01</dd>
+			<dt class="">Expiry Date</dt>
+			<dd class="">2013-03-31</dd>
+			<dt class="cr">Settlement Date:</dt>
+			<dd class="">2008-10-01</dd>
+			<dt class="">Number of Employees:</dt>
+			<dd class="">90</dd>
+			<dt class="cr">employer:</dt>
+			<dd class="span2">Loomis Express (Canada) Ltd.</dd>
+			<dt class="cr">Union and Affiliation:</dt>
+			<dd class="span2">National Automobilie, Aerospace, Transportation, and General Workers Union of Canada (CAW Canada) (CLC)</dd>
+			<dt class="cr">Bargaining Unit:</dt>
+			<dd class="span2">Couriers</dd>
+			<dt class="cr">Location:</dt>
+			<dd class="span2">Multiprovince</dd>
+			<dt class="cr">Sector:</dt>
+			<dd class="span2">Private Sector</dd>
+			<dt class="cr">Industry:</dt>
+			<dd class="span2">Transportation</dd>
+			<dt class="cr">Jurisdiction:</dt>
+			<dd class="span2">Federal, Canada Labour Code, Part I (Private)</dd>
+			<dt class="cr span2">Collective agreement(s):</dt>
+			<dd class=""><a href="#">0524611a (English PDF Version, 300 KB</a></dd>
+			<dt class="cr span2">Summary:</dt>
+			<dd class="span2">Summary report for this bargaining unit is not available.</dd>
+		</dl>
+
+		<table>
+			<tr>
+				<th id="h1">Agreement Number</th>
+				<td headers="h1" colspan="3">0524611</td>
+			</tr>
+			<tr>
+				<th id="h2">Effective Date:</th>
+				<td headers="h2">2008-10-01</td>
+				<th id="h4">Expiry Date</th>
+				<td headers="h4">2013-03-31</td>
+			</tr>
+			<tr>
+				<th id="h3">Settlement Date:</th>
+				<td headers="h3">2008-10-01</td>
+				<th id="h5">Number of Employees:</th>
+				<td headers="h5">90</td>
+			</tr>
+			<tr>
+				<th id="h6">Employer:</th>
+				<td headers="h6" colspan="3">Loomis Express (Canada) Ltd.</td>
+			</tr>
+			<tr>
+				<th id="h7">Union and Affiliation:</th>
+				<td headers="h7" colspan="3">National Automobilie, Aerospace, Transportation, and General Workers Union of Canada (CAW Canada) (CLC)</td>
+			</tr>
+			<tr>
+				<th id="h8">Bargaining Unit:</th>
+				<td headers="h8" colspan="3">Couriers</td>
+			</tr>
+			<tr>
+				<th id="h9">Location:</th>
+				<td headers="h9" colspan="3">Multiprovince</td>
+			</tr>
+			<tr>
+				<th id="h10">Sector:</th>
+				<td headers="h10" colspan="3">Private Sector</td>
+			</tr>
+			<tr>
+				<th id="h11">Industry:</th>
+				<td headers="h11" colspan="3">Transportation</td>
+			</tr>
+			<tr>
+				<th id="h12">Jurisdiction:</th>
+				<td headers="h12" colspan="3">Federal, Canada Labour Code, Part I (Private)</td>
+			</tr>
+			<tr>
+				<th id="h13" colspan="2">Collective agreement(s):</th>
+				<td headers="h13" colspan="2"><a href="#">0524611a (English PDF Version, 300 KB</a></td>
+			</tr>
+			<tr>
+				<th id="h14" colspan="2">Summary:</th>
+				<td headers="h14" colspan="2">Summary report for this bargaining unit is not available.</td>
+			</tr>
+		</table>
+
+			<div class="class1">Bad Way<br>Width: pxadfasdfasf</div>
+			<div class="class2">Good Way<br>Width: emadfadffadfasfd</div>
+			<div class="class3">Blah 3<br>Blahblahblah</div>
+			<div class="class4">Blah 4<br>Blahblahblah</div>
+		</div>
+
+		<table>
+  <colgroup>
+    <col class="hide">
+    <col class="show">
+    <col class="hide">
+  </colgroup>
+  <tr>
+    <th>ISBN</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>3476896</td>
+    <td>My first HTML</td>
+    <td>$53</td>
+  </tr>
+  <tr>
+    <td>5869207</td>
+    <td>My first CSS</td>
+    <td>$49</td>
+  </tr>
+
+<div align="center" id="watermark5709" style="border: thin solid black; position: absolute; left:0px; top:0px; z-index:20; visibility:hidden;width:320px;">
+	<p>Test thingy.
+	<!-- <a href="http://www.icefire.ca" style="text-decoration:none;cursor:hand;" onClick="this.style.display='none';return false;"><img src="/_layouts/PointFire2010/iflogomin.jpg" width="320" height="40" border="0" alt="Multilingual User Interface powered by PointFire 2010 - IceFire Studios Corp."></a> -->
+</div>
+<script language="JavaScript">
+function SetStatic(){
+	if(document.all){
+		watermark5709.style.pixelTop=document.body.scrollTop+document.body.clientHeight-45;
+	}else if(document.layers){
+		eval(document.watermark5709.top=eval(window.pageYOffset+window.innerHeight-45));
+	}else if(document.getElementById && !document.all){
+		var wm = null;
+		wm = document.getElementById("watermark5709");
+		var finalTop = (window.pageYOffset+window.innerHeight-45) + "px";
+		console.log("finalTop: "+ finalTop + ".");
+		wm.style.top= finalTop;
+		//document.getElementById("watermark5709").style.top=(window.pageYOffset+window.innerHeight-45);
+		console.log("Repositioning in setStatic.");
+		console.log("innerHeight: " + window.innerHeight + ".");
+		console.log("innerHeight-45: "+ (window.innerHeight-45) + ".");
+		console.log("pageYOffset: "+ window.pageYOffset + ".");
+		console.log("final: "+ (window.pageYOffset+window.innerHeight-45) + ".");
+		console.log("Set at: "+ document.getElementById("watermark5709").style.top + ".");
+	}
+}
+
+setTimeout('SetStatic()',1);
+
+function position() {
+		console.log("Repositioning in position.");
+	if(document.all){
+		watermark5709.style.pixelLeft = document.body.clientWidth/2-160;
+		setTimeout('watermark5709.style.visibility = "visible"', 50);}
+	else if(document.layers){
+		document.watermark5709.left+=window.innerWidth/2-160;
+		setTimeout('document.watermark5709.visibility = "visible"', 50);}
+	else if(document.getElementById && !document.all){
+		document.getElementById("watermark5709").style.left=window.innerWidth/2-160 +"px";
+	setTimeout('document.getElementById("watermark5709").style.visibility = "visible"', 50);
+	
+	}
+}
+position();
+</script>
+</table>
+		<footer>
+			
+		</footer>
+	</body>
+</html>

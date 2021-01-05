@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: black;
+	background-color: white;
+}
+h1 {
+	width: 30em;
+	text-align: center;
+	/*border: thin solid red;*/
+	margin: auto;
+}
+table {
+	border: thin solid black;
+}
+td, th {
+	border: thin inset #808080;
+}
+#leftMenu {
+	position: absolute;
+	top: 100px;
+	border: none; /*thin solid blue;*/
+	width: 200px;
+	left: 1px;
+}
+#contentPane {
+	position: absolute;
+	top: 100px;
+	left: 210px;
+	border: none; /*thin solid red;*/
+	width: 89%;
+}
+#ysle {
+	display: none;
+	height: 200px;
+	border-top: 1.5em;
+	background-image: url('http://dilbert.com/dyn/str_strip/000000000/00000000/0000000/000000/00000/1000/000/1074/1074.strip.print.gif');
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+abbr#ysleAbbr span {
+	display: none;
+}
+abbr#ysleAbbr:hover span {
+	display: block;
+}
+
+#radioFieldset {
+	height: 80px;
+	overflow: scroll;
+	border: thin solid red;
+}

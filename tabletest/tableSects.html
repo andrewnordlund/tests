@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+		<title>Table Test</title>
+	</head>
+	<body>
+		<h1>Table Test Page 1</h1>
+		<div>
+
+		<p>This page has a multi-sectional table.</p>
+		<table border="1" class="taxslip"> 
+			<caption class="hidden">Slip Information:</caption>
+			<thead>
+				<tr>
+					<th id="boxNumberHeading" class="beige align-bottom">Box Number</th>
+					<th id="boxNameHeading" class="beige align-bottom">Box Name</th>
+					<th id="boxValueHeading" class="beige align-bottom">Box Value</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td colspan="3" headers="boxValueHeading">This could be a legend for Box Value.<br>It's weird because it shows up at the end of the table, but it's coded near the top.</td>
+				</tr>
+			</tfoot>		
+			<tbody>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">10</td>
+					<td headers="boxNameHeading" class="align-top">Year</td>
+					<td headers="boxValueHeading" class="align-top align-right">2009</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">11</td>
+					<td headers="boxNameHeading" class="align-top">Recipient type</td>
+					<td headers="boxValueHeading" class="align-top align-right">1</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">12</td>
+					<td headers="boxNameHeading" class="align-top"><a href="Help.do?topic=NR412" class="wet-newwindow">Country code</a></td>
+					<td headers="boxValueHeading" class="align-top align-right">USA</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">13</td>
+					<td headers="boxNameHeading" class="align-top">Foreign social security number or Social Insurance Number</td>
+					<td headers="boxValueHeading" class="align-top align-right"></td>
+				</tr>
+			</tbody>
+		
+			<tbody>	
+				<tr>
+					<th id="incomeTypeCdHeading" colspan="3" class="beige align-left"><strong>Taxable Canada Pension Plan Benefits&nbsp;</strong></th>
+				</tr>
+		
+				<tr>
+					<td headers="boxNumberHeading incomeTypeCdHeading" class="align-top align-center">14</td>
+					<td headers="boxNameHeading incomeTypeCdHeading" class="align-top"><a href="Help.do?topic=NR414" class="wet-newwindow">Income code</a></td>
+					<td headers="boxValueHeading incomeTypeCdHeading" class="align-top align-right">46</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading incomeTypeCdHeading" class="align-top align-center">15</td>
+					<td headers="boxNameHeading incomeTypeCdHeading" class="align-top"><a href="Help.do?topic=NR415" class="wet-newwindow">Currency code</a></td>
+					<td headers="boxValueHeading incomeTypeCdHeading" class="align-top align-right">CAD</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading incomeTypeCdHeading" class="align-top align-center">16</td>
+					<td headers="boxNameHeading incomeTypeCdHeading" class="align-top"><a href="Help.do?topic=NR416" class="wet-newwindow">Gross income</a></td>
+					<td headers="boxValueHeading incomeTypeCdHeading" class="align-top align-right">4,515.84</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading incomeTypeCdHeading" class="align-top align-center">17</td>
+					<td headers="boxNameHeading incomeTypeCdHeading" class="align-top"><a href="Help.do?topic=NR417" class="wet-newwindow">Non-resident tax withheld</a></td>
+					<td headers="boxValueHeading incomeTypeCdHeading" class="align-top align-right"></td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading incomeTypeCdHeading" class="align-top align-center">18</td>
+					<td headers="boxNameHeading incomeTypeCdHeading" class="align-top"><a href="Help.do?topic=NR418" class="wet-newwindow">Exemption code</a></td>
+					<td headers="boxValueHeading incomeTypeCdHeading" class="align-top align-right"></td>
+				</tr>
+			</tbody>
+		
+			<tbody style="border: thin solid green;">
+				<tr class="beige">
+					<td colspan="3" class="beige align-left" style="height:1.13em;"></td>
+				</tr>
+			
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">24</td>
+					<td headers="boxNameHeading" class="align-top"><a href="Help.do?topic=NR414" class="wet-newwindow">Income code</a></td>
+					<td headers="boxValueHeading" class="align-top align-right"></td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">25</td>
+					<td headers="boxNameHeading" class="align-top"><a href="Help.do?topic=NR415" class="wet-newwindow">Currency code</a></td>
+					<td headers="boxValueHeading" class="align-top align-right"></td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">26</td>
+					<td headers="boxNameHeading" class="align-top"><a href="Help.do?topic=NR416" class="wet-newwindow">Gross income</a></td>
+					<td headers="boxValueHeading" class="align-top align-right"></td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">27</td>
+					<td headers="boxNameHeading" class="align-top"><a href="Help.do?topic=NR417" class="wet-newwindow">Non-resident tax withheld</a></td>
+					<td headers="boxValueHeading" class="align-top align-right"></td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">28</td>
+					<td headers="boxNameHeading" class="align-top"><a href="Help.do?topic=NR418" class="wet-newwindow">Exemption code</a></td>
+					<td headers="boxValueHeading" class="align-top align-right"></td>
+				</tr>
+	
+				<tr class="beige">
+					<td colspan="3" class="beige align-left" style="height:1.13em;"></td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">n/a</td>
+					<td headers="boxNameHeading" class="align-top">Payer or remitter identification number</td>
+					<td headers="boxValueHeading" class="align-top align-right">811&nbsp;111&nbsp;321</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">n/a</td>
+					<td headers="boxNameHeading" class="align-top">Non-resident account number</td>
+					<td headers="boxValueHeading" class="align-top align-right">NRF2619sdfadf74</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">n/a</td>
+					<td headers="boxNameHeading" class="align-top">Name and address of disbursing agent or payer</td>
+					<td headers="boxValueHeading" class="align-top align-right">Government of Canada</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">n/a</td>
+					<td headers="boxNameHeading" class="align-top">Benefit number</td>
+					<td headers="boxValueHeading" class="align-top align-right">*********&nbsp;&nbsp;&nbsp;20</td>
+				</tr>
+				<tr>
+					<td headers="boxNumberHeading" class="align-top align-center">n/a</td>
+					<td headers="boxNameHeading" class="align-top">Office</td>
+					<td headers="boxValueHeading" class="align-top align-right">Scarborough &nbsp;(0510)</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		</div>
+	</body>
+</html>

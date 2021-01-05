@@ -1,0 +1,12 @@
+.hidden {
+	display: none;
+}
+.shown {
+	display: block;
+	padding: 0;
+	background-color: #00CCFF;
+}
+#areYouSureHolder {
+	height: 3em;
+	border: none;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Screen Reader Sim Test Page</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+		<script type="text/javascript">
+function run () {
+	//alert ("Running.");
+	var theSel = document.getElementById("selection");
+	if (theSel) {
+		theSel.addEventListener("change", tellMeSel, false);
+	} else {
+		alert ("Couldn't get select.");
+	}
+	var theTA = document.getElementById("ta");
+	if (theTA) {
+		theTA.addEventListener("change", tellMeTA, false);
+	} else {
+		alert ("Couldn't get select.");
+	}
+	var checkBtn = document.getElementById("checkBtn");
+	if (checkBtn) {
+		checkBtn.addEventListener("click", getSelected, false);
+	} else {
+		alert ("Couldn't find Check Button.");
+	}
+}
+function getSelected () {
+	var theSel = document.getElementById("ta");
+	//var opts = document.getElementsByName("option");
+	//alert ("Got " + opts.length + " opts.");
+	var output = "";
+	if (theSel) {
+		output += theSel.defaultValue + " is selected.\n";
+		//var obj = opts[0];
+		//output += "Obj is " + obj + ".\n";
+		//for (var k in opts) {
+			//if (str) {
+			//	if (k.match(str)) output += k + ", ";
+			//} else {
+			//	output += k + ": " + opts[k] + ", ";
+			//}
+		//}
+		//for (var i = 0; i < opts.length; i++) {
+			
+		//}
+	} else {
+		output += "Couldn't get the selection box.";
+	}
+	alert (output);
+	var results = document.getElementById("results");
+	if (results) {
+		results.innerHTML += output;
+	} else {
+		alert ("Couldn't get results to write:\n" + output);
+	}
+}
+function tellMeTA() {
+	alert ("Telling you.");
+	var theSel = document.getElementById("ta");
+	if (theSel) {
+		alert ("You got " + theSel.value + ".");
+	} else {
+		alert ("Couldn't get textarea.");
+	}
+}
+function tellMeSel() {
+	alert ("Telling you.");
+	var theSel = document.getElementById("selection");
+	if (theSel) {
+		alert ("You got " + theSel.selectedIndex + ".");
+	} else {
+		alert ("Couldn't get select.");
+	}
+}
+		</script>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+	asdfasdfs<br>
+	<h1>This is the header</h1>
+	<label for="thing1">Label stuff</label>
+	<input type="text" id="thing1" value="test stuff">
+	<fieldset>
+		<legend>This is a legend</legend>
+		<label><input type="checkbox"> Checked?</label>
+		<fieldset>
+			<legend>Gender</legend>
+			<label><input type="radio" name="sex" id="genderMale"> Male</label><br>
+			<label><input type="radio" name="sex" id="genderFemale"> Female</label><br>
+		</fieldset>
+	</fieldset>
+	<label for="ta">
+		Enter your life's story:
+		<textarea id="ta">This is my life's story.</textarea>
+		And that was your life's story.
+	</label>
+	<br>
+	<label for="selection">Select something:</label>
+	<select id="selection" name="selection">
+		<option val="option1">Option 1</option>
+		<option val="option2">Option 2</option>
+		<option val="option3">Option 3</option>
+	</select>
+	<div>
+	Last <a href="blah">stuf</a>f.
+	</div>
+	<div>
+		<input type="button" value="See What's Selected" id="checkBtn">
+	</div>
+	<div id="results">
+	</div>
+		<header>
+		<h1>Screen Reader Sim Test Page</h1>
+		</header>
+		<div id="mainContent">
+			<h1>Tabindex="x" where x is a positive integer</h1>
+			<div class="fieldHolder">
+				<label for="txt3">Tabindex 1:</label>
+				<input type="text" tabindex="1" id="txt3">
+			</div>
+			<div class="fieldHolder">
+				<label for="txt1">TabIndex 2:</label>
+				<input type="text" tabindex="2" id="txt1">
+			</div>
+			<p tabindex="2">This paragraph has tabindex="2".</p>
+			<div class="fieldHolder">
+				<label for="txt2">Tabindex 0:</label>
+				<input type="text" tabindex="0" id="txt2">
+			</div>
+			<div tabindex="-1"><h3>Test Div</h3>
+				<div class="fieldHolder">
+					<label for="txt4">No tabindex:</label>
+					<input type="text" id="txt4">
+				</div>
+				<p tabindex="0">This paragraph has tabindex="0".</p>
+				<div class="fieldHolder">
+					<label for="txt5">Tabindex -1:</label>
+					<input type="text" tabindex="-1" id="txt5">
+				</div>
+			</div>
+			<div class="fieldHolder">
+				<label for="txt0">Tabindex 0:</label>
+				<input type="text" tabindex="0" id="txt0">
+			</div>
+			<p>This paragraph has no tabindex.  Notice it's never selected no matter how much you hit tab.</p>
+			<div class="fieldHolder">
+				<label for="txt6">Tabindex 1:</label>
+				<input type="text" tabindex="1" id="txt6">
+			</div>
+		</div>
+	<script type="text/javascript">
+window.addEventListener("load", run, false);
+	</script>
+	</body>
+</html>

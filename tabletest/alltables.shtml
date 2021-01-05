@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>Table Test</title>
+		<!--#include virtual="/tabletest/css.html" -->
+	</head>
+	<body>
+		<h1>Table Test Page 1</h1>
+		<p>This page has a table with no headers or scopes.</p>
+		<!--#include virtual="/tabletest/leftMenu.html" -->
+		<div id="contentPane">
+			Non-Accessible:
+			<table>
+				<tr>
+					<th>Col 1</th>
+					<th>Col 2</th>
+				</tr>
+				<tr>
+					<td>1, 1</td>
+					<td>1, 2</td>
+				</tr>
+				<tr>
+					<td>2, 1</td>
+					<td>2, 2</td>
+				</tr>
+			</table>
+			Scope:
+			<table summary="">
+				<tr>
+					<th scope="col">Col 1</th>
+					<th scope="col">Col 2</th>
+				</tr>
+				<tr>
+					<td>1, 1</td>
+					<td>1, 2</td>
+				</tr>
+				<tr>
+					<td>2, 1</td>
+					<td>2, 2</td>
+				</tr>
+			</table>
+			Scope's and headers:
+			<table summary="this table sucks">
+				<tr>
+					<th id="col1A" scope="col">Col 1</th>
+					<th id="col2A" scope="col">Col 2</th>
+				</tr>
+				<tr>
+					<td headers="col1A">1, 1</td>
+					<td headers="col2A">1, 2</td>
+				</tr>
+				<tr>
+					<td headers="col1A">2, 1</td>
+					<td headers="col2A">2, 2</td>
+				</tr>
+			</table>
+			Ids/Headers:
+			<table summary="This table exists to show how a table properly uses ids and headers, and long summaries.">
+				<tr>
+					<th id="col1B">Col 1</th>
+					<th id="col2B">Col 2</th>
+				</tr>
+				<tr>
+					<td headers="col1B">1, 1</td>
+					<td headers="col2B">1, 2</td>
+				</tr>
+				<tr>
+					<td headers="col1B">2, 1</td>
+					<td headers="col2B">2, 2</td>
+				</tr>
+			</table>
+			
+		</div>
+	</body>
+</html>

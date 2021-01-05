@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Help Text Test</title>
+		<link rel="Stylesheet" type="text/css" href="helpTextTest.css">
+	</head>
+	<body>
+		<header>
+		<h1>Help Text Test</h1>
+		</header>
+
+		<main>
+		<div id="formDiv">
+			<h2>Test part</h2>
+			<form action="" method="GET">
+			<div class="formHolder">
+				<label for="firstName">First name:</label>
+				<button id="helpBtn1" aria-controls="fnHelp1" aria-expanded="false">H<span class="wb-inv">elp for First Name</span></button>
+				<input type="text" id="firstName">
+				<div id="fnHelp1" class="none other"><p>Put your first name here.</p></div>
+			</div>
+			<div class="formHolder">
+				<label for="lastName">Last name:</label>
+				<button id="helpBtn2" aria-controls="fnHelp2" aria-expanded="false">H<span class="wb-inv">elp for Last Name</span></button>
+				<input type="text" id="lastName">
+				<div id="fnHelp2" class="none other"><p>Put your last name here.</p></div>
+			</div>
+			</form>
+		</div>
+		<div id="results">
+			<h2>Screen Reader results:</h2>
+			<p>Windows 11</p>
+			<h3>NVDA</h3>
+			<dl>
+				<dt>Firefox 55</dt>
+				<dd>When the button is clicked (using keyboard), the help text is shown and read.</dd>
+				<dt>IE 11</dt>
+				<dd>When the button is clicked (using keyboard), the help text is shown but not read.  Only "Expanded" is heard.</dd>
+				<dt>Opera 51</dt>
+				<dd>When the button is clicked (using keyboard), nothing is heard.</dd>
+			</dl>
+			<h3>JAWS</h3>
+			<dl>
+				<dt>Firefox 55</dt>
+				<dd>When the button is clicked (using keyboard), the help text is shown and read.</dd>
+				<dt>IE 11</dt>
+				<dd>When the button is clicked (using keyboard), the help text is shown but not read.  Only "Expanded" is heard.</dd>
+				<dt>Opera 51</dt>
+				<dd>When the button is clicked (using keyboard), the help text is shown but not read.  Only "Expanded" is heard (along with some other instructions).</dd>
+			</dl>
+		</div>
+		</main>
+		<script src="helpTextTest.js"></script>
+	</body>
+</html>

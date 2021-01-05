@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sort Test Page</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+		<style type="text/css">
+		dt {
+			font-weight: bold;
+			/*border: thin solid red;*/
+
+		}
+		dt, dd {
+			display: inline-block;
+			width: 5em;
+			padding: 0;
+		}
+		dd {
+			/*border: thin solid blue;*/
+		}
+		.li {
+			/*border: thin solid green;*/
+		}
+		ol {
+			/*border: thin solid black;*/
+		}
+		</style>
+
+		<script type="text/javascript">
+			var debug = false;
+function printList (a) {
+	var list = document.createElement("ol");
+	for (var i = 0; i < a.length; i++) {
+		var newItem = document.createElement("li");
+		newItem.appendChild(document.createTextNode(a[i]["city"] + " - " + a[i]["state"] + " - " + a[i]["zip"] + " - $" + a[i]["price"]));
+		list.appendChild(newItem);
+	}
+	return list;
+}
+
+var sort_by = function(field, reverse, primer) {
+	var key = function (x) {return primer ? primer(x[field]) : x[field]};
+
+	return function (a,b) {
+		var A = key(a), B = key(b);
+		return (A < B ? -1 : (A > B ? 1 : 0)) * [1,-1][+!!reverse];                 
+	}
+}
+
+function nordSort (arr, f) { //, r, p) {
+	//alert ("arr: " + typeof(arr));
+	var r = (arguments.length>=3 ? arguments[2] : false);
+	var p = (arguments.length>=4 ? arguments[3] : null);
+	var output = "f: " + f + "\nr: " + r + "\np: " + p + ".";
+	if (debug) alert (output);
+
+	var tarr = arr.slice(0);
+	var key = function (x) {
+		var output = "x: " + x + "\nf: " + f + "\nx[f]: " + x[f] + "\nr: " + r + "\np: " + p + ".";
+		//alert (output);
+		var returnValue = (p ? p(x[f]) : x[f]);
+		output += "\nreturning: " + returnValue + ".";
+		return returnValue;
+	};
+
+	// a is a passed array of objects.
+	//return a.sort(sort_by(f, r, p));
+	tarr.sort(function (a, b) {
+		var output = "a: " + a + "\nb: " + b + ".";
+		var A = key(a), B = key(b);
+		output += "\nA: " + A + "\nB: " + B +".";
+		var returnValue;// = 0;
+		
+		output += "\n[+r]: " + [1, -1][+r] + ".";
+		
+		var returnValue = (A > B ? 1 : (A < B ? -1 : 0)) * [1, -1][+r];
+		output += "\nreturning " + returnValue + ".";
+		if (debug) alert (output);
+		return returnValue;
+	});
+	return tarr;
+}
+
+function run () {
+	var mainContent = document.getElementById("mainContent");
+
+	
+// Now you can sort by any field at will...
+	var homes = [
+		{h_id: "3", city: "Dallas", state: "TX", zip: "75201", price: "162500"},
+		{h_id: "4", city: "Bevery Hills", state: "CA", zip: "90210", price: "319250"},
+		{h_id: "5", city: "New York", state: "NY", zip: "00010", price: "962500"}
+	];
+
+	//alert ("Homes: " + (homes[0].hasOwnProperty(length) ? "Array" : "Object") + ".");
+	var firstHeader = document.createElement("h2");
+	firstHeader.appendChild(document.createTextNode("At first"));
+	mainContent.appendChild(firstHeader);
+	mainContent.appendChild(printList(homes));
+
+	// Sort by price high to low
+	var prices = nordSort(homes, 'price', true); //homes.sort(sort_by('price', true, parseInt));
+	var priceHeader = document.createElement("h2");
+	priceHeader.appendChild(document.createTextNode("By Price"));
+	mainContent.appendChild(priceHeader);
+	mainContent.appendChild(printList(prices));
+	
+
+	homes.push({h_id: "2", city: "Old New York", state: "ONY", zip: "70000", price: "62500"});
+	var zips = nordSort(homes, 'zip'); //homes.sort(sort_by('zip', false, parseInt));
+	var zipHeader = document.createElement("h2");
+	zipHeader.appendChild(document.createTextNode("By Zip"));
+	mainContent.appendChild(zipHeader);
+	mainContent.appendChild(printList(zips));
+
+	//debug= true;
+	var cities = nordSort(homes, 'city', true, function(a){return a.toUpperCase()}); //homes.sort(sort_by('city', true, function(a){return a.toUpperCase()}));
+	var cityHeader = document.createElement("h2");
+	cityHeader.appendChild(document.createTextNode("By City"));
+	mainContent.appendChild(cityHeader);
+	mainContent.appendChild(printList(cities));
+
+	debug= false;
+	var lastHeader = document.createElement("h2");
+	lastHeader.appendChild(document.createTextNode("At Last"));
+	mainContent.appendChild(lastHeader);
+	mainContent.appendChild(printList(homes));
+
+	/*var testb = true;
+	mainContent.innerHTML += "testb: " + testb + ".<br>\n";
+	mainContent.innerHTML += "+!!testb: " + +!!testb + "<br>\n";
+	mainContent.innerHTML += "[+!!testb]: " + [+!!testb] + "<br>\n";
+	mainContent.innerHTML += "[1, -1][+!!testb]: " + [false, "car", "truck", "minivan"][+!!testb] + "<br>\n";*/
+}
+
+		</script>
+	</head>
+	<body>
+		<header>
+		<h1>Sort Test Page</h1>
+		</header>
+		<div id="mainContent">
+
+		</div>
+		<footer>
+			<script type="text/javascript">
+				if (window.addEventListener) {
+					window.addEventListener("load", run, false);
+				} else if (window.attachEvent) {
+					window.attachEvent("load", run);
+				} else {
+					window.onload(run);
+				}
+			</script>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,4 @@
+table {border: thin solid black;}
+td, th {border: thin inset #808080;}
+.hidden {display: none;}
+.show {display: block;}

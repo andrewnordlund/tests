@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>PushState Page</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+		<style type="text/css">
+		dt {
+			font-weight: bold;
+			/*border: thin solid red;*/
+
+		}
+		dt, dd {
+			display: inline-block;
+			width: 5em;
+			padding: 0;
+		}
+		dd {
+			/*border: thin solid blue;*/
+		}
+		.li {
+			/*border: thin solid green;*/
+		}
+		ol {
+			/*border: thin solid black;*/
+		}
+		</style>
+
+		<script type="text/javascript">
+			function run () {
+				var addHistBtn = document.getElementById("addHistButton");
+				if (addHistBtn) {
+					addHistButton.addEventListener("click", addHistFun, false);
+				} else {
+					alert ("Couldn't get button.");
+				}
+			}
+function addHistFun () {
+	window.history.pushState({foo:"bar"}, "Blah", "http://localhost/common_link.html");
+	window.history.back();
+	// Make AJAX call here to get content, not template
+	alert ("Hit button!");
+}
+		</script>
+	</head>
+	<body>
+		<header>
+		<h1>PushState Page</h1>
+		</header>
+		<div id="mainContent">
+		<input type="button" id="addHistButton" value="Add Forward">
+		</div>
+		<footer>
+			<script type="text/javascript">
+				if (window.addEventListener) {
+					window.addEventListener("load", run, false);
+				} else if (window.attachEvent) {
+					window.attachEvent("load", run);
+				} else {
+					window.onload(run);
+				}
+			</script>
+		</footer>
+	</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+		<title>ARIA-hidden Test Page</title>
+	</head>
+	<body>
+		<header>
+		<h1>ARIA-hidden Test Page</h1>
+		</header>
+		<main>
+		<div>
+			<p>No tabindex, no aria.</p>
+			<p aria-hidden="true">No tabindex.  Aria-hidden="true"</p>
+			<p tabindex="0">Tabindex="0", no aria.</p>
+			<p tabindex="0" aria-hidden="true">Tabindex="0", aria-hidden="true".</p>
+			<p tabindex="0">Tabindex="0", no aria the second.</p>
+			<p tabindex="0">Tabindex="0", no aria for good measure.</p>
+		</div>
+		<details>
+			<summary><h2 style="display: inline">Screen Readers Results</h2></summary>
+			<dl>
+				<dt>JAWS</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p>Cannot seem to use arrow keys with Firefox and JAWS.</p>
+					<p>When tabbing through, every <code>&lt;p tabindex="0"&gt;</code> gets read as <q>Edit. Type and text</q>.</p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p>When using the arrow keys, "Blank" is read when <code>aria-hidden="true"</code> is focused.  Note that it also reads "Blank" between the last two paragraphs, even though there's nothing there.<p>
+					<p>When tabbing through, when focus lands on a paragraph with <code>aria-hidden="true"</code> it reads <q>Tabindex equals quote zero quote no aria.</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p>When using the arrow keys, "Blank" is read when <code>aria-hidden="true"</code> is focused.</p>
+					<p>When tabbing through, when focus lands on a paragraph with <code>aria-hidden="true"</code>, it reads the whole <code>&lt;div&gt;</code>; that is to say it reads all the paragraphs without <code>aria-hidden="true"</code>.</p></dd>
+				</dl>
+				</dd>
+				<dt>NVDA</dt>
+				<dd>
+				<dl>
+					<dt>Firefox (55, 59, and 60)</dt>
+					<dd><p>When using arrow keys, the <code>aria-hidden="true"</code> sections get skipped over.</p>
+					<p>When tabbing through, the focus will land on the <code>&lt;p tabindex="0" aria-hidden="true"&gt;</code>, and will read "Blank".  Then a really odd thing happens.  When I tab to the next <code>&lt;p tabindex="0"&gt;</code>, it doesn't get read.  When I tab to the <em>next</em> <code>&lt;p tabindex="0"&gt;</code>, it gets read. Then, if I <kbd>shift+tab</kbd> I hear <q>tabindex equals zero no aria the second</q>, then when focus lands on the <code>aria-hidden="true"</code> I <em>don't</em> hear "blank".  I hear nothing.  Then I hear <q>tabindex equals zero no aria</q>.</p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p>When using arrow keys, the <code>aria-hidden="true"</code> sections get skipped over.</p>
+					<p>When tabbing through, the focus will land on the <code>&lt;p tabindex="0" aria-hidden="true"&gt;</code>, and will read out <q>tabindex equals zero aria hidden equals true edit</q>.</p></dd>
+					<dt>Opera 43</dt>
+					<dd><p>When using arrow keys, the <code>aria-hidden="true"</code> sections get skipped over.</p>
+					<p>When tabbing through, focus lands on the <code>aria-hidden="true"</code> paragraphs, but nothing is read.</p></dd>
+				</dl>
+				</dd>
+				<dt>iOS Voice Over (iOS 10)</dt>
+				<dd>
+				<dl>
+					<dt>Safari, Firefox, and Chrome</dt>
+					<dd><p>Whether swiping from part to part, or reading the whole page, the paragraphs with <code>aria=hidden="true"</code> are completely missed.</dd>
+					<dt>Opera Mini</dt>
+					<dd>Abosultely nothing</dd>
+				</dl>
+				</dd>
+				<dt>OS X Voice Over</dt>
+				<dd>
+				<dl>
+					<dt>Firefox 55</dt>
+					<dd><p>When using arrow keys, every paragraph is read, even those with aria-hidden-"true".</p>
+					<p>When tabbing through, every paragraph with <code>tabindex="true"</code> is read, even those with aria-hidden-"true".</p></dd>
+					<dt>Firefox 60 (Dev edition)</dt>
+					<dd><p>Nothing works!  Grrrr!</p></dd>
+					<dt>Chrome</dt>
+					<dd><p>When using arrow keys, the <code>aria-hidden="true"</code> sections get skipped over.</p>
+					<p>When tabbing through, the <code>aria-hidden="true" tabindex="0"</code> receives focus, but VO doesn't read anything out.</p></dd>
+					<dt>Safari</dt>
+					<dd><p>When using arrow keys, the <code>aria-hidden="true"</code> sections get skipped over.</p>
+					<p>When tabbing through, the <code>aria-hidden="true" tabindex="0"</code> receives focus, but VO doesn't read anything out.</p></dd>
+					<dt>Opera</dt>
+					<dd><p>When using arrow keys, the <code>aria-hidden="true"</code> sections get skipped over.</p>
+					<p>When tabbing through, the <code>aria-hidden="true" tabindex="0"</code> receives focus, but VO doesn't read anything out.</p></dd>
+				</dl>
+				</dd>
+			</dl>
+		</details>
+		<h2>Summary</h2>
+		<div><p>When using <code>aria-hidden="true"</code>, keep the following in mind:</p>
+		<ul>
+			<li>Adding <code>aria-hidden="true"</code> to a non-focusable element is well supported in screen reader and browser combos.</li>
+			<li>But adding <code>tabindex="0"</code> has varying results:
+				<ul>
+					<li>Firefox (55) on OSX (10.9), and IE 11 with both NVDA and JAWS on Windows 7, <code>aria-hidden="true"</code> is ignored completely.</li>
+					<li>JAWS + Opera reads the whole <code>&lt;div&gt;</code>.</li>
+					<li>NVDA + Firefox (55 - 60) messes up code in surrounding paragraphs.</li>
+				</ul>
+			</li>
+		</ul>
+		</div>
+		</main>
+</body></html>
+

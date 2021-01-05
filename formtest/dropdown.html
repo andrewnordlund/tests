@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Dropdown Testing Page</title>
+		<style type="text/css">
+.fieldHolder {
+	border: thin solid black;
+	width: 50%;
+}
+#testSelect4 {
+	border: 0 !important;  /*Removes border*/
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+	width: 90%;
+	padding: .35em;
+	border: thin inset #808080;
+	appearance:none;
+	background: #0088cc url(select-arrow.png) no-repeat 90% center;
+	background: #D0D0D0;
+	-moz-appearance: none; /* Removes Default Firefox style*/
+	text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
+	
+}
+.fa-caret-down:before{content:"\f0d7"}
+.fa-caret-up:before{content:"\f0d8"}
+#testSelect4 option {
+	margin: 2em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 1.13em;
+}
+details, #screenshots {/*display: none;*/}
+		</style>
+	</head>
+	<body>
+		<header><h1>Custom Select</h1></header>
+
+		<main>
+		<!--
+		<details><summary>This is a summary</summary>
+			<div>
+				<p>And these are details</p>
+			</div>
+		</details>
+		-->
+		<h2>Option Tests</h2>
+		<form method="GET" action="formtest.html">
+
+		<div class="fieldHolder1">
+			<label for="testOption1">Test option with option label</label><br>
+			<select id="testOption1" name="testOption1">
+				<option value="opt0" label="Label option"></option>
+				<option value="op1">Option 1</option>
+				<option value="op2">Option 2</option>
+			</select>
+		</div>
+		<details>
+			<summary>Screen Readers Results</summary>
+			<dl>
+				<dt>JAWS</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Test option with option label combo box. Label option. To change the selection use the arrow keys.</q></p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>List option with option label combo box. Label option. To change the selection use the arrow keys.</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Listbox label option</q></p></dd>
+				</dl>
+				</dd>
+				<dt>NVDA</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Test option with option label combo box label option collapsed.</q></p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Test option with option label combo box label option collapsed.</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Test option with option label combo box collapsed. List. Label option.</q></p></dd>
+				</dl>
+				</dd>
+				<dt>iOS Voice Over</dt>
+				<dd>
+				<dl>
+					<dt>Safari, Firefox, and Chrome</dt>
+					<dd><q>Test option with option label. Label option. Popup button. Double-tap to activate the picker.</q></dd>
+					<dt>Opera Mini</dt>
+					<dd>Voice Over does not work on Opera Mini.</dd>
+				</dl>
+				</dd>
+
+			</dl>
+		</details>
+		<div class="fieldHolder1">
+			<label for="testOption2">Test option with empty option label</label><br>
+			<select id="testOption2" name="testOption2">
+				<option value="opt0" label=" "> </option>
+				<option value="op1">Option 1</option>
+				<option value="op2">Option 2</option>
+			</select>
+		</div>
+		<details>
+			<summary>Sreen Reader Results</summary>
+			<dl>
+				<dt>JAWS</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Test option with empty option label combo box. To change the selection use the arrow keys.</q></p>	
+					</dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Test option with empty option label combo box. To change the selection use the arrow keys.</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Listbox</q></p></dd>
+				</dl>
+				</dd>
+				<dt>NVDA</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Test option with empty option label combo box collapsed.</q></p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Test option with empty option label combo box collapsed.</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Test option with empty option label combo box collapsed.  List.  List item.</q></p></dd>
+				</dl>
+				</dd>
+				<dt>iOS Voice Over</dt>
+				<dd>
+				<dl>
+					<dt>Safari, Firefox, and Chrome</dt>
+					<dd><q>Test option with empty option label. New line. Popup button. Double-tap to activate the picker.</q></dd>
+					<dt>Opera Mini</dt>
+					<dd>Voice Over does not work on Opera Mini.</dd>
+				</dl>
+				</dd>
+			</dl>
+		</details>
+		<div class="fieldHolder1">
+			<label for="testOption3">Test option with optgroup</label><br>
+			<select id="testOption3" name="testOption3">
+				<optgroup label="Optgroup">
+				<option value="op1">Option 1</option>
+				<option value="op2">Option 2</option>
+			</select>
+		</div>
+		<details>
+			<summary>Screen Readers Results</summary>
+			<dl>
+				<dt>JAWS</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Test option with option optgroup combo box. To change the selection use the arrow keys.</q></p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Test option with optgroup combobox.  Option 1 left paren optgroup right paren. To change the selection use the arrow keys.</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Listbox option 1</q></p></dd>
+				</dl>
+				</dd>
+				<dt>NVDA</dt>
+				<dd>
+				<dl>
+					<dt>Firefox</dt>
+					<dd><p><q>Test option with optgroup combo box Option 1 collapsed.</q></p></dd>
+					<dt>Internet Explorer 11</dt>
+					<dd><p><q>Test option with optgroup combo box Option 1 collapsed.</q></p></dd>
+					<dt>Opera 43</dt>
+					<dd><p><q>Test option with optgroup combo box collapsed. List. Option 1</q></p></dd>
+				</dl>
+				</dd>
+				<dt>iOS Voice Over</dt>
+				<dd>
+				<dl>
+					<dt>Safari, Firefox, and Chrome</dt>
+					<dd><q>Test option with optgroup. Option 1. Popup button. Double-tap to activate the picker.</q></dd>
+					<dt>Opera Mini</dt>
+					<dd>Voice Over does not work on Opera Mini.</dd>
+				</dl>
+				</dd>
+			</dl>
+		</details>
+		<section id="screenshots">
+		<h2>Screenshots</h2>
+		<dl>
+			<dt>Firefox</dt>
+			<dd><img src="Firefox-dropdown.png" alt="Option labels shown as blank. Optgroup only showing upon expansion."></dd>
+			<dt>Internet Explorer 11</dt>
+			<dd><img src="IE-dropdown.png" alt="Option labels shown. Optgroup label shown upon expansion."></dd>
+			<dt>Opera 43</dt>
+			<dd><img src="Opera-dropdown.png" alt="Option labels shown. Optgroup label shown upon expansion."></dd>
+			<dt>iOS (Firefox, Safari, and Chrome.  All look the same.)
+			<dd><img src="ios-browsers-dropdown.png" alt="Option labels shown. Optgroup label shown upon expansion."></dd>
+			<dt>iOS (Opera Mini)
+			<dd><img src="ios-opera-dropdown.png" alt="Option labels nor optgroup labels shown."></dd>
+		</dl>
+		</section>
+		<!--
+		<div class="fieldHolder">
+			<label for="testText">Type something here.</label><br>
+			<input type="text" name="testText" id="testText">
+		</div>
+		<div class="fieldHolder1">
+			<label for="testSelect4">Select an option</label><br>
+			<select id="testSelect4" name="testSelect4" disabled>
+				<option value="op1">Option 1</option>
+				<option value="op2">Option 2</option>
+				<option value="op3">Option 3</option>
+				<option value="op4">Option 4</option>
+				<option value="op5">Option 5</option>
+			</select>
+		</div>
+		<div class="fieldHolder">
+			<label for="testText2">Type something else here.</label><br>
+			<input type="text" name="testText2" id="testText2">
+		</div>
+		
+		<div class="fieldHolder">
+			<input type="submit">
+		</div>
+		-->
+		</form>
+		</main>
+	</body>
+</html>

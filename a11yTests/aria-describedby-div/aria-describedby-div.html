@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Aria-Describedby on Div Test</title>
+		<link rel="Stylesheet" href="aria-describedby-div.css" type="text/css" >
+	</head>
+	<body>
+		<header>
+			<h1>Aria-Describedby on Div Test</h1>
+		</header>
+		<body>
+			<div tabindex="-1" id="modalBox" class="hide" role="dialog" aria-modal="true" aria-describedby="innerDiv">
+				<div id="innerDiv">
+					<h2 id="sectionHeader2">Important stuff</h2>
+					<p>This is the second paragraph and it should be read when the button has focus.</p>
+					<p>This is yet another paragraph.  Shut up.</p>
+				</div>
+				<div>
+					<button type="button" id="btn1">Yes</button>
+				</div>
+			</div>
+			<div>
+				<p tabindex="0">Blah blah.</p>
+				<p>This is the first paragraph with <a href="#btn1" role="button" id="a1">linky button to open a modal</a> in it.</p>
+			</div>
+			<script src="aria-describedby-div.js"></script>
+		</body>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="iso-8859-1">
+		<title>ARIA Test Page</title>
+		<!-- <meta http-equiv='Content-Type' content='text/html; charset=iso8859-1'> -->
+		<style type="text/css">
+.errorMsg {
+	color: #AA0000;
+}
+.noHeight{
+	border: thin solid red;
+	display: block;
+	height: 0;
+		overflow: hidden;
+}
+		</style>
+		<!-- 	<script src="/jquery/jquery-1.8.0.js" type="text/javascript"></script> -->
+		<script type="text/javascript">
+var defLblTxt;
+var errMsg = "<span class=\"errorMsg\" id=\"errorMsg\" >This is in error.</span>";
+function fixLabel () {
+	var lbl = document.getElementById("drpdownLbl");
+	var dd = document.getElementById("drpdown");
+	var txt = document.getElementById("txt");
+	if (lbl && dd && txt) {
+		//alert ("Got " + dd.selectedIndex + ".");
+		if (dd.selectedIndex == 2) {
+			//alert ("Selected 2");
+			lbl.setAttribute("aria-live", "polite");
+			lbl.innerHTML = defLblTxt + errMsg;
+			txt.disabled=true;
+		} else {
+			lbl.innerHTML = defLblTxt;
+			//lbl.setAttribute("aria-live", "off");
+			txt.disabled=false;
+		}	
+
+	} else {
+		alert ("Couldn't get something.");
+	}
+}
+		</script>
+	</head>
+	<body>
+		<header>
+		<h1>Aria Test Page</h1>
+		</header>
+		<p class="jqx-chart-axis-text">This is a test.</p>
+		<p class="jqx-chart-axis-text" aria-hidden="true">This is aria-hidden.</p>
+		<p class="jqx-chart-axis-text" role="presentation">This is presentational.</p>
+		<p class="jqx-chart-axis-text" aria-hidden="true" role="presentation">This is both.</p>
+		<p class="jqx-chart-axis-text">You should see/hear this.</p>
+		<p class="noHeight">Will you here this?  It has no height.</p>
+		<div class="fieldHolder">
+			<label for="drpdown" id="drpdownLbl">Select something:</label><br>
+			<select id="drpdown" name="drpdown">
+				<option value="opt1">Something 1</option>
+				<option value="opt2">Something 2</option>
+				<option value="opt3">Something 3</option>
+				<option value="opt4">Something 4</option>
+				<option value="opt5">Something 5</option>
+			</select>
+		</div>
+		<div class="fieldHolder">
+			<label for="txt">Enter some text:</label><br>
+			<textarea id="txt"></textarea>
+		</div>
+		<div class="fieldHolder">
+			<input type="button" value="Submit">
+		</div>
+		<footer>
+		<p>Ending</p>
+	</footer>
+
+	<script>
+//$( ".jqx-chart-axis-text" ).attr("aria-hidden", "true");
+var lbl = document.getElementById("drpdownLbl");
+var dd = document.getElementById("drpdown");
+if (lbl && dd) {
+	defLblTxt = lbl.innerHTML;
+	dd.addEventListener("blur", fixLabel, false);
+}
+
+</script>	
+	</body>
+</html>
