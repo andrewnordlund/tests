@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>Font Test</title>
+		<link type="text/css" rel="stylesheet" href="other.css">
+		<script type="text/javascript" src="font.js" /></script>
+		<script type="text/javascript">
+
+window.onload=function() {
+	var cont = document.getElementById("contentPane");
+
+	//var str1 = "* Widget blah v1.2a.3";
+	//var re = /\* (.*) v([\d\.a-z]*)/;
+	//var res = str1.match(re);
+
+	//var styleSheets = document.styleSheets;
+	//var scripts = document.scripts;
+	//cont.innerHTML += document.length + ": <ol>";
+	//for (var i in document) {
+	//	cont.innerHTML += "<li>i: " + i + " -> " + document.i + "</" + "li>";
+	//}
+	//cont.InnerHTML += "</" + "ol>";
+
+	//cont.innerHTML += "Stylesheets: " + styleSheets.length + ".<br><" + "ol>";
+	//cont.innerHTML += arrayToString(showProperties(styleSheets[0])) +".</" + "ol>";
+
+	//var scriptableStream = Components.classes["@mozilla.org/scriptableinputstream;1"].createInstance(Components.interfaces.nsIScriptableInputStream)
+	/*
+	for (var s =0; s < styleSheets.length; s++) {
+		var ss = styleSheets[s];
+		cont.innerHTML += ss + ": " + ss["href"] + ".<br>";
+		for (var r in ss["cssRules"]) {
+			cont.innerHTML += r + " -> " + ss.cssRules[r].cssText + ".<br>";
+			for (var s in ss.cssRules[r]) {
+				cont.innerHTML += s + ".<br>";
+			}
+		}
+	}*/
+
+
+	//cont.innerHTML += "Scripts: " + scripts.length + ".<br><" + "ol>";
+	//cont.innerHTML += arrayToString(showProperties(scripts[0])) +".</" + "ol>";
+	//cont.innerHTML += "Results: (" + res.length + ") " + arrayToString(res) + " of type " + typeof(res) + ".";
+	//var str1 = "c:\\asdfkasdf\\asefsdf\\asdf";
+	//var re = new RegExp(/\\/, "g");
+	//var str2 = str1.replace(/\\/g, "/");
+	//var str2 = str2.replace(/C:/i, "file:/");
+
+	var myObj = {};
+
+	cont.innerHTML += "result:  " + isEmpty(myObj) + ".";
+	myObj["blah"] = "yadda yadda";
+	cont.innerHTML += "<br>result2:  " + isEmpty(myObj) + ".";
+}
+
+function isEmpty (obj) {
+
+  for(var i in obj) { return false; }
+  return true;
+	
+}
+function arrayToString (ar) {
+	var returnValue = "[" + ar.length + "]";
+	for (var i = 1; i < ar.length; i++) {
+		returnValue += "<li>" +  ar[i] + "</" + "li>";
+	}
+	returnValue = returnValue.replace(/, $/, "");
+	return returnValue;
+}
+function showProperties (obj) {
+	var returnValue = [];
+	for (var p in obj) {
+		returnValue.push(p + " -> " + obj[p]);
+		//alert ("pushing " + p);
+	}
+	return returnValue;
+}
+		</script>
+	</head>
+	<body>
+		<h1>Table Test Page 1</h1>
+		<!--#include virtual="/fontTest/leftMenu.html" -->
+		<div id="contentPane">
+			<p onclick="say('POW!');">This page only calls other.css so it should fail.</p>
+				
+			<p onclick="addToPage('POW! POW!');">What was that?</p>
+		</div>
+	
+	</body>
+</html>

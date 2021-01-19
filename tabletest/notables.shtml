@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<title>Table Test</title>
+		<link type="text/css" rel="stylesheet" href="table.css">
+		<script type="text/javascript">
+window.onload=init;
+
+var cp; //= document.getElementById("contentPane");
+var stl;
+var styleK = [];
+var styleV = [];
+
+function init(){
+	//alert ("Initing.");
+	document.onkeydown=checkKey;
+	document.onkeyup=stopSomething;
+	cp = document.getElementById("contentPane");
+	cp.innerHTML += "Inited.<br>";
+	stl = "";
+	styleK[0] = "border";
+	styleV[0] = "thin solid green";
+	styleK[1] = "width";
+	styleV[1] = "30";
+
+	//alert ("Inited.");
+}
+
+function checkKey(e) {
+	var KeyID = (window.event) ? event.keyCode : e.keyCode;
+	//cp.innerHTML += "Key: " + KeyID;
+	if (KeyID == 38) {
+		var newDiv = document.createElement("div");
+		stl ="";
+		var re = /^\d+$/;
+		
+		for (var i = 0; i < styleK.length; i++) {
+			
+			stl += styleK[i] + ": " + styleV[i];
+			if (re.test(styleV[i])) stl += "px";
+			stl += "; ";
+		}
+		cp.innerHTML += "Style: " + stl + "<br>";
+		newDiv.setAttribute("style", stl);
+		cp.appendChild(newDiv);
+		newDiv.innerHTML += "appending";
+		//newDiv.setAttribute('style', 'border: thin solid green; width: 20;');
+
+	}
+}
+
+function stopSomething(e) {
+	var KeyID = (window.event) ? event.keyCode : e.keyCode;
+	//document.getElementById("contentPane").innerHTML += "cp: " + typeof (cp) + "<br>";
+	//cp.innerHTML += "Key up<br>"; // + KeyID; + "up.<br>";
+}
+		</script>
+		
+	</head>
+	<body>
+		<h1>Table Test Page 1</h1>
+		<div>
+			<p>This page has a table with no headers or scopes.</p>
+		</div>
+		<!--#include virtual="/tabletest/leftMenu.html" -->
+		<div id="contentPane">
+			<p>Do <strong>NOT</strong> use tables for layout....<abbr id="ysleAbbr" title="You Stupid Lemon Eater">YSLE<span id="ysle"></span></abbr></p>
+				
+		</div>
+	
+	</body>
+</html>

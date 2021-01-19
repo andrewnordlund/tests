@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Compare Versions Test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="compareVersions.js" type="text/javascript"></script>
+		<style type="text/css">
+			table {
+				border: thin solid black;
+			}
+			td, th {
+				border: thin inset #808080;
+			}
+		</style>
+		<script type="text/javascript">
+			function init () {
+				//alert ("Initing.");
+				var compareBtn = document.getElementById("compareBtn");
+				var installedVersion = document.getElementById("installedVersion");
+				var results = document.getElementById("results");
+				var lsr = "1.1.1";
+				if (compareBtn && installedVersion && results) {
+					results.innerHTML = "Latest Stable Release: " + lsr + "<br>\n";
+					compareBtn.addEventListener("click", function () {
+						//alert ("Testing " + installedVersion.value + ".");
+						var outOfDate = isOutOfDate(lsr, installedVersion.value);
+						results.innerHTML += "Is " + installedVersion.value + " Out of Date? " + (outOfDate ? "Yes" : "No") + ".<br>\n";
+					}, false);
+				} else {
+					var msg = "Problem getting something.";
+					if (results) {
+						results.innerHTML += "<p class=\"errorMsg\">" + msg + "</p>";
+					} else {
+						alert (msg);
+					}
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Compare Versions Test</h1>
+		<div id="mainContent" tabindex="0">
+			<div class="formElementHolder">
+				Should be read:<label> Check <input type="radio" /> this, or <input type="radio"> this.</label>Won't be read.
+			</div>
+			<div class="formElementHolder">
+				<label for="installedVersion">Installed version number:</label>
+				<input type="text" size="30" id="installedVersion" name="installedVersion" />
+			</div>
+			<form method="GET" action="">
+			<div class="formElementHolder">
+				<input type="button" value="Compare" id="compareBtn" />
+			</div>
+			</form>
+			<div id="results">
+			</div>
+			<!--<iframe src="/tests/nordSRSim/nordSRSim.html"></iframe>-->
+
+			<table>
+				<tr>
+					<th scope="col" colspan="2">Header 1</th>
+					<th scope="col">Header 2</td>
+				</tr>
+				<tr>
+					<td colspan="2">Data 1</td>
+					<td>Data 2</td>
+				</tr>
+				<tr>
+					<td colspan="2">Data 3</td>
+					<td>Data 4</td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript">
+			//window.addEventListener("DOMContentLoaded", function () { alert ("DOMContentLoaded.");}, false);
+			window.addEventListener("load", function () {
+					//alert ("ABout to init.");
+					init();
+					}, false);
+		</script>
+	</body>
+</html>

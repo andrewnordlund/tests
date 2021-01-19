@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>iFrames Outer</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+		<style type="text/css">
+iframe {
+	border: thick solid red;
+}
+iframe:focus, p:focus {
+	border: thick solid blue !important;
+}
+		</style>
+	</head>
+	<body>
+		<h1>This is a test of an outer frame</h1>
+		<p tabindex="0"> Trying...</p>
+		<iframe id="theFrame" src="http://hrsdc-rhdcc.sondages-surveys.ca/surveys/AlexandraHickey/jm-general/?collector=158797&l=en" style="width: 700px; height: 300px; :focus: border: thin solid green;"></iframe>
+		<div>
+			<p><a href="inner.html">Go to inner</a>.</p>
+		</div>
+		<p tabindex="0">This is the bottom</p>
+		<script type="text/Javascript">
+var theFrame = document.getElementById("theFrame");
+if (theFrame) {
+	theFrame.addEventListener("load", function () { 
+		//alert ("Loaded!");
+		var doc = theFrame.contentDocument;
+		//alert ("Doc: " + doc + ".");
+		var tcs = doc.querySelectorAll("p.testClass");
+		if (tcs) {
+			//alert ("Got " + tcs.length + " testClasses.");
+		}
+		var ps = doc.getElementsByTagName("p");
+		if (ps) {
+			//alert ("Got " + ps.length + " paragraphs.");
+		}
+	});
+}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+dl {
+	border: thin solid green;
+	width: 95%;
+}
+dl:after {
+	content: " ";
+	height: 1px;
+	display: block;
+	clear: both;
+}
+dt {
+	font-weight: bold;
+	border: thin solid blue;
+	width: 20%;
+	float: left;
+}
+dd {
+	border: thin solid red;
+	display: block;
+	width: 20%;
+	float: left;
+	margin-left: 0;
+}
+dt.cr {
+	clear: left;
+}
+dd.cr:after {
+	content: '\A';
+	white-space: pre;
+}
+.span2 {
+	width:45%;
+}
+
+.class1 {
+	font-size: 0.9em;
+	width: 80px;
+}
+.class2 {
+	font-size: 100%;
+	width: 8em;
+	color: #FFFF00;
+}
+.class3 {
+	font-size: 12px;
+}
+.class4 {
+}
+div div {
+	color: #ffffff !important;
+	background-color: #cc0000;
+	margin: 5px;
+	width: 10em;
+}
+table {
+	border: thin solid black;
+}
+td, th {
+	border: thin inset #808080;
+	text-align: left;
+}
+.blck {
+	border: thin #808080 inset;
+	color: green;
+}
+.hdden {
+	border: thin #808080 inset;
+	color: red;
+}
+.show {
+	visibility: visible;
+}
+.hide {
+	visibility: collapse;
+}

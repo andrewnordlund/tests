@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Headings in tables</title>
+		<link rel="Stylesheet" href="headingsInTables.css" type="text/css">
+	</head>
+	<body>
+		<header>
+			<h1>Headings in tables</h1>
+			<p>This is just a test for screen readers.</p>
+		</header>
+		<main>
+		<h2>Table section</h2>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Simple th</th>
+					<th scope="col"><h3>H3 as a TH</h3></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Data point 1, 1</td>
+					<td>Data point 2, 1</td>
+				</tr>
+				<tr>
+					<td><h3>H3 in a TD</h3></td>
+					<td>Data point 2, 2</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>SR Results</h2>
+		<p>JAWS and NVDA treat all <code>&lt;h#&gt;</code> as headers.  Being in a table didn't matter.  However, <code>&lt;h#&gt;</code> inside a <code>&lt;th&gt;</code> fails HTML validation, but not a WCAG 2.1 - 4.1.1 - Parsing error.</p>
+		</main>
+
+	</body>
+</html>

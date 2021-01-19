@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>ARIA-Labelledby vs Label Test Page</title>
+<style>
+.formHolder {
+	margin: 1em 0;
+}
+</style>
+	</head>
+	<body>
+		<header>
+		<h1>ARIA-Labelledby vs Label Test Page</h1>
+		</header>
+		<main>
+		<form>
+			<section>
+				<h2>Nested <code>aria-labelledby</code> inside <code>&lt;label&gt;</code></h2>
+				<div class="formHolder">
+					<label for="initTxt1" id="initLbl1">Part of label <span id="internalLbl1">rest of label</span></label><br>
+					<input id="initTxt1" type="text" aria-labelledby="internalLbl1">
+				</div>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 18</dt>
+						<dd>
+						<dl>
+							<dt>Firefox</dt>
+							<dd><p><q>rest of label. Edit. Type and text.</q></p></dd>
+							<dt>Internet Explorer 11</dt>
+							<dd><p><q>Part of label rest of label. Edit. Type and text</q></p></dd>
+							<dt>Edge 42</dt>
+							<dd><p><q>rest of label. Edit. Type and text</q></p></dd>
+							<dt>Opera 53</dt>
+							<dd><p><q>rest of label. Edit. Type and text.</q></p></dd>
+						</dl>
+						</dd>
+						<dt>NVDA 2019.1.1</dt>
+						<dd>
+						<dl>
+							<dt>Firefox</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+							<dt>Internet Explorer 11</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+							<dt>Edge 42</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+							<dt>Opera 53</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+						</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd><p><q>Part of label rest of label. Textfield.  Is editing. Insertion point at start.</q><p></dd>
+							<dt>Opera Mini</dt>
+							<dd>Abosultely nothing</dd>
+						</dl>
+						</dd>
+						<dt>OS X Voice Over</dt>
+						<dd>
+						<dl>
+							<dt>Firefox</dt>
+							<dd><p><q>rest of label. Text.</q></p></dd>
+							<dt>Chrome</dt>
+							<dd><p><q>rest of label. Edit. Text.</q></p></dd>
+							<dt>Safari</dt>
+							<dd><p><q>rest of label. Edit. Text.</q></p></dd>
+							<dt>Opera</dt>
+							<dd><p><q>rest of label. Edit. Text.</q></p></dd>
+						</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+			<section>
+				<h2><code>&lt;label&gt;</code> with adjascent <code>aria-labelledby</code>'d <code>&lt;div&gt;</code></h2>
+					<div class="formHolder">
+						<label for="initTxt2" id="initLbl2">Part of label </label>
+						<div id="internalLbl2">rest of label</div>
+						<input id="initTxt2" type="text" aria-labelledby="internalLbl2">
+					</div>
+					<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 18</dt>
+						<dd>
+						<dl>
+							<dt>Firefox</dt>
+							<dd><p><q>rest of label. Edit. Type and text.</q></p></dd>
+							<dt>Internet Explorer 11</dt>
+							<dd><p><q>rest of label. Edit. Type and text.</q></p></dd>
+							<dt>Edge 42</dt>
+							<dd><p><q>rest of label. Edit. Type and text</q></p></dd>
+							<dt>Opera 53</dt>
+							<dd><p><q>rest of label. Edit. Type and text.</q></p></dd>
+						</dl>
+						</dd>
+						<dt>NVDA 2019.1.1</dt>
+						<dd>
+						<dl>
+							<dt>Firefox</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+							<dt>Internet Explorer 11</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+							<dt>Edge 42</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+							<dt>Opera 53</dt>
+							<dd><p><q>rest of label. Edit. Blank.</q></p></dd>
+						</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd><p><q>Part of label. Textfield.  Is editing. Insertion point at start.</q><p></dd>
+							<dt>Opera Mini</dt>
+							<dd>Abosultely nothing</dd>
+						</dl>
+						</dd>
+						<dt>OS X Voice Over</dt>
+						<dd>
+						<dl>
+							<dt>Firefox</dt>
+							<dd><p><q>rest of label. Text.</q></p></dd>
+							<dt>Chrome</dt>
+							<dd><p><q>rest of label. Edit. Text.</q></p></dd>
+							<dt>Safari</dt>
+							<dd><p><q>rest of label. Edit. Text.</q></p></dd>
+							<dt>Opera</dt>
+							<dd><p><q>rest of label. Edit. Text.</q></p></dd>
+						</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+			<section>
+				<h2><code>&lt;label&gt;</code> with empty, nested <code>aria-labelledby</code> <code>&lt;span&gt;</code></h2>
+				<div class="formHolder">
+					<label for="initTxt3" id="initLbl3">All of label<span id="internalLbl3"></span></label><br>
+					<input id="initTxt3" type="text" aria-labelledby="internalLbl3">
+				</div>
+	
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 18</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd><p><q>All of label. Edit. Type and text.</q></p></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd><p><q>All of label. Edit. Type and text.</q></p></dd>
+								<dt>Edge 42</dt>
+								<dd><p><q>All of label. Edit. Type and text</q></p></dd>
+								<dt>Opera 43</dt>
+								<dd><p><q>Edit. Type and text.</q></p></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2019.1.1</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd><p><q>All of label. Edit. Blank.</q></p></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd><p><q>Edit. Blank.</q></p></dd>
+								<dt>Edge 42</dt>
+								<dd><p><q>All of label. Edit. Blank.</q></p></dd>
+								<dt>Opera 53</dt>
+								<dd><p><q>Edit. Blank.</q></p></dd>
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd><p><q>All of label. Textfield.  Is editing. Insertion point at start.</q><p></dd>
+								<dt>Opera Mini</dt>
+								<dd>Abosultely nothing</dd>
+							</dl>
+						</dd>
+						<dt>OS X Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd><p><q>Text. Blank.</q></p></dd>
+								<dt>Chrome</dt>
+								<dd><p><q>Edit text. Blank.</q></p></dd>
+								<dt>Safari</dt>
+								<dd><p><q>All of label. edit text.</q></p></dd>
+								<dt>Opera</dt>
+								<dd><p><q>Edit text. Blank.</q></p></dd>
+							</dl>
+						</dd>
+					</dl>
+			</details>
+		</section>
+		<section>
+				<h2><code>&lt;label&gt;</code> with adjascent empty <code>aria-labelledby</code>'d <code>&lt;div&gt;</code></h2>
+				<div class="formHolder">
+					<label for="initTxt4" id="initLbl4">All of label</label>
+					<div id="internalLbl4"></div>
+					<input id="initTxt4" type="text" aria-labelledby="internalLbl4">
+				</div>
+	
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 18</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd><p><q>All of label. Edit. Type and text.</q></p></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd><p><q>All of label. Edit. Type and text.</q></p></dd>
+								<dt>Edge 42</dt>
+								<dd><p><q>All of label. Edit. Type and text.</q></p></dd>
+								<dt>Opera 43</dt>
+								<dd><p><q>Edit. Type and text.</q></p></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2019.1.1</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd><p><q>All of label. Edit. Blank.</q></p></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd><p><q>Edit. Blank.</q></p></dd>
+								<dt>Edge 42</dt>
+								<dd><p><q>All of label. Edit. Blank.</q></p></dd>
+								<dt>Opera 53</dt>
+								<dd><p><q>Edit. Blank.</q></p></dd>
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd><p><q>All of label. Textfield.  Is editing. Insertion point at start.</q><p></dd>
+								<dt>Opera Mini</dt>
+								<dd>Abosultely nothing</dd>
+							</dl>
+						</dd>
+						<dt>OS X Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd><p><q>Text. Blank.</q></p></dd>
+								<dt>Chrome</dt>
+								<dd><p><q>Edit text. Blank.</q></p></dd>
+								<dt>Safari</dt>
+								<dd><p><q>All of label. edit text.</q></p></dd>
+								<dt>Opera</dt>
+								<dd><p><q>Edit text. Blank.</q></p></dd>
+							</dl>
+						</dd>
+					</dl>
+			</details>
+		</section>
+
+		</form>
+		<h2>Summary</h2>
+		<ul>
+			
+			<li>If a <code>aria-labelled</code> section that <em>has text</em> is nested inside a <code>&lt;label&gt;</code>, then JAWS 18 with IE 11 is the only situation where both get read.  In other stacks, only the <code>aria-labelled</code> section is read, and the rest of the <code>&lt;label&gt;</code> is ignored.</li>
+			<li>If an <code>aria-labelled</code> is <em>not</em> nested inside a <code>&lt;label&gt;</code>, then the <code>&lt;label&gt;</code> isn't read at all, except on iOS.</li>
+			<li>If an empty <code>aria-labelled</code> section is nested inside a <code>&lt;label&gt;</code> then JAWS reads the <code>&lt;label&gt;</code> in all browsers except Opera, and NVDA with Firefox and Edge. </li>
+			<li>VoiceOver on iOS 11 completely ignores <code>aria-labelled</code>.  This is incorrect behavior.</li>
+			<li>On Mac OS X (10.9.5) <code>aria-labelled</code> is read and the <code>&lt;label&gt;</code> is ignored, except in Safari if the <code>aria-labelled</code> section is empty.</li>
+
+		</ul>
+		<h2>Conclusion</h2>
+		<p>Preferably just use a <code>&lt;label&gt;</code>.  If that's not possible, or desirable in a particular set of circumstances, then use a <code>aria-labelled</code> section.  Pick one or the other.  Don't combine them.</p>
+
+		</main>
+	
+
+
+</body></html>
+

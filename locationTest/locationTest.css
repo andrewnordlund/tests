@@ -1,0 +1,19 @@
+body {
+	background: white;
+	color: black;
+}
+
+#btnHolder {
+	width: 50%;
+	margin: 10px auto;
+	cursor: pointer;
+	padding: 2em;
+}
+#theBtn, #theBtn2, #btnHolder {
+	background: white;
+	padding: 10px;
+}
+#theBtn, #theBtn2 {
+	margin: 10px auto;
+	display: block;
+}
