@@ -16,4 +16,5 @@ body {
 #theBtn, #theBtn2 {
 	margin: 10px auto;
 	display: block;
+	border: none;
 }
