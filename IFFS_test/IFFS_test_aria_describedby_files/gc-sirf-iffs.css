@@ -1,0 +1,177 @@
+/*** Adding style for module-info (WET 3) and new alert alert-info WET (WET 4) styles for alignment ***/
+/* @media screen */
+
+[rel='external'] {
+	background: url(../images/external.png) 100% 0 no-repeat;
+	padding-right: 20px;
+}
+
+/*Add styles for bullets inside helptexts */
+[role="list"] {
+    display: block;
+    margin: 10px 10px 10px 40px;
+}
+
+[role="listitem"] {
+    display: list-item;
+}
+
+.pretend-ul [role="listitem"] {
+    list-style: disc; /* default bullet */
+    list-style-position: inside;
+}
+
+/*** Overwrite some WET styles that affect alignment/glitches ***/
+.controlsStyle{margin-bottom:11.5px;}
+.ctlLiteral:not(:first-of-type){margin-top:11.5px;}
+abbr[data-original-title], abbr[title]{border-bottom:1px dotted #6f6f6f;text-decoration:none;}
+legend
+{
+    float:none;
+    margin-bottom: 0px;
+    font-size:16px;
+    font-weight: 700;
+}
+
+.summaryFrame .form-inline .userAnswer span,.summaryFrame .form-inline .userAnswer div{display:inline-block;}
+
+/* Add the zebra effect */
+.iffs_zebra {padding:20px;}
+.iffs_zebra legend{float:left;}
+.iffs_zebra:nth-child(odd){background-color: #d9edf7 !important;}
+
+
+/*** IFFS framework styles -- All hardcoded classes that was found ***/
+.toggleMe{display:none;}
+label.hiddenLabel, legend.hiddenLabel, .hiddenLabel { display: none !important; }
+.iffsInvisibleLabel { position: absolute; left: 0px; top: -500px; width: 1px; height: 1px; overflow: hidden; }
+div.responseStyle { margin-bottom: 11.5px; }
+img {min-height:23px;padding-right:5px;margin-bottom:0; }
+span.errortext { color: #CC0000; font-weight: bold; display: block; width: 100%; font-size:16px; }
+.helptext { background-color: #EEE; padding: 5px; margin: 5px 0px 5px 0px; width: 100%; display: inline-block; font-size:16px;line-height:23px;font-weight:normal;}
+noscript span { background-color: #FFFF66; padding: 3px 3px 3px 3px; display: block; font-weight: bold; border: 2px dotted; }
+div.labelStyleLeft { float: left;}
+span.radioButtonListLeft label {padding-left:0px; padding-right:25px;}
+.radioButtonListLeft label, .rowLabel {min-height:23px;padding-right:20px;margin-bottom:0; }
+span.radioButtonListLeft .radio input[type=radio] {margin-left:0px;}
+span.radioButtonListGroup fieldset {padding-top:0px;}
+span.radioButtonListGroup fieldset legend {font-size: 20px;} 
+span.radioButtonListGroup fieldset span.row label {padding-left:5px;} 
+
+
+/* Format for radio-inline and checkbox inline */
+
+.radio-inline label, .checkbox-inline label {   
+   
+    font-weight:400;
+}
+
+/* Summary Styles */
+.summaryFieldset{clear:both;}
+/*#DECISION_YES_BUTTON { float: right; }*/
+
+/** Exam styles (all framework classes) -- DO NOT DELETE; styles can be assigned */
+div.examTableContainer { }
+div.examScore { }
+div.examScoreColumn { }
+div.examPercentageColumn { }
+div.scorePercentage { }
+div.questionHeader { }
+div.resultHeader { }
+div.detailHeader { }
+div.examTableBody { }
+div.answerCorrect { background-image: url(../images/icn_correct.gif); background-repeat: no-repeat; background-position: center; margin-top: 5px; font-weight: normal; }
+div.answerIncorrect { background-image: url(../images/icn_incorrect.gif); background-repeat: no-repeat; background-position: center; margin-top: 5px; font-weight: normal; }
+div.examTableBottom { }
+div.examTableContainer input[type='submit'] { margin: 10px 0px 20px 0px; }
+.answerDetailsContainer h2 { background-color: #ebebeb; padding: 3px 2px 3px 2px; }
+.answerDetailsContainer div.answerDetailsValue .summaryListItems { list-style: none; margin: 1px 0px 0px 0px; }
+.answerDetails { }
+.answerDetailsLabel {display: block; font-weight: bold; padding-top: 0.5em; }
+.answerDetailsValue { }
+.examTableBody { margin-top: 10px; font-weight: bold; }
+
+#IFFS_EXAM_VIEWALL_BUTTON { margin: 0px 0px 0px 0px; }
+
+/* Error Page styles */
+/* div.errorMessage p (error page messages) 
+#gcwu-left-msg, #gcwu-right-msg { width: 45%; padding: 10px; }
+#gcwu-left-msg { float: left; }
+#gcwu-right-msg { float: right; }
+div#pnlMessages { margin: 0px 10px 0px 10px; }
+span#hiddenTitle { display: none !important; visibility: hidden; }
+span#hiddenTitle { display: none !important; visibility: hidden; }
+legend.hiddenLabel { display: none !important; visibility: hidden; }
+label.hiddenLabel { display: none !important; visibility: hidden; }*/
+
+/* Read only styles 
+.readOnly textarea { background-color: #EEE; resize: none; overflow: hidden; padding: 5px; margin: 5px 0px 5px 0px; width: 99%; }
+input.readOnly { background-color: #EEE; }
+.readOnly input { display: none; }
+.readOnly label { background-color: #EEE; }
+div.promptStyle div { margin-bottom: 15px; }*/
+
+/* Button styles */
+div.buttonContainer { clear:both; display: block; width: 100%; margin-top: 15px; border-top: 1px dotted #CCC; padding-top: 10px; }
+div.btnLeft { display: inline-block !important; float: left; min-height: 1px; text-align: left !important; }
+div.btnCenter { display: inline-block !important; float: left; min-width: 1px; text-align: center !important; }
+div.btnRight { display: inline-block !important; float: right; text-align: right !important; min-width: 1px; }
+div.summaryButton { margin: 5px 0px 10px 0px; }
+div.viewPrevAnswerButton { display: block; float: inherit; width: 100%; }
+
+
+/* Message page styles 
+div.message { margin: 0px 10px 0px 10px; display: block; }*/
+
+/*** CUSTOM CLASSES NOT ADDED BY THE IFFS FRAMEWORK ***/
+
+/* Used in IFFS.Quizz */
+.background-grey { background-color: #999999; }
+.background-red { background-color: #CC0000; }
+.border-2px { border-width: 2px; border-style: inset; }
+.block { display: block; background-position: center; }
+.no-border-bottom { border-bottom: none; }
+.no-border-top { border-top: none; }
+.padding-top-15px { padding-top: 15px; }
+.padding-bottom-5px { padding-bottom: 5px; }
+/* the bellow class should be changed to text-center for WET 4 */
+.alignCenter, .align-topcenter {text-align: center;}
+
+
+/*Before using the bellow align class try the WET grid .col-md-2, .col-md-4, .col-md-6, etc. */
+.aling-50 { min-width: 50px; text-align: left; display: inline-block; }/* */
+.aling-110, .AlignAd { min-width: 110px; text-align: left; display: inline-block; }
+.aling-120, .AlignBNeng { min-width: 120px; text-align: left; display: inline-block; }
+.aling-145, .AlignName { min-width: 145px; text-align: left; display: inline-block; }
+.aling-150 { min-width: 150px; text-align: left; display: inline-block; }
+.aling-160, .AlignBNfra { min-width: 160px; text-align: left; display: inline-block; }
+.LineBr { display: block; margin-top: 15px; margin-bottom: 5px; }
+.LinePara, span.LinePara { display: block; margin-top: 15px; margin-bottom: 10px; }
+/*.mainTitleCenter { text-align: center; display: block; }*/
+/* To add space before the literal used that is parts of questions CSJ and PPMC */
+.Qhidden, p.Qhidden, span span.Qhidden { display: block; margin-top: 5px; font-weight: normal; }
+.h2Size, span.h2Size { font-weight: bold; font-size: 115%; }
+span.summaryUnboldText { font-weight: normal; }
+
+/* Remove the link look when there is no link 
+a.footerNoLink, a.footerNoLink :hover, a.footerNoLink :active, a.footerNoLink :focus, #gcwu-sft a.footerNoLink:hover, #gcwu-foot a.footerNoLink:hover { text-decoration: none; display: inline-block; min-width: 900px; }*/
+
+
+/* This line is used for the main header links in the footer but if there are no links beneath it we have to convert it to a span 
+#wb-foot span,#wb-foot .gcwu-col-head {border:0;font-size:110%;font-weight:700;line-height: 2.5}*/
+
+
+
+
+/* Print only styles */
+@media print {
+    #gcwu-title-in a { visibility: hidden; display: none; margin: 0px; }
+    #gcwu-title { min-height: 1em; }
+    #gcwu-bc-in { display: none; }
+    #buttonContainer, div.summaryButton, .linkButton { display: none; padding: 0; margin: 0; }
+    #gcwu-date-mod { display: inline-block; width: 95%; margin-top: 20px; }
+    /*Remove the display of the some parts of the question or in the answer */
+    p.Qhidden, h2.Qhidden, span span.Qhidden .summaryContainer .summaryQuestion .Qhidden, .summaryContainer .summaryQuestionAlt .Qhidden, .summaryContainer .summaryAnswer .Qhidden, .summaryContainer .summaryAnswerAlt .Qhidden { display: none; }
+    .summaryFieldset { border: 0; font-size: 115%; }
+    .printLabelNone { display: none; }
+} 

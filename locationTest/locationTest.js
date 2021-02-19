@@ -9,8 +9,8 @@ btnHolder = document.getElementById("btnHolder");
 var pg1 = "locationTest.html";
 var pg2 = "location2.html";
 
-if (theBtn) theBtn.addEventListener ("click", linkFun, false);
-if (theBtn2) theBtn2.addEventListener ("click", linkFun, false);
+//if (theBtn) theBtn.addEventListener ("click", linkFun, false);
+//if (theBtn2) theBtn2.addEventListener ("click", linkFun, false);
 if (theLink) theLink.addEventListener ("click", linkFun, false);
 if (theLink2) theLink2.addEventListener ("click", linkFun, false);
 if (btnHolder) btnHolder.addEventListener ("click", linkFun, false);
