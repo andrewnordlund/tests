@@ -185,11 +185,21 @@
 			</dl>
 		</details>
 		-->
+		<fieldset aria-labelledby="extraInfo">
+			<legend>radio buttons fieldset with labelledby</legend>
+			<label><input type="radio" name="radioFSLB">radio button 3</label>
+			<label><input type="radio" name="radioFSLB">radio button 4</label>
+		</fieldset>
+		<fieldset>
+			<legend aria-describedby="extraInfo">radio buttons legend with describedby</legend>
+			<label><input type="radio" name="radioDBLB">radio button 5</label>
+			<label><input type="radio" name="radioDBLB">radio button 6</label>
+		</fieldset>
 		<fieldset>
 			<legend aria-labelledby="extraInfo">radio buttons legend with labelledby</legend>
-				<label><input type="radio" name="radioFSLB">radio button 3</label>
-				<label><input type="radio" name="radioFSLB">radio button 4</label>
-			</fieldset>
+			<label><input type="radio" name="radioLLB">radio button 7</label>
+			<label><input type="radio" name="radioLLB">radio button 8</label>
+		</fieldset>
 			<!--
 			<fieldset>
 				<legend aria-describedby="extraInfo">legend with describedby</legend>
