@@ -15,6 +15,7 @@
 				<input id="initTxt" type="text">
 			</div>
 			<p id="extraInfo">This is some kind of extra text that provides information that pertains to the following fields way down below.</p>
+			<!--
 			<fieldset aria-labelledby="extraInfo">
 				<legend>fieldset with labelledby</legend>
 				<label><input type="checkbox"> Checkbox 1</label>
@@ -68,9 +69,10 @@
 				</dd>
 			</dl>
 		</details>
-
+		-->
+		<!--
 			<fieldset aria-describedby="extraInfo">
-				<legend>fieldset with describedby</legend>
+				<legend>checkbox fieldset with describedby</legend>
 				<label><input type="checkbox"> Checkbox 2</label>
 			</fieldset>
 			<details>
@@ -122,6 +124,13 @@
 				</dd>
 			</dl>
 		</details>
+		-->
+		<fieldset aria-describedby="extraInfo">
+			<legend>Radio button fieldset with describedby</legend>
+			<label><input type="radio" name="radioFSDB">Radio Button 1</label>
+			<label><input type="radio" name="radioFSDB">Radio Button 2</label>
+		</fieldset>
+		<!--
 		<fieldset>
 				<legend aria-labelledby="extraInfo">legend with labelledby</legend>
 				<label><input type="checkbox"> Checkbox 3</label>
@@ -175,7 +184,23 @@
 				</dd>
 			</dl>
 		</details>
-
+		-->
+		<fieldset aria-labelledby="extraInfo">
+			<legend>radio buttons fieldset with labelledby</legend>
+			<label><input type="radio" name="radioFSLB">radio button 3</label>
+			<label><input type="radio" name="radioFSLB">radio button 4</label>
+		</fieldset>
+		<fieldset>
+			<legend aria-describedby="extraInfo">radio buttons legend with describedby</legend>
+			<label><input type="radio" name="radioDBLB">radio button 5</label>
+			<label><input type="radio" name="radioDBLB">radio button 6</label>
+		</fieldset>
+		<fieldset>
+			<legend aria-labelledby="extraInfo">radio buttons legend with labelledby</legend>
+			<label><input type="radio" name="radioLLB">radio button 7</label>
+			<label><input type="radio" name="radioLLB">radio button 8</label>
+		</fieldset>
+			<!--
 			<fieldset>
 				<legend aria-describedby="extraInfo">legend with describedby</legend>
 				<label><input type="checkbox"> Checkbox 4</label>
@@ -453,7 +478,7 @@ text....</q></p></dd>
 				</dd>
 			</dl>
 		</details>
-
+		-->
 		</form>
 		<h2>Summary</h2>
 		<ul>
