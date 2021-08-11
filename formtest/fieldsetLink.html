@@ -7,9 +7,31 @@
 		
 
 		<style type="text/css">
+body{
+	counter-reset: section;
+}
+			[role="listitem"]::before{
+				counter-increment: section;
+				content: counter(section) ". ";
+			}
 			.req {
 				color: #CC0000;
 			}
+			#listy {
+				display: block;
+			}
+			[role="listitem"] {
+  display: block; /*list-item;*/
+}
+.invisibleStuff {
+	clip: rect(1px, 1px, 10px, 100px);
+				height: 1em !important;
+				margin: 0 !important;
+				overflow: hidden !important;
+				position: absolute;
+				width: 70px !important;	
+			
+
 
 		</style>
 	</head>
@@ -49,8 +71,34 @@
 					<input type="text" id="name2" name="name2">
 
 				</div>
+				<div>
+					<fieldset id="radioFieldset2">
+					<legend>Please put the following<a href="https://www.google.ca">Loveley, wonderful Radio</a> buttons in order.
+						<span id="listy" role="list">
+							<span role="listitem" id="item1">Item 1</span>
+							<span role="listitem" id="item2">Item 2</span>
+							<span role="listitem" id="item3">Item 3</span>
+						</span>
+					</legend>
+					<input type="radio" value="a" id="rd_a2" name="rd2" aria-describedby="item1 then item3 then item2">
+					<label for="rd_a2">1, 3, 2</label><br><br>
+					<input type="radio" value="b" id="rd_b2" name="rd2" aria-describedby="item1 then item2 then item3">
+					<label for="rd_b2">1, 2, 3</label><br><br>
+					<input type="radio" value="c" id="rd_c2" name="rd2" aria-describedby="item3 then item2 then item1">
+					<label for="rd_c2">3, 2, 1</label><br><br>
+					<input type="radio" value="d" id="rd_d2" name="rd2" aria-describedby="item3 then item1 then item2">
+					<label for="rd_d2">3, 1, 2</label><br><br>
+
+				</fieldset>
+				</div>
+				<div>
+					<label for="name3">Name 3:</label>
+					<input type="text" id="name3" name="name3">
+
+				</div>
 			</form>
 
 		</div>
+		<footer><span style="display: none;" id="then">then</span></footer>
 	</body>
 </html>
