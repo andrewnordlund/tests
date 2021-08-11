@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 		<title>ASP .NET Form Submit</title>
-		<link rel="stylesheet" href="form.css" type="text/css">
+		<!-- link rel="stylesheet" href="form.css" type="text/css"> -->
 
 		<style type="text/css">
 			.req {
@@ -17,16 +17,16 @@
 				position: absolute;
 				top: -7.69em;
 				width: 0.07em;
-			}*/
+			}
 			.invisibleStuff, label {
-				/*clip: rect(1px, 1px, 10px, 100px);*/
+				/*clip: rect(1px, 1px, 10px, 100px);* /
 				height: 1em !important;
 				margin: 0 !important;
 				overflow: hidden !important;
 				position: absolute;
 				width: 70px !important;	
 			}
-			
+			*/
 		</style>
 	</head>
 
@@ -47,6 +47,7 @@
 					<input tpye="text" id="name2">
 		</form>
 		<br>
+			-->
 			<form action="" method="get" id="myForm1">
 				<div>
 					<label for="name">Name:</label>
@@ -55,10 +56,11 @@
 				</div>
 			</form>
 			<br>
+			
 			<form action="" method="get" id="myForm2">
 				<p>This form doesn't need a submit button.</p>
 				<fieldset id="radioFieldset">
-					<legend>Radio butons</legend>
+					<legend>Radio buttons.  Ahh yes <a href="https://www.google.ca">Loveley, wonderful Radio</a> buttons.</legend>
 					<input type="radio" value="a" id="rd_a" name="rd">
 					<label for="rd_a">Option 1</label><br><br>
 					<input type="radio" value="b" id="rd_b" name="rd">
@@ -72,8 +74,7 @@
 					<input type="radio" value="f" id="rd_f" name="rd">
 					<label for="rd_f">Option 6</label><br><br>
 				</fieldset>
-				-->
-
+<!--
 				<p>
 				<form method="GET" action="">
 				<label for="testField">Test Label</label>
@@ -185,6 +186,7 @@
             </table>
 				
 			</form>
+-->
 		</div>
 		<!--#include virtual="/tests/formtest/leftMenu.html" -->
 	</body>
