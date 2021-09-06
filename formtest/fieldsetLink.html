@@ -122,21 +122,9 @@ kbd {
 			<section>
 				<h2>Results</h2>
 				<section>
-					<h3>VoiceOver on OS X Catalina</h3>
-					<ul>
-						<li>VoiceOver reads the <code>&lt;legend&gt;</code> only when tabbing into a <code>&lt;fieldset&gt;</code> from above or below.  And it reads it last.  On Safari, the <code>&lt;legend&gt;</code> is read out twice.</li>
-						<li>When there's a link in the <code>&lt;legend&gt;</code>, and you <kbd>Tab</kbd> to the link: first it reads out the word "link" followed by the link text.  Then it reads out the <code>&lt;legend&gt;</code> (twice in Safari) followed by the word "Group".</li>
-						<li>Then when you <kbd>Tab</kbd> into the radio buttons, VoiceOver reads out the <code>&lt;label&gt;</code> text, "radio button, x of y".  (Safari follows that up with the <code>&lt;legend&gt;</code> text.)</li>
-						<li>When <kbd>Shift+Tab</kbd>ing from the radio buttons to the <code>&lt;legend&gt;</code>'s link, it reads out "link" followed by the link text.  Safari then reads out the <code>&lt;legend&gt;</code> text.</li>
-						<li>When there's a link in the legend and there's an <code>role="list"</code> in the <code>&lt;legend&gt;</code>, when the link is <kbd>Tab</kbd>'d to, the <code>&lt;legend&gt;</code> is read out as above.  The list items are read out with their number (ie: "1 item 1")</li>
-						<li>When <kbd>Tab</kbd>ing to the radio buttons that have <code>aria-describedby</code> first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y", then it reads out all the <code>aria-describedby</code> contents, including the <code>display:n1</code> "then" <code>&lt;span&gt;</code>.  Note that Chromium browsers (Chrome, Edge) only read out "then" the first time.  ex: "1 item 1 then 2 item 2 3 item 3".</li>
-						<li>When <kbd>Shift+Tab</kbd>ing into the <code>&lt;fieldset&gt;</code>, first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y" followed by the <code>&lt;legend&gt;</code> text then "group".  Then it reads out all the <code>aria-describedby</code> contents as above.</li>
-					</ul>
-				</section>
-				<section>
 					<h3>VoiceOver on iOS 14.7</h3>
 					<ul>
-						<li>Voiceover only reads the <code>&lt;legend&gt;</code> text when swipped-right/left to; not along with radio button <code>&lt;label&gt;</code>s.  The <code>&lt;legend&gt;</code> text is also skipped when the rotator has selected "Form controls" and up/down swipping is used.</li>
+						<li>VoiceOver (VO) only reads the <code>&lt;legend&gt;</code> text when swipped-right/left to; not along with radio button <code>&lt;label&gt;</code>s.  The <code>&lt;legend&gt;</code> text is also skipped when the rotator has selected "Form controls" and up/down swipping is used.</li>
 						<li>When there's a link in the <code>&lt;legend&gt;</code>, left/right-swipping reads 1 piece at a time.  So it reads the <code>&lt;legend&gt;</code> text before the link, then swipe-right, then the link text, then "link", then swipe left, then the <code>&lt;legend&gt;</code> text that comes after the link</li>
 						<li>For the <code>role="list</code>, VoiceOver treats that as an actual list, reading out the number, the period after the number, then the list item content aling with "list start" and "list end" at the first and last part of the list.</li>
 						<li>For the <code>aria-describedby</code> parts in the list items, it reads out "3 item 3 then 1 item 1 then 2 item 2..."</li>
@@ -144,24 +132,114 @@ kbd {
 					</ul>
 				</section>
 				<section>
+					<h3>VoiceOver on OS X Catalina</h3>
+					<ul>
+						<li>VoiceOver (VO) reads the <code>&lt;legend&gt;</code> only when tabbing into a <code>&lt;fieldset&gt;</code> from above or below.  And it reads it last.  On Safari, the <code>&lt;legend&gt;</code> is read out twice.</li>
+						<li>When <kbd>Tab</kbd>bing from the "Name 1" <code>&lt;input&gt;</code> to the link in the <code>&lt;legend&gt;</code>
+							<dl>
+								<dt>Firefox and Chrome:</dt><dd>first VO reads "Link" then the link text then the whole <code>&lt;legend&gt;</code> text then "group"</dd>
+								<dt>In Safari</dt><dd>VO does the same as Firefox and Chrome, but reads out the the <code>&lt;legend&gt;</code> text twice before saying "group".</dd>
+							</dl>
+						</li>
+						<li>Then when you <kbd>Tab</kbd> into the radio buttons:
+							<dl>
+								<dt>Firefox and Chrome:</dt><dd>VO reads out the <code>&lt;label&gt;</code> text, "radio button, x of y".</dd>
+								<dt>Safari:</dt><dd>VO reads the same as Firefox and Chrome, then follows that up with the <code>&lt;legend&gt;</code> text.</dd>
+							</dl>
+						</li>
+						<li>When <kbd>Shift+Tab</kbd>ing from the radio buttons to the <code>&lt;legend&gt;</code>'s link:
+							<dl>
+								<dt>Firefox and Chrome:</dt><dd>VO reads out "link" followed by the link text.</dd>
+								<dt>Safari:</dt><dd>VO does the same as Firefox and Chrome, and then reads out the <code>&lt;legend&gt;</code> text.</dd>
+							</dl>
+						VO does not read out that you're in a <code>&lt;legend&gt;</code>.</li>
+						<li>Then when <kbd>Shift+Tab</kbd>bing to the radio buttons from below:
+							<dl>
+								<dt>Firefox and Chrome:</dt><dd>VO reads out the <code>&lt;label&gt;</code> text, "radio button, x of y", then the <code>&lt;legend&gt;</code> text followed by "group".</dd>
+								<dt>Safari:</dt><dd> The same as Firefox and Chrome, but reads out the <code>&lt;legend&gt;</code> text twice before reading out "group".</dd>
+							</dl>
+						There's no mention of a link in the <code>&lt;legend&gt;</code>.
+						</li>
+						
+
+
+						<li>When there's a link in the legend and there's an <code>role="list"</code> in the <code>&lt;legend&gt;</code>, when the link is <kbd>Tab</kbd>'d to:
+							<dl>
+								<dt>Firefox:</dt><dd>the <code>&lt;legend&gt;</code> is read out as above ("link" + link text + <code>&lt;legend&gt;</code> text + "group".  The list items are read out <em>with</em> their number (ie: "1. item 1 2. item 2 3. item 3" - and there's a pause at each period).</dd>
+								<dt>Chrome:</dt><dd>the <code>&lt;legend&gt;</code> is read out as above ("link" + link text + <code>&lt;legend&gt;</code> text + "group".  The list items are read out <em>without</em> their number (ie: "item 1 item 2 item 3")</dd>
+								<dt>Safari:</dt><dd>VO reads out "link" then the link text then the <code>&lt;legend&gt;</code> text (twice) with the word "group". Sarari does <em>not</em> read out the list!  In order to hear that list at this point, you have to use the <kbd>ctrl+option+arrow keys</kbd> instead of <kb>Tab</kbd>.  (But you will hear the list when you <kbd>Tab</kbd> to the radio buttons.</dd>
+							</dl>
+						</li>
+
+
+						<li>When <kbd>Tab</kbd>ing to the radio buttons that have <code>aria-describedby</code>:
+							<dl>
+								<dt>Firefox:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y", then it reads out all the <code>aria-describedby</code> contents, including the <code>display:none</code> "then" <code>&lt;span&gt;</code>.  ie: "1, 3, 2 radio butto 1 of 4 1 item 1 then 3 item 3 then 2 item two".</dd>
+								<dt>Chrome:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y", then it reads out all the <code>aria-describedby</code> contents, including the <code>display:none</code> "then" <code>&lt;span&gt;</code>.  But it only reads out the "then" once.  ie: "1, 3, 2 radio butto 1 of 4 1 item 1 then 3 item 3 2 item two".</dd>
+								<dt>Safari:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y", then it reads the <code>&lt;legend&gt;</code> text <em>without</em> the list. But then it reads out all the <code>aria-describedby</code> contents, including the <code>display:none</code> "then" <code>&lt;span&gt;</code>.  ie: "1, 3, 2 radio butto 1 of 4. Please put the following Loveley, wonderful Radio buttons in order. 1 item 1 then 3 item 3 then 2 item two".</dd>
+							</dl>
+							No mention of the link in the <code>&lt;legend&gt;</code>.
+						</li>
+
+						<li>When <kbd>Shift+Tab</kbd>ing into the <code>&lt;fieldset&gt;</code> from below:
+							<dl>
+								<dt>Firefox:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y" followed by the <code>&lt;legend&gt;</code> text then "group".  Then it reads out all the <code>aria-describedby</code> contents including the <code>display:none</code> "then" <code>&lt;span&gt;</code>.  ie: "3, 1, 2 radio button 4 of 4, Please put the following Lovely, wonderful Radio buttons in order. 1. item 1 2. item 2 3. item 3 group. 3. item 3 then 1. item 1 then 2. item 2"</dd>
+								<dt>Chrome:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y" followed by the <code>&lt;legend&gt;</code> text then "group".  Then it reads out all the <code>aria-describedby</code> contents including the <code>display:none</code> "then" <code>&lt;span&gt;</code> - but only once.  ie: "3, 1, 2 radio button 4 of 4, Please put the following Lovely, wonderful Radio buttons in order. 1. item 1 2. item 2 3. item 3 group. 3. item 3 then 1. item 1 2. item 2"</dd>
+								<dt>Safari:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button x of y" followed by the <code>&lt;legend&gt;</code> text twice then "group".  ie: "3, 1, 2 radio button 4 of 4, Please put the following Lovely, wonderful Radio buttons in order. Please put the following Lovely, wonderful Radio buttons in order. group. 3. item 3 then 1. item 1 then 2. item 2"</dd>
+							</dl>
+							No mention of the link is made.
+						</li>
+					</ul>
+				</section>
+								<section>
 					<h3>NVDA 2021.1 on Windows 10 (IE 11, Firefox 90.0.2 and 55.0.3, Chrome 92, Edge 92)</h3>
 					<ul>
 						<li>NVDA reads the <code>&lt;legend&gt;</code> only when tabbing into a <code>&lt;fieldset&gt;</code> from above or below.  And it reads it first.</li>
-						<li>When there's a link in the <code>&lt;legend&gt;</code>, and you <kbd>Tab</kbd> to the link: first it reads out the <code>&lt;legend&gt;</code> text with the word "grouping", then link text followed by the word "link". Except in IE.  In IE, it doesn't read out the <code>&lt;legend&gt;</code> text:  Just the link text with "link".</li>
-						<li>Then when <kbd>Tab</kbd>bing to the first radio button, the <code>&lt;legend&gt;</code> text is not read in any browser.</li>
-						<li>When <kbd>Shift+Tab</kbd>bing from below, the <code>&lt;legend&gt;</code> text is read with "grouping" followed by the selected radio button <code>&lt;label&gt;</code> text and its status.  No mention of the link in the <code>&lt;legend&gt;</code>.  The same in all browsers.</li>
-						<li>If you <kbd>Shift+TAb</kbd> from the radio buttons to the link in the <code>&lt;legend&gt;</code>, the link is read out as a normal link (link text + "link").  Same in all browsers.</li>
-						<li>When there's a link in the <code>&lt;legend&gt;</code> and there's an <code>role="list"</code> in the <code>&lt;legend&gt;</code>, when the link is <kbd>Tab</kbd>'d to, the <code>&lt;legend&gt;</code> is read out as above (<code>&lt;legend&gt;</code> text including the aria link as an ordered link + the link text + "link".  IE only reads out the link text + "link").  The list items are read out with their number (ie: "1 item 1"), except in IE.</li>
-						<li>When <kbd>Tab</kbd>ing to the radio buttons that have <code>aria-describedby</code> first the <code>&lt;label&gt;</code> text is read followed by "radio button (not) checked". Then it reads out all the <code>aria-describedby</code> contents, including the <code>display:n1</code> "then" <code>&lt;span&gt;</code> followed by "x of y".
-						<ul>
-							<li>Note that Chromium browsers (Chrome, Edge) only read out "then" the first time.  ex: "1. item 1 then 2. item 2 3. item 3".</li>
-							<li>Note that IE does not read out the list item number, nor does it read out "then", nor the "x of y".  ex:  "1, 3, 2 radio button not checked item 1 item 3 item 2".</li>
-						</ul></li>
-						<li>When <kbd>Shift+Tab</kbd>ing into the <code>&lt;fieldset&gt;</code>, first the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above with all the "then"s followed by "x of y".  ie: "Please put the following Lovely, wonderful Radio buttons in order. 1. Item 1. 2. Item 2. 3. Item 3 grouping.  1, 3, 2 radio button not checked 1. item 1 then 3. item 3 then 2. item 2."
-						<ul>
-							<li>Note that Chromium browsers (Chrome, Edge) only read out "then" the first time.  ex: "1. item 1 then 2 item 2 3 item 3".</li>
-							<li>Note that IE does not read out the list item number, nor does it read out "then", nor the "x of y".  ex:  "Please put the following Lovely, wonderful Radio buttons in order. Item 1.  Item 2.  Item 3 grouping.  1, 3, 2 radio button not checked item 1 item 3 item 2".</li>
-						</ul></li>
+						<li>When there's a link in the <code>&lt;legend&gt;</code>, and you <kbd>Tab</kbd> to the link:
+							<dl>
+								<dt>Firefox and Chromium:</dt><dd>first it reads out the <code>&lt;legend&gt;</code> text with the word "grouping", then link text followed by the word "link".</dd>
+								<dt>IE:</dt><dd>NVDA just reads the link text with "link". It doesn't read out the <code>&lt;legend&gt;</code> text.</dd>
+							</dl>
+						</li>
+						<li>Then when <kbd>Tab</kbd>bing to the first radio button:
+							<dl>
+								<dt>Firefox, Chomium and IE:</dt><dd>the <code>&lt;legend&gt;</code> text is not read in any browser.</dd>
+							</dl>
+						</li>
+						<li>If you <kbd>Shift+TAb</kbd> from the radio buttons to the link in the <code>&lt;legend&gt;</code>:
+							<dl>
+								<dt>Firefox, Chromium, and IE:</dt><dd>the link is read out as a normal link (link text + "link").</dd>
+							</dl>
+						</li>
+						<li>When <kbd>Shift+Tab</kbd>bing to the radio buttons from below:
+							<dl>
+								<dt>Firefox, Chromium, and IE:</dt><dd>the <code>&lt;legend&gt;</code> text is read with "grouping" followed by the selected radio button <code>&lt;label&gt;</code> text and its status.</dd>
+							</dl>
+							No mention of the link in the <code>&lt;legend&gt;</code>.
+						</li>
+						<li>When there's a link in the <code>&lt;legend&gt;</code> and there's an <code>role="list"</code> in the <code>&lt;legend&gt;</code>, when the link is <kbd>Tab</kbd>'d to:
+							<dl>
+								<dt>Firefox, and Chromium:</dt><dd>the <code>&lt;legend&gt;</code> text including the aria list as an ordered list + the link text + "link". The list items are read out with their number (ie: "1 item 1").</dd>
+								<dt>IE:</dt><dd>NVDA only reads out the link text + "link".  The list is ignored.</dd>
+							</dl>
+						</li>
+						<li>When <kbd>Tab</kbd>ing to the radio buttons that have <code>aria-describedby</code>:
+							<dl>
+								<dt>Firefox:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button (not) checked". Then it reads out all the <code>aria-describedby</code> contents, including the <code>display:none</code> "then" <code>&lt;span&gt;</code> followed by "x of y".</dd>
+								<dt>Chromium:</dt><dd>first the <code>&lt;label&gt;</code> text is read followed by "radio button (not) checked". Then it reads out all the <code>aria-describedby</code> contents, including the <code>display:none</code> "then" <code>&lt;span&gt;</code> - but only the first time - followed by "x of y".  Ex: "1. item 1 then 2. item 2 3. item 3".</dd>
+								<dt>IE:</dt><dd>NVDA does not read out the list item number, nor does it read out "then", nor the "x of y".  ex:  "1, 3, 2 radio button not checked item 1 item 3 item 2".</dd>
+							</dl>
+						</li>
+						<li>When <kbd>Shift+Tab</kbd>ing into the <code>&lt;fieldset&gt;</code> from below:
+							<dl>
+								<dt>Firefox:</dt>
+								<dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above with all the "then"s followed by "x of y".  ie: "Please put the following Lovely, wonderful Radio buttons in order. 1. Item 1. 2. Item 2. 3. Item 3 grouping.  1, 3, 2 radio button not checked 1. item 1 then 3. item 3 then 2. item 2."</dd>
+								<dt>Chromium:</dt>
+								<dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above with the "then" the first time followed by "x of y".  ie: "Please put the following Lovely, wonderful Radio buttons in order. 1. Item 1. 2. Item 2. 3. Item 3 grouping.  1, 3, 2 radio button not checked 1. item 1 then 3. item 3 2. item 2."</dd>
+								<dt>IE:</dt>
+								<dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above without all the "then"s.  ie: "Please put the following Lovely, wonderful Radio buttons in order. Item 1.  Item 2.  Item 3 grouping.  1, 3, 2 radio button not checked item 1 item 3 item 2".</dd>
+							</dl>
+						</li>
 					</ul>
 				</section>
 				<section>
@@ -169,51 +247,56 @@ kbd {
 					<ul>
 						<li>JAWS reads the <code>&lt;legend&gt;</code> only when tabbing into a <code>&lt;fieldset&gt;</code> from above or below.  And it reads it first.</li>
 						<li>When <kbd>Tab</kbd>bing from the "Name 1" <code>&lt;input&gt;</code> to the link in the <code>&lt;legend&gt;</code>, things get interesting:
-						<ul>
-							<li>In IE, JAWS just reads out "Name 1 colon edit" - when the link is selected!</li>
-							<li>In Firefox JAWS reads out the <code>&lt;legend&gt;</code> text followed by the link text + "link".  This is what we want.</li>
-							<li>In Chromium browsers (Chrome and Edge), JAWS reads out the <code>&lt;legend&gt;</code> text + "Name 1 colon edit".</li>
-						</ul></li>
+							<dl>
+								<li>In IE, JAWS just reads out "Name 1 colon edit" - when the link is selected!</li>
+								<li>In Firefox JAWS reads out the <code>&lt;legend&gt;</code> text followed by the link text + "link".  This is what we want.</li>
+								<li>In Chromium browsers (Chrome and Edge), JAWS reads out the <code>&lt;legend&gt;</code> text + "Name 1 colon edit".</li>
+							</dl>
+						</li>
 						<li>When <kbd>Tab</kbd>bing from the link to the radio buttons:
-							<ul>
-								<li>In IE: JAWS now reads out the <code>&lt;legend&gt;</code> text followed by the selected radio button's <code>&lt;label&gt;</code> text + " radio button (not) checked".  There's no mention of a link.</li>
+							<dl>
+								<dt>In IE:</dt><dd>JAWS now reads out the <code>&lt;legend&gt;</code> text followed by the selected radio button's <code>&lt;label&gt;</code> text + " radio button (not) checked".  There's no mention of a link.</dd>
 								<li>In Firefox, JAWS reads out the <code>&lt;label&gt;</code> of the first radio button followed by the <code>&lt;label&gt;</code> of the selected radio button.  So if "Option 3" is selected, JAWS reads out "Option 1 not checked Option 3 radio button checked 3 of 6."</li>
 								<li>In Chromium browsers, it just reads out "Option x radio button checked, x of y"</li>
-							</ul></li>
+							</dl>
+						</li>
 						<li>When there's a link in the <code>&lt;legend&gt;</code>, and you <kbd>Shift+Tab</kbd> to the link from a radio button:
-						<ul>
-							<li>In IE: JAWS reads out the <code>&lt;legend&gt;</code> text plus the <code>&lt;label&gt;</code> of the checked radio button and its "checked" status, ex: "Radio buttons, Ahh yes Lovely, wonderful Radio buttons. Option 4 radio button checked."  No mention of a link.</li>
-							<li>In Firefox: it reads the link text with "link".  None of the rest of the <code>&lt;legend&gt;</code> text is read.  It's not indicated that you're even in a <code>&lt;legend&gt;</code> or <code>&lt;fieldset&gt;.</code></li>
-							<li>In Chromium it reads the <code>&lt;label&gt;</code> of the selected radio button with x of y.  ex: ""Option 6 radio button checked 6 of 6."  If no radio button is selected, instead it reads out the last focused radio button's <code>&lt;label&gt;</code> with "not checked" + "x of y".  No mention of a link or <code>&lt;legend&gt;</code> or link.</li>
-						</ul></li>
+							<dl>
+								<dt>In IE:</dt><dd>JAWS reads out the <code>&lt;legend&gt;</code> text plus the <code>&lt;label&gt;</code> of the checked radio button and its "checked" status, ex: "Radio buttons, Ahh yes Lovely, wonderful Radio buttons. Option 4 radio button checked."  No mention of a link.</dd>
+								<dt>In Firefox:</dt><dd>it reads the link text with "link".  None of the rest of the <code>&lt;legend&gt;</code> text is read.  It's not indicated that you're even in a <code>&lt;legend&gt;</code> or <code>&lt;fieldset&gt;.</code></dd>
+								<dt>In Chromium it reads the <code>&lt;label&gt;</code> of the selected radio button with x of y.  ex:</dt><dd>""Option 6 radio button checked 6 of 6."  If no radio button is selected, instead it reads out the last focused radio button's <code>&lt;label&gt;</code> with "not checked" + "x of y".  No mention of a link or <code>&lt;legend&gt;</code> or link.</dd>
+							</dl>
+						</li>
 						<li>Then when <kbd>Shift+Tab</kbd>bing to the radio buttons from below:
-						<ul>
-							<li>In IE: the 	<code>&lt;legend&gt;</code> text then the selected option is read with its status.  No mention of a link.</li>
-							<li>In Firefox: JAWS reads the <code>&lt;legend&gt;</code> text then the first radio button's <code>&lt;label&gt;</code> text followed by the selected radio button's <code>&lt;label&gt;</code> textwith their status.  Ex: "Radio buttons. Ahh yes Lovely, wonderful Radio buttons. Option 1 radio button not checked. Option 3 radio button checked."  No mention of a link.</li>
-							<li>In Chromium: JAWS reads the <code>&lt;legend&gt;</code> text + the selected radio button's <code>&lt;label&gt;</code> text, its status, then "x of y".  No mention of a link.</li>
-						</ul></li>
+							<dl>
+								<dt>In IE:</dt><dd>the 	<code>&lt;legend&gt;</code> text then the selected option is read with its status.  No mention of a link.</dd>
+								<dt>In Firefox:</dt><dd>JAWS reads the <code>&lt;legend&gt;</code> text then the first radio button's <code>&lt;label&gt;</code> text followed by the selected radio button's <code>&lt;label&gt;</code> textwith their status.  Ex: "Radio buttons. Ahh yes Lovely, wonderful Radio buttons. Option 1 radio button not checked. Option 3 radio button checked."  No mention of a link.</dd>
+								<dt>In Chromium:</dt><dd>JAWS reads the <code>&lt;legend&gt;</code> text + the selected radio button's <code>&lt;label&gt;</code> text, its status, then "x of y".  No mention of a link.</dd>
+							</dl>
+						</li>
 						<li>When there's a link in the <code>&lt;legend&gt;</code> and there's an <code>role="list"</code> in the <code>&lt;legend&gt;</code>, when the link is <kbd>Tab</kbd>'d to:
-						<ul>
-							<li>In IE: JAWS just reads out the <code>&lt;label&gt;</code> of the previous <code>&lt;input&gt;</code>, as above.  Note that if that <code>&lt;input&gt;</code> is removed, then when the focus lands on the link, the <code>&lt;legend&gt;</code> text of the previous <code>&lt;fieldset&gt;</code> is read along with the selected radio button.  It's as though JAWS is just reading out the last <code>&lt;legend&gt;</code> or <code>&lt;label&gt;</code>.  Incidentally, if I <kbd>Alt+Tab</kbd> away and back again, instead of the last <code>&lt;label&gt;</code> or <code>&lt;legend&gt;</code>, I get the browser name and page name.</li>
-							<li>In Firefox: The <code>&lt;legend&gt;</code> text is read followed by the link text and the word "link".  Note that JAWS also reads out the aria list as though it were a real <code>&lt;ol&gt;</code>.  This is what we want.</li>
-							<li>In Chromium: the <code>&lt;legend&gt;</code> text followed by "Name 2 colon edit.".  JAWS does not read out the list item number like it does with Firefox.</li>
-						</ul></li>
+							<dl>
+								<dt>In IE:</dt><dd>JAWS just reads out the <code>&lt;label&gt;</code> of the previous <code>&lt;input&gt;</code>, as above.  Note that if that <code>&lt;input&gt;</code> is removed, then when the focus lands on the link, the <code>&lt;legend&gt;</code> text of the previous <code>&lt;fieldset&gt;</code> is read along with the selected radio button.  It's as though JAWS is just reading out the last <code>&lt;legend&gt;</code> or <code>&lt;label&gt;</code>.  Incidentally, if I <kbd>Alt+Tab</kbd> away and back again, instead of the last <code>&lt;label&gt;</code> or <code>&lt;legend&gt;</code>, I get the browser name and page name.</dd>
+								<dt>In Firefox:</dt><dd>The <code>&lt;legend&gt;</code> text is read followed by the link text and the word "link".  Note that JAWS also reads out the aria list as though it were a real <code>&lt;ol&gt;</code>.  This is what we want.</dd>
+								<dt>In Chromium:</dt><dd>the <code>&lt;legend&gt;</code> text followed by "Name 2 colon edit.".  JAWS does not read out the list item number like it does with Firefox.</dd>
+							</dl>
+						</li>
 						<li>When <kbd>Tab</kbd>ing to the radio buttons that have <code>aria-describedby</code>:
-						<ul>
-							<li>In IE: the <code>&lt;legend&gt;</code> text is read then the radio button's <code>&lt;label&gt;</code> + "radio button (not) checked".  No mention of link.  <code>aria-describedby</code> is ignored.</li>
-							<li>In Firerox: JAWS reads out the <code>&lt;legend&gt;</code> text with the link text and "link" then  the focused radio button's <code>&lt;label&gt;</code> + "radio button (not) checked" then it reads out the <code>aria-describedby</code> texts along with all the "then"s of the first radio button, followed by the same for the selected radio button.</li>
-							<li>In Chromium: JAWS reads out the <code>&lt;label&gt;</code> of the focused radio button, along with the <code>aria-describedby</code> parts.  The <code>&lt;legend&gt;</code> text is left out.  Something weird happens here.  If you use the up/down arrow keys to select another radio button, you hear "Blank" betwixt each radio button selection.  And if you're sighted, you don't actually <em>see</em> your visual focus indicator moving around.  Then if you hit <kbd>(Shift+)Tab</kbd> your focus goes to the radio button that JAWS has focused, and not to the link in the <code>&lt;legend&gt;</code>.  But, the now focused radio button doesn't change it's checked status.</li>
-							<li>Note that Chromium browsers (Chrome, Edge) only read out "then" the first time.  ex: "1. item 1 then 2. item 2 3. item 3".</li>
-							<li>Note that IE does not read out the list item number, nor does it read out "then", nor the "x of y".  ex:  "1, 3, 2 radio button not checked item 1 item 3 item 2".</li>
-						</ul></li>
+						<dl>
+								<dt>In IE:</dt><dd>the <code>&lt;legend&gt;</code> text is read then the radio button's <code>&lt;label&gt;</code> + "radio button (not) checked".  No mention of link.  <code>aria-describedby</code> is ignored.</dd>
+								<dt>In Firerox:</dt><dd>JAWS reads out the <code>&lt;legend&gt;</code> text with the link text and "link" then  the focused radio button's <code>&lt;label&gt;</code> + "radio button (not) checked" then it reads out the <code>aria-describedby</code> texts along with all the "then"s of the first radio button, followed by the same for the selected radio button.</dd>
+								<dt>In Chromium:</dt><dd>JAWS reads out the <code>&lt;label&gt;</code> of the focused radio button, along with the <code>aria-describedby</code> parts.  The <code>&lt;legend&gt;</code> text is left out.  Something weird happens here.  If you use the up/down arrow keys to select another radio button, you hear "Blank" betwixt each radio button selection.  And if you're sighted, you don't actually <em>see</em> your visual focus indicator moving around.  Then if you hit <kbd>(Shift+)Tab</kbd> your focus goes to the radio button that JAWS has focused, and not to the link in the <code>&lt;legend&gt;</code>.  But, the now focused radio button doesn't change it's checked status.</dd>
+								<dt>Note that Chromium browsers (Chrome, Edge) only read out "then" the first time.  ex:</dt><dd>"1. item 1 then 2. item 2 3. item 3".</dd>
+								<dt>Note that IE does not read out the list item number, nor does it read out "then", nor the "x of y".  ex:</dt><dd> "1, 3, 2 radio button not checked item 1 item 3 item 2".</dd>
+							</dl>
+						</li>
 						<li>When <kbd>Shift+Tab</kbd>ing into the <code>&lt;fieldset&gt;</code> from below:
-							<ul>
-								<li>In IE: the <code>&lt;legend&gt;</code> text is read (no mention of a link) followed by the selected radio button's <code>&lt;label&gt;</code> + "radio button checked" followed by the <code>aria-describedby</code> text - including all the "then"s.</li>
-								<li>In Firefox it reads out the <code>&lt;legend&gt;</code> text (no mention of link) along with the list item count, followed by the <code>&lt;label&gt;</code> of the first radio button and its status then the <code>&lt;label&gt;</code> of the selected radio button with its status and place in the list.  Then it reads the <code>aria-describedby</code> text with all the "then"s.</li>
-								<li>In Chromium: JAWS reads out the <code>&lt;legend&gt;</code> text (no mention of a link) along with the list item count, followed by the selected radio button's <code>&lt;label&gt;</code> followed by "radio button (not) checked x of y" then the <code>aria-describedby</code> text.</li>
-								<li>Note that Chromium browsers (Chrome, Edge) only read out "then" the first time.  ex: "1. item 1 then 2 item 2 3 item 3".</li>
-							<li>Note that IE does not read out the list item number, nor the "x of y". But it <em>does</em> it read out "then".  ex:  "Please put the following Lovely, wonderful Radio buttons in order. Item 1.  Item 2.  Item 3.  1, 3, 2 radio button not checked item 1 item 3 item 2".  (No "grouping")</li>
-						</ul></li>
+							<dl>
+								<dt>Firefox</dt><dd>JAWS reads out the <code>&lt;legend&gt;</code> text (no mention of link) along with the list item count, followed by the <code>&lt;label&gt;</code> of the first radio button and its status then the <code>&lt;label&gt;</code> of the selected radio button with its status and place in the list.  Then it reads the <code>aria-describedby</code> text with all the "then"s.</li>
+								<dt>Chromium:</dt><dd>JAWS reads out the <code>&lt;legend&gt;</code> text (no mention of a link) along with the list item count, followed by the selected radio button's <code>&lt;label&gt;</code> followed by "radio button (not) checked x of y" then the <code>aria-describedby</code> text.  But it only reads the "then" once.  ex: "1. item 1 then 2 item 2 3 item 3".</dd>
+								<dt>IE:</dt><dd>the <code>&lt;legend&gt;</code> text is read (no mention of a link) followed by the selected radio button's <code>&lt;label&gt;</code> + "radio button checked" followed by the <code>aria-describedby</code> text - including all the "then"s. It does not read out the list item number, nor the "x of y". But it <em>does</em> it read out "then".  ex:</dt><dd> "Please put the following Lovely, wonderful Radio buttons in order. Item 1.  Item 2.  Item 3.  1, 3, 2 radio button not checked item 1 item 3 item 2".  (No "grouping") ???</dd>
+							</dl>
+						</li>
 					</ul>
 				</section>
 
