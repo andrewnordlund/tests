@@ -202,12 +202,9 @@
 						</li>
 						<li>When <kbd>Shift+Tab</kbd>ing into the <code>&lt;fieldset&gt;</code> from below:
 							<dl>
-								<dt>Firefox:</dt>
-								<dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above with all the "then"s followed by "x of y".  ie: "Please put the following Lovely, wonderful Radio buttons in order. 1. Item 1. 2. Item 2. 3. Item 3 grouping.  1, 3, 2 radio button not checked 1. item 1 then 3. item 3 then 2. item 2."</dd>
-								<dt>Chromium:</dt>
-								<dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above with the "then" the first time followed by "x of y".  ie: "Please put the following Lovely, wonderful Radio buttons in order. 1. Item 1. 2. Item 2. 3. Item 3 grouping.  1, 3, 2 radio button not checked 1. item 1 then 3. item 3 2. item 2."</dd>
-								<dt>IE:</dt>
-								<dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above without all the "then"s.  ie: "Please put the following Lovely, wonderful Radio buttons in order. Item 1.  Item 2.  Item 3 grouping.  1, 3, 2 radio button not checked item 1 item 3 item 2".</dd>
+								<div><dt>Firefox:</dt><dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above with all the "then"s followed by "x of y".  ie: "Please put the following Lovely, wonderful Radio buttons in order. 1. Item 1. 2. Item 2. 3. Item 3 grouping.  1, 3, 2 radio button not checked 1. item 1 then 3. item 3 then 2. item 2."</dd></div>
+								<div><dt>Chromium:</dt><dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above with the "then" the first time followed by "x of y".  ie: "Please put the following Lovely, wonderful Radio buttons in order. 1. Item 1. 2. Item 2. 3. Item 3 grouping.  1, 3, 2 radio button not checked 1. item 1 then 3. item 3 2. item 2."</dd></div>
+								<div><dt>IE:</dt><dd>First the <code>&lt;legend&gt;</code> text is read followed by "grouping" followed by the <code>&lt;label&gt;</code> text + "radio button (not) checked".  Then it reads out all the <code>aria-describedby</code> contents as above without all the "then"s.  ie: "Please put the following Lovely, wonderful Radio buttons in order. Item 1.  Item 2.  Item 3 grouping.  1, 3, 2 radio button not checked item 1 item 3 item 2".</dd></div>
 							</dl>
 						</li>
 					</ul>
