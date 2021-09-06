@@ -1,0 +1,43 @@
+body{
+	counter-reset: section;
+}
+[role="listitem"]::before{
+	counter-increment: section;
+	content: counter(section) ": ";
+}
+.req {
+	color: #CC0000;
+}
+#listy {
+	display: block;
+}
+[role="listitem"] {
+  	display: block; /*list-item;*/
+}
+.invisibleStuff {
+	clip: rect(1px, 1px, 10px, 100px);
+	height: 1em !important;
+	margin: 0 !important;
+	overflow: hidden !important;
+	position: absolute;
+	width: 70px !important;	
+}
+kbd {
+	font-weight: 700;
+}
+dt {
+	font-weight: 700;
+	margin-top: 0.5em;
+}
+dd {
+	margin-left: 1em;
+}
+dt, dd {
+	display: inline;
+}
+dl div {
+	margin: 0.5em 0 0.5em 0.5em;
+}
+#resultsSection ul li {
+	margin: 0.75em auto;
+}
