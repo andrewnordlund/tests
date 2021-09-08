@@ -3,7 +3,7 @@ body{
 }
 [role="listitem"]::before{
 	counter-increment: section;
-	content: counter(section) ": ";
+	content: counter(section) ". ";
 }
 .req {
 	color: #CC0000;
@@ -39,5 +39,14 @@ dl div {
 	margin: 0.5em 0 0.5em 0.5em;
 }
 #resultsSection ul li {
+	margin: 0.75em auto;
+}
+ol li {
+	margin: 0.75em auto;
+}
+summary h3 {
+	display:inline;
+}
+details {
 	margin: 0.75em auto;
 }
