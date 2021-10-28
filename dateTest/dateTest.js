@@ -1,11 +1,17 @@
 var dateTestTxt = document.getElementById("dateTest");
 var results = document.getElementById("results");
 var submitBtn =document.getElementById("submitBtn");
+var clearBtn =document.getElementById("clearBtn");
 
 //dateTestTxt.addEventListener("change", getDay, false);
 submitBtn.addEventListener("click", function() {
 	let result = nordburg.getDateAsString(dateTestTxt.value);
 	results.innerHTML = "Date: " + result + ".";
+}, false);
+
+clearBtn.addEventListener("click", function() {
+	dateTestTxt.value = "";
+	dateTestTxt.focus();
 }, false);
 
 function getDay() {
