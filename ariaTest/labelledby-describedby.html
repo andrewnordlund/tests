@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
 		<title>ARIA-Describedby and Labelledby Test Page</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 	</head>
 	<body>
 		<header>
@@ -11,249 +13,554 @@
 		<main>
 		<form>
 			<div class="formHolder">
-				<label for="initTxt">Random form field</label><br>
+				<label for="initTxt">Random form field to initiate Forms Mode:</label><br>
 				<input id="initTxt" type="text">
 			</div>
 			<p id="extraInfo">This is some kind of extra text that provides information that pertains to the following fields way down below.</p>
-			<!--
-			<fieldset aria-labelledby="extraInfo">
-				<legend>fieldset with labelledby</legend>
+			<fieldset aria-describedby="extraInfo">
+				<legend>checkbox with <code>aria-describedby</code> in the <code>fieldset</code> element.</legend>
 				<label><input type="checkbox"> Checkbox 1</label>
 			</fieldset>
 			<details>
-			<summary>Screen Readers Results</summary>
-			<dl>
-				<dt>JAWS</dt>
-				<dd>
+				<summary>Screen Readers Results</summary>
 				<dl>
-					<dt>Firefox</dt>
-					<dd><p><q>This is some kind of extra text.... Checkbox 1 not checked. To check press space bar.</q></p></dd>
-					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Fieldset with labelledy Checkbox 1 checkbox not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>This is some kind of extra text.... Checkbox 1 not checked. To check press space bar.</q></p></dd>
+					<dt>JAWS 2020, 2021</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>legend</code> text then the paragraph.  Full support.</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>legend</code> text then the paragraph.  Full support.</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>legend</code> text then the paragraph.  Full support.</dd>
+						</dl>
+					</dd>
+					<dt>NVDA 2021.2</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+						</dl>
+					</dd>
+					<dt>Narrator</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+							<dt>Chrome 94</dt>
+							<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>legend</code>, not the paragraph.</dd>
+
+						</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+						</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the <code>legend</code> text twice, and then the paragraph.</dd>
+							</dl>
+						</dd>
 				</dl>
-				</dd>
-				<dt>NVDA</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><p><q>This is some kind of extra text...grouping. Checkbox 1 checkbox not checked.</q></p></dd>
-					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Checkbox 1 checkbox not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>This is some kind of extra text...grouping. Checkbox 1 checkbox not checked.</q></p></dd>
-				</dl>
-				</dd>
-				<dt>iOS Voice Over</dt>
-				<dd>
-				<dl>
-					<dt>Safari, Firefox, and Chrome</dt>
-					<dd><q>Only reads label.</q></dd>
-					<dt>Opera Mini</dt>
-					<dd>Abosultely nothing</dd>
-				</dl>
-				</dd>
-				<dt>OS X Voice Over</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><q>Checkbox 1. Checkbox 1.  This is some kind of extra text....Unchecked checkbox.</q></dd>
-					<dt>Chrome</dt>
-					<dd><q>Checkbox 1.  This is some kind of extra text...Unchecked checkbox</q></dd>
-					<dt>Safari</dt>
-					<dd><q>Checkbox 1. Unchecked checkbox</q></dd>
-					<dt>Opera</dt>
-					<dd><q>Checkbox 1. This is some kind of extra text..... Unchecked checkbox.</q></dd>
-				</dl>
-				</dd>
-			</dl>
-		</details>
-		-->
-		<!--
-			<fieldset aria-describedby="extraInfo">
-				<legend>checkbox fieldset with describedby</legend>
-				<label><input type="checkbox"> Checkbox 2</label>
-			</fieldset>
-			<details>
-			<summary>Screen Readers Results</summary>
-			<dl>
-				<dt>JAWS</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><p><q>Fieldset with describedy by.  This is some kind of extra text.... Checkbox 2 not checked. To check press space bar.</q></p></dd>
-					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Fieldset with describedy by. Checkbox 2 not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>Fieldset with describedy by. Checkbox 2 not checked. To check press space bar.</q></p></dd>
-				</dl>
-				</dd>
-				<dt>NVDA</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><p>Clickable Checkbox 2 checkbox not checked.</p></dd>
-					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Checkbox 2 checkbox not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>Checkbox 2 checkbox not checked.</q></p></dd>
-				</dl>
-				</dd>
-				<dt>iOS Voice Over</dt>
-				<dd>
-				<dl>
-					<dt>Safari, Firefox, and Chrome</dt>
-					<dd><q>Only reads label.</q></dd>
-					<dt>Opera Mini</dt>
-					<dd>Abosultely nothing</dd>
-				</dl>
-				</dd>
-				<dt>OS X Voice Over</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><q>Checkbox 2. Checkbox 2 fieldset with describedby fieldset with describedby checkbox. Unchecked checkbox.</q></dd>
-					<dt>Chrome</dt>
-					<dd><q>Checkbox 2 fieldset with describedby. Unchecked checkbox.</q></dd>
-					<dt>Safari</dt>
-					<dd><q>Checkbox 2. Unchecked checkbox</q></dd>
-					<dt>Opera</dt>
-					<dd><q>Checkbox 2 fieldset with describedby. Unchecked checkbox.</q></dd>
-				</dl>
-				</dd>
-			</dl>
-		</details>
-		-->
-		<fieldset aria-describedby="extraInfo">
-			<legend>Radio button fieldset with describedby</legend>
-			<label><input type="radio" name="radioFSDB">Radio Button 1</label>
-			<label><input type="radio" name="radioFSDB">Radio Button 2</label>
-		</fieldset>
-		<!--
-		<fieldset>
-				<legend aria-labelledby="extraInfo">legend with labelledby</legend>
-				<label><input type="checkbox"> Checkbox 3</label>
-			</fieldset>
-			<details>
-			<summary>Screen Readers Results</summary>
-			<dl>
-				<dt>JAWS</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><p><q>Legend with labelledby Checkbox 3 not checked. To check press space bar.</q></p></dd>
-					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Legend with labelledby Checkbox 3 not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>This is some kind of extra text.... Checkbox 3 not checked. To check press space bar.</q></p></dd>
-				</dl>
-				</dd>
-				<dt>NVDA</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><p><q>Clickable Checkbox 3 checkbox not checked.</q></p></dd>
-					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Checkbox 3 checkbox not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>Checkbox 3 checkbox not checked.</q></p></dd>
-				</dl>
-				</dd>
-				<dt>iOS Voice Over</dt>
-				<dd>
-				<dl>
-					<dt>Safari, Firefox, and Chrome</dt>
-					<dd><q>Only reads label.</q></dd>
-					<dt>Opera Mini</dt>
-					<dd>Abosultely nothing</dd>
-				</dl>
-				</dd>
-				<dt>OS X Voice Over</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><q>Checkbox 3. Checkbox 3. Legend with labelledby. This is some kind of extra text....Unchecked checkbox.</q></dd>
-					<dt>Chrome</dt>
-					<dd><q>Checkbox 3.  This is some kind of extra text...Unchecked checkbox</q></dd>
-					<dt>Safari</dt>
-					<dd><q>Checkbox 3. Unchecked checkbox</q></dd>
-					<dt>Opera</dt>
-					<dd><q>Checkbox 3. This is some kind of extra text..... Unchecked checkbox.</q></dd>
-				</dl>
-				</dd>
-			</dl>
-		</details>
-		-->
-		<fieldset aria-labelledby="extraInfo">
-			<legend>radio buttons fieldset with labelledby</legend>
-			<label><input type="radio" name="radioFSLB">radio button 3</label>
-			<label><input type="radio" name="radioFSLB">radio button 4</label>
-		</fieldset>
-		<fieldset>
-			<legend aria-describedby="extraInfo">radio buttons legend with describedby</legend>
-			<label><input type="radio" name="radioDBLB">radio button 5</label>
-			<label><input type="radio" name="radioDBLB">radio button 6</label>
-		</fieldset>
-		<fieldset>
-			<legend aria-labelledby="extraInfo">radio buttons legend with labelledby</legend>
-			<label><input type="radio" name="radioLLB">radio button 7</label>
-			<label><input type="radio" name="radioLLB">radio button 8</label>
-		</fieldset>
-			<!--
-			<fieldset>
-				<legend aria-describedby="extraInfo">legend with describedby</legend>
+			</details>
+				<fieldset aria-labelledby="extraInfo">
+					<legend>checkbox with <code>aria-labelledby</code> in the <code>fieldset</code> element.</legend>
+					<label><input type="checkbox"> Checkbox 2</label>
+				</fieldset>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+						<dt>iOS Voice Over (iOS 14.8) when using Form Fields in the rotor and swiping down</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd>The paragraph is read, but the <code>legend</code> text is not.</dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+				<fieldset>
+					<legend  aria-describedby="extraInfo">checkbox with <code>aria-describedby</code> in the <code>legend</code> element.</legend>
+					<label><input type="checkbox"> Checkbox 3</label>
+				</fieldset>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Reads <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Reads <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads <code>legend</code> text, but not the paragraph.</dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the <code>legend</code> text twice, but not the paragraph.</dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+				<fieldset>
+				<legend aria-labelledby="extraInfo">checkbox with <code>aria-labelledby</code> in the <code>legend</code> element.</legend>
 				<label><input type="checkbox"> Checkbox 4</label>
 			</fieldset>
 			<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads paragraph, but not <code>legend</code> text.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads paragraph, but not <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads paragraph, but not <code>legend</code> text.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads paragraph, but not <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads paragraph, but not <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the <code>legend</code> text twice, but not the paragraph.</dd>
+							</dl>
+						</dd>
+
+					</dl>
+				</details>
+				<fieldset aria-describedby="extraInfo">
+					<legend>Radio button with <code>aria-describedby</code> in the <code>fieldset</code> element.</legend>
+					<label><input type="radio" name="radioFSDB">Radio Button 1</label>
+					<label><input type="radio" name="radioFSDB">Radio Button 2</label>
+				</fieldset>
+				<details>
+				<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Reads the <code>legend</code> then the paragraph.  Full support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Legend, but not paragraph.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads the <code>legend</code> then the paragraph.  Full support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the <code>legend</code> then the paragraph.  Full support.</dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox</dt>
+								<dd>Reads the <code>legend</code> text then then paragraph.  Full support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Reads the <code>legend</code> text then then paragraph.  Full support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Reads the <code>legend</code> text then then paragraph.  Full support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the <code>legend</code> text then then paragraph.  Full support.</dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads <code>legend</code> text, but not the paragraph.</dd>
+							</dl>
+						</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd>Reads the paragraph, but not the <code>legend</code> text on each radio button.</dd>
+						</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the <code>legend</code> text twice, and then the paragraph. Full support.</dd>
+							</dl>
+						</dd>
+
+				</dl>
+			</details>
+
+			<fieldset aria-labelledby="extraInfo">
+				<legend>radio buttons  with <code>aria-labelledby</code> in the <code>fieldset</code> element.</legend>
+				<label><input type="radio" name="radioFSLB">radio button 3</label>
+				<label><input type="radio" name="radioFSLB">radio button 4</label>
+			</fieldset>
+			<details>
+			<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS 2020, 2021</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+						<dt>Internet Explorer 11</dt>
+						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+						<dt>Chrome 94</dt>
+						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+						<dt>Edge 94</dt>
+						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+					</dl>
+					</dd>
+					<dt>NVDA 201.4</dt>
+					<dd>
+					<dl>
+						<dt>Firefox</dt>
+						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+						<dt>Internet Explorer 11</dt>
+						<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+						<dt>Chrome 94</dt>
+						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+						<dt>Edge 94</dt>
+						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+					</dl>
+					</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+							</dl>
+						</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+					<dl>
+						<dt>Safari, Firefox, and Chrome</dt>
+						<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
+					</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the paragraph twice, but not the <code>legend</code> text.</dd>
+							</dl>
+						</dd>
+
+					</dl>
+				</details>
+				
+				<fieldset>
+					<legend aria-describedby="extraInfo">radio buttons <code>aria-describedby</code> in <code>legend</code> element.</legend>
+					<label><input type="radio" name="radioDBLB">radio button 5</label>
+					<label><input type="radio" name="radioDBLB">radio button 6</label>
+				</fieldset>
+				<details>
+				<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+						</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+						<dl>
+							<dt>Firefox</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+						</dl>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							</dl>
+						</dd>
+						</dd>
+							<dt>iOS Voice Over</dt>
+							<dd>
+								<dl>
+									<dt>Safari, Firefox, and Chrome</dt>
+									<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
+								</dl>
+							</dd>
+							<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the <code>legend</code> text twice, but not the paragraph.</dd>
+							</dl>
+						</dd>
+
+						</dd>
+					</dl>
+				</details>
+			
+		<fieldset>
+			<legend aria-labelledby="extraInfo">radio buttons with <code>aria-labelledby</code> in the <code>legend</code> element.</legend>
+			<label><input type="radio" name="radioLLB">radio button 7</label>
+			<label><input type="radio" name="radioLLB">radio button 8</label>
+		</fieldset>
+		<details>
 			<summary>Screen Readers Results</summary>
 			<dl>
-				<dt>JAWS</dt>
+				<dt>JAWS 2020, 2021</dt>
 				<dd>
 				<dl>
 					<dt>Firefox</dt>
-					<dd><p><q>Legend with describedy by. Checkbox 4 checkbox not checked. To check press space bar.</q></p></dd>
+					<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
 					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Legend with describedy by. Checkbox 4 checkbox not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>Legend with describedy by. Checkbox 4 checkbox not checked. To check press space bar.</q></p></dd>
+					<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+					<dt>Chrome 94</dt>
+					<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+					<dt>Edge 94</dt>
+					<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
 				</dl>
 				</dd>
-				<dt>NVDA</dt>
+				<dt>NVDA 2021.2</dt>
 				<dd>
 				<dl>
 					<dt>Firefox</dt>
-					<dd><p>Clickable Checkbox 4 checkbox not checked.</p></dd>
+					<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
 					<dt>Internet Explorer 11</dt>
-					<dd><p><q>Checkbox 4 checkbox not checked.</q></p></dd>
-					<dt>Opera 43</dt>
-					<dd><p><q>Checkbox 4 checkbox not checked.</q></p></dd>
+					<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+					<dt>Chrome 94</dt>
+					<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+					<dt>Edge 94</dt>
+					<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
 				</dl>
 				</dd>
+				<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+							</dl>
+						</dd>
 				<dt>iOS Voice Over</dt>
 				<dd>
 				<dl>
 					<dt>Safari, Firefox, and Chrome</dt>
-					<dd><q>Only reads label.</q></dd>
-					<dt>Opera Mini</dt>
-					<dd>Abosultely nothing</dd>
+					<dd></dd>
 				</dl>
 				</dd>
-				<dt>OS X Voice Over</dt>
-				<dd>
-				<dl>
-					<dt>Firefox</dt>
-					<dd><q>Checkbox 4. Checkbox 4. Legend with describedby legned with describedby. Unchecked checkbox.</q></dd>
-					<dt>Chrome</dt>
-					<dd><q>Checkbox 4.  Legend with describedby.  Unchecked checkbox</q></dd>
-					<dt>Safari</dt>
-					<dd><q>Checkbox 4. Unchecked checkbox</q></dd>
-					<dt>Opera</dt>
-					<dd><q>Checkbox 4. Legend with describedby. Unchecked checkbox.</q></dd>
+				<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 93</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
+								<dt>Safari 13, 15</dt>
+								<dd>Reads the <code>legend</code> text twice, but not the paragraph.</dd>
+							</dl>
+						</dd>
 				</dl>
-				</dd>
-			</dl>
-		</details>
+			</details>
+
+			<!--
+			
 		<div class="fieldHolder">
 			<label for="txt1">Input with labelledby</label><br>
 			<input id="txt1" aria-labelledby="extraInfo" type="text">
@@ -270,6 +577,10 @@
 					<dd><p><q>This is some kind of extra text... Edit. Type and text.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>This is some kind of extra text... Edit. Type and text.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>NVDA</dt>
@@ -281,6 +592,10 @@
 					<dd><p><q>This is some kind of extra text... Edit blank.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>This is some kind of extra text... Edit blank.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>iOS Voice Over</dt>
@@ -323,6 +638,10 @@
 					<dd><p><q>Input with describedby edit. This is some kind of extra text... Type and text.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>Input with describedby edit. Type and text.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>NVDA</dt>
@@ -334,6 +653,10 @@
 					<dd><p><q>Input with describedby edit. This is some kind of extra text... Blank.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>Input with describedby edit. This is some kind of extra text... Blank.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>iOS Voice Over</dt>
@@ -388,6 +711,10 @@ text....</q></p></dd>
 					<dd><p><q>Label with labelledby edit. Type and text.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>This is some kind of extra text... Type and text.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>NVDA</dt>
@@ -399,6 +726,10 @@ text....</q></p></dd>
 					<dd><p><q>Label with labelledby edit. Blank.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>This is some kind of extra text... Edit blank.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>iOS Voice Over</dt>
@@ -441,6 +772,10 @@ text....</q></p></dd>
 					<dd><p><q>Label with describedby edit. Type and text.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>Label with describedby edit. Type and text.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>NVDA</dt>
@@ -452,6 +787,10 @@ text....</q></p></dd>
 					<dd><p><q>Label with describedby edit. Blank.</q></p></dd>
 					<dt>Opera 43</dt>
 					<dd><p><q>Label with describedby edit. Blank.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 				<dt>iOS Voice Over</dt>
@@ -474,6 +813,10 @@ text....</q></p></dd>
 					<dd><p><q>Label with describedby. Edit text.</q></p></dd>
 					<dt>Opera</dt>
 					<dd><p><q>Label with describedby. Edit text.</q></p></dd>
+					<dt>Chrome 94</dt>
+					<dd></dd>
+					<dt>Edge 94</dt>
+					<dd></dd>
 				</dl>
 				</dd>
 			</dl>
@@ -482,23 +825,24 @@ text....</q></p></dd>
 		</form>
 		<h2>Summary</h2>
 		<ul>
-			<li>JAWS only reads the <code>&lt;label&gt;</code>, <code>&lt;legend&gt;</code>, and <code>aria-describedby</code> when <code>&lt;fieldset&gt;</code> has <code>aria-describedby</code>, but not <code>aria-labelledby</code>, and then only in Firefox.</li>
-			<li>JAWS never reads the <code>aria-describedby</code> bit when <code>aria-describedby</code>/<code>aria-labelledby</code> are applied to the <code>&lt;legend&gt;</code> except in Opera.</li>
-			<li>NVDA never reads the <code>aria-describedby</code> bit when <code>aria-describedby</code>/<code>aria-labelledby</code> are applied to the <code>&lt;legend&gt;</code> or <code>&lt;fieldset&gt;</code> Except in Firefox and Opera when <code>aria-labelledby</code> are applied to the <code>&lt;fieldset&gt;</code>.</li>
-			<li>Applying <code>aria-labelledby</code> to an <code>&lt;input&gt;</code> prevents its <code>&lt;label&gt;</code> from being read, <em>except</em> on iOS VoiceOver.</li>
-			<li>Applying <code>aria-describedby</code> to the <code>&lt;input&gt;</code> works on everything except Opera + JAWS and Opera Mini + iOS VoiceOver.</li>
-			<li>Applying <code>aria-describedby</code> or <code>aria-labelledby</code> to the <code>&lt;label&gt;</code> never works (ie: it never reads both).</li>
-			<li>If using iOS and VoiceOver, it makes almost no difference if you use Safari, Chrome, or Firefox.</li>
-			<li>If using VoiceOver on OS X, Firefox reads a lot of stuff twice, and Safari leaves a lot out.</li>
-			<li>Adding <code>tabindex="-1"</code> to the Extra Text makes no appreciable difference.  (See <a href="labelledby-describedby-tabindex-1.html"><code>tabindex-"-1"</code> test results</a>.)</li>
+			<li>Using <code>aria-describedby</code> or <code>aria-labelledby</code> should <em>only</em> be used in the <code>&lt;fieldset&gt;</code> element, and <em>not</em> the <code>&lt;legend&gt;</code>.</li>
+			<li>Having <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element enjoys the most support; still lacks with IE, VoiceOver + non-Safari, and Narrator + non-Edge.</li>
+			<li>Even though Edge and Chrome use the same engine (Chromium) Narrator <em>only</em> reads <code>&lt;legend&gt;</code> text with Edge.  It's like they went out of their way to not support other browsers.</li>
+			<li>Putting <code>aria-labelledby</code> in the <code>&lt;fieldset&gt;</code> element has the most consistent support: it reads the paragraph instead of the <code>&lt;legend&gt;</code> text.  The only stacks this doesn't apply to are: NVDA + Internet Explorer and Narrator + non-Edge.</li>
+			<li>Putting <code>aria-describedby</code> in the <code>&lt;legend&gt;</code> element is never supported.  The paragraph is just ignored.</li>
+			<li>Support for putting <code>aria-labelledby</code> in the <code>&lt;legend&gt;</code> is all over the map.  Don't do.</li>
+			<li>VoiceOver on iOS has poor <code>&lt;legend&gt;</code> support in the first place.  So, even though having <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element only reads the paragraph, and not the <code>&lt;legend&gt;</code> text, that's consistent with how it handles <code>&lt;legend&gt;</code>s without <code>aria-describedby</code>.  Maybe this will be fixed in iOS 15?</li>
+
+			<li>Adding <code>tabindex="-1"</code> to the Extra Text makes no difference whatsoever.  (See <a href="labelledby-describedby-1.html">test results</a>.)  (I think it used to make a difference.  See: <a href="https://www.davidmacd.com/blog/is-tabindex-required-on-describedby.html">Testing aria-describedby and aria-labelledby in browsers and screen readers. Does it require tabindex on span references in IE11?- David MacDonald Web Accessibility Blog, testing, teaching, and discussion</a>.)</li>
 		</ul>
 		<h2>Conclusion</h2>
 		<p>Dos and don'ts:</p>
 		<ol>
-			<li><strong>Don't</strong> put <code>aria-describedby</code> or <code>aria-labelledby</code> in a <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, or <code>&lt;legend&gt;</code>.</li>
+			<li><strong>Don't</strong> put <code>aria-describedby</code> or <code>aria-labelledby</code> in a <code>&lt;legend&gt;</code> element.</li>
 			<li><strong>Do</strong> use <code>aria-describedby</code> in <code>&lt;input&gt;</code>s to supplement the <code>&lt;label&gt;</code>.</li>
-			<li><strong>Don't</strong> use Safari on OS X with VoiceOver. If using VoiceOver on OS X, Firefox gives a slight advantage, even if it reads stuff out twice sometimes.</li>
-			<li><strong>Don't</strong> use Opera Mini on iOS if you go blind or require a screen reader.</li>
+			<li><strong>Do</strong> use Safari if using OS X with VoiceOver.  Firefox support is getting better, but Safari is still your best bet.</li>
+			<li><strong>Do</strong> use Edge if you must use Narrator.</li>
+			<li><strong>Only</strong> use <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element if you don't care about supporting Internet Explorer or non-supported stacks.  (VoiceOver only <em>officially</em> supports Safari on OS X, and apparently Narrator only supports Edge on Windows 10.)
 		</ol>
 
 		</main>
