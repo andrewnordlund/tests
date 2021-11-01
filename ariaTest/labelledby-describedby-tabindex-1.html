@@ -833,7 +833,7 @@ text....</q></p></dd>
 		<h2>Summary</h2>
 		<ul>
 			<li>Using <code>aria-describedby</code> or <code>aria-labelledby</code> should <em>only</em> be used in the <code>&lt;fieldset&gt;</code> element, and <em>not</em> the <code>&lt;legend&gt;</code>.</li>
-			<li>Having <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element enjoys the most support; still lacks with IE, VoiceOver + non-Safari, and Narrator + non-Edge.</li>
+			<li>Having <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element enjoys the most support; still lacks with IE, OS X VoiceOver + non-Safari, and Narrator + non-Edge.</li>
 			<li>Even though Edge and Chrome use the same engine (Chromium) Narrator <em>only</em> reads <code>&lt;legend&gt;</code> text with Edge.  It's like they went out of their way to not support other browsers.</li>
 			<li>Putting <code>aria-labelledby</code> in the <code>&lt;fieldset&gt;</code> element has the most consistent support: it reads the paragraph instead of the <code>&lt;legend&gt;</code> text.  The only stacks this doesn't apply to are: NVDA + Internet Explorer and Narrator + non-Edge.</li>
 			<li>Putting <code>aria-describedby</code> in the <code>&lt;legend&gt;</code> element is never supported.  The paragraph is just ignored.</li>
