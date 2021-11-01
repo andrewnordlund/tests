@@ -390,6 +390,20 @@
 						<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
 					</dl>
 					</dd>
+					<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+							</dl>
+						</dd>
+	
 					<dt>iOS Voice Over</dt>
 					<dd>
 					<dl>
@@ -445,6 +459,20 @@
 							<dt>Edge 94</dt>
 							<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
 						</dl>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the <code>legend</code> text, but not the paragraph.</dd>
+							</dl>
+						</dd>
+
 						</dd>
 							<dt>iOS Voice Over</dt>
 							<dd>
@@ -503,6 +531,20 @@
 					<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
 				</dl>
 				</dd>
+			<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Chrome 94</dt>
+								<dd>Only reads the <code>label</code>.  It does not read the <code>legend</code> text nor the paragraph.  No support.</dd>
+								<dt>Edge 94</dt>
+								<dd>Reads the paragraph, but not the <code>legend</code>.</dd>
+							</dl>
+						</dd>
+	
 				<dt>iOS Voice Over</dt>
 				<dd>
 				<dl>
@@ -790,25 +832,24 @@ text....</q></p></dd>
 		</form>
 		<h2>Summary</h2>
 		<ul>
-			<li>JAWS only reads the <code>&lt;label&gt;</code>, <code>&lt;legend&gt;</code>, and <code>aria-describedby</code> when <code>&lt;fieldset&gt;</code> has <code>aria-describedby</code>, but not <code>aria-labelledby</code>, and then only in Firefox.</li>
-			<li>JAWS never reads the <code>aria-describedby</code> bit when <code>aria-describedby</code>/<code>aria-labelledby</code> are applied to the <code>&lt;legend&gt;</code> except in Opera.</li>
-			<li>NVDA never reads the <code>aria-describedby</code> bit when <code>aria-describedby</code>/<code>aria-labelledby</code> are applied to the <code>&lt;legend&gt;</code> or <code>&lt;fieldset&gt;</code> Except in Firefox and Opera when <code>aria-labelledby</code> are applied to the <code>&lt;fieldset&gt;</code>.</li>
-			<li>Applying <code>aria-labelledby</code> to an <code>&lt;input&gt;</code> prevents its <code>&lt;label&gt;</code> from being read, <em>except</em> on iOS VoiceOver.</li>
-			<li>Applying <code>aria-describedby</code> to the <code>&lt;input&gt;</code> works on everything except Opera + JAWS and Opera Mini + iOS VoiceOver.</li>
-			<li>Applying <code>aria-describedby</code> or <code>aria-labelledby</code> to the <code>&lt;label&gt;</code> never works.</li>
-			<li>If using iOS and VoiceOver, it makes almost no difference if you use Safari, Chrome, or Firefox.</li>
-			<li>If using iOS, selecting "Form Fields" on the rotor and swiping down, only the <code>aria-describedby</code> text is read when it's in the <code>&lt;fieldset&gt;</code> element.</li>
+			<li>Using <code>aria-describedby</code> or <code>aria-labelledby</code> should <em>only</em> be used in the <code>&lt;fieldset&gt;</code> element, and <em>not</em> the <code>&lt;legend&gt;</code>.</li>
+			<li>Having <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element enjoys the most support; still lacks with IE, VoiceOver + non-Safari, and Narrator + non-Edge.</li>
+			<li>Even though Edge and Chrome use the same engine (Chromium) Narrator <em>only</em> reads <code>&lt;legend&gt;</code> text with Edge.  It's like they went out of their way to not support other browsers.</li>
+			<li>Putting <code>aria-labelledby</code> in the <code>&lt;fieldset&gt;</code> element has the most consistent support: it reads the paragraph instead of the <code>&lt;legend&gt;</code> text.  The only stacks this doesn't apply to are: NVDA + Internet Explorer and Narrator + non-Edge.</li>
+			<li>Putting <code>aria-describedby</code> in the <code>&lt;legend&gt;</code> element is never supported.  The paragraph is just ignored.</li>
+			<li>Support for putting <code>aria-labelledby</code> in the <code>&lt;legend&gt;</code> is all over the map.  Don't do.</li>
+			<li>VoiceOver on iOS has poor <code>&lt;legend&gt;</code> support in the first place.  So, even though having <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element only reads the paragraph, and not the <code>&lt;legend&gt;</code> text, that's consistent with how it handles <code>&lt;legend&gt;</code>s without <code>aria-describedby</code>.  Maybe this will be fixed in iOS 15?</li>
 
-			<li>If using VoiceOver on OS X, Firefox reads a lot of stuff twice, and Safari leaves a lot out.</li>
-			<li>Adding <code>tabindex="-1"</code> to the Extra Text makes no difference whatsoever.  (See <a href="labelledby-describedby.html">test results</a>.)  (I think it used to make a difference.  See: <a href="https://www.davidmacd.com/blog/is-tabindex-required-on-describedby.html">Testing aria-describedby and aria-labelledby in browsers and screen readers. Does it require tabindex on span references in IE11?- David MacDonald Web Accessibility Blog, testing, teaching, and discussion</a>.)</li>
+			<li>Adding <code>tabindex="-1"</code> to the Extra Text makes no difference whatsoever.  (See <a href="labelledby-describedby-1.html">test results</a>.)  (I think it used to make a difference.  See: <a href="https://www.davidmacd.com/blog/is-tabindex-required-on-describedby.html">Testing aria-describedby and aria-labelledby in browsers and screen readers. Does it require tabindex on span references in IE11?- David MacDonald Web Accessibility Blog, testing, teaching, and discussion</a>.)</li>
 		</ul>
 		<h2>Conclusion</h2>
 		<p>Dos and don'ts:</p>
 		<ol>
-			<li><strong>Don't</strong> put <code>aria-describedby</code> or <code>aria-labelledby</code> in a <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, or <code>&lt;legend&gt;</code>.</li>
+			<li><strong>Don't</strong> put <code>aria-describedby</code> or <code>aria-labelledby</code> in a <code>&lt;legend&gt;</code> element.</li>
 			<li><strong>Do</strong> use <code>aria-describedby</code> in <code>&lt;input&gt;</code>s to supplement the <code>&lt;label&gt;</code>.</li>
-			<li><strong>Don't</strong> use Safari on OS X with VoiceOver.</li>
-			<li><strong>Don't</strong> use Opera Mini on iOS if you go blind or require a screen reader.</li>
+			<li><strong>Do</strong> use Safari if using OS X with VoiceOver.  Firefox support is getting better, but Safari is still your best bet.</li>
+			<li><strong>Do</strong> use Edge if you must use Narrator.</li>
+			<li><strong>Only</strong> use <code>aria-describedby</code> in the <code>&lt;fieldset&gt;</code> element if you don't care about supporting Internet Explorer or non-supported stacks.  (VoiceOver only <em>officially</em> supports Safari on OS X, and apparently Narrator only supports Edge on Windows 10.)
 		</ol>
 
 		</main>
