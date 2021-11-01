@@ -54,7 +54,7 @@
 					<dd>
 						<dl>
 							<dt>Safari, Firefox, and Chrome</dt>
-							<dd></dd>
+							<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
 						</dl>
 					</dd>
 					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -103,11 +103,11 @@
 								<dd>Reads the paragraph, but not the <code>legend</code> text.</dd>
 							</dl>
 						</dd>
-						<dt>iOS Voice Over</dt>
+						<dt>iOS Voice Over (iOS 14.8) when using Form Fields in the rotor and swiping down</dt>
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>The paragraph is read, but the <code>legend</code> text is not.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -160,7 +160,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -213,7 +213,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -268,7 +268,7 @@
 					<dd>
 						<dl>
 							<dt>Safari, Firefox, and Chrome</dt>
-							<dd></dd>
+							<dd>Reads the paragraph, but not the <code>legend</code> text on each radio button.</dd>
 						</dl>
 					</dd>
 					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -324,7 +324,7 @@
 					<dd>
 					<dl>
 						<dt>Safari, Firefox, and Chrome</dt>
-						<dd></dd>
+						<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
 					</dl>
 					</dd>
 					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -380,7 +380,7 @@
 							<dd>
 								<dl>
 									<dt>Safari, Firefox, and Chrome</dt>
-									<dd></dd>
+									<dd>Only reads the <code>label</code> text.  The <code>legend</code> text and the paragraph are not read.</dd>
 								</dl>
 							</dd>
 							<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -727,6 +727,7 @@ text....</q></p></dd>
 			<li>Applying <code>aria-describedby</code> to the <code>&lt;input&gt;</code> works on everything except Opera + JAWS and Opera Mini + iOS VoiceOver.</li>
 			<li>Applying <code>aria-describedby</code> or <code>aria-labelledby</code> to the <code>&lt;label&gt;</code> never works (ie: it never reads both).</li>
 			<li>If using iOS and VoiceOver, it makes almost no difference if you use Safari, Chrome, or Firefox.</li>
+			<li>If using iOS, selecting "Form Fields" on the rotor and swiping down, only the <code>aria-describedby</code> text is read when it's in the <code>&lt;fieldset&gt;</code> element.</li>
 			<li>If using VoiceOver on OS X, Firefox reads a lot of stuff twice, and Safari leaves a lot out.</li>
 			<li>Adding <code>tabindex="-1"</code> to the Extra Text makes no appreciable difference.  (See <a href="labelledby-describedby-tabindex-1.html"><code>tabindex-"-1"</code> test results</a>.)</li>
 		</ul>
