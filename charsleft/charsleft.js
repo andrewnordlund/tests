@@ -37,7 +37,7 @@ charsLeftDiv4.innerHTML = "You have " + ta4.getAttribute("maxLength") + " charac
 ta4.addEventListener("input", updateCharCount4, false);
 //ta4.setAttribute("aria-describedby", (ta4.hasAttribute("aria-describedby")? ta4.getAttribute("aria-describedby") + " charsLeftDiv4" : "charsLeftDiv4"));
 let waitInterval = null;
-ta4.addEventListener("keyup", startWait, false);
+ta4.addEventListener("input", startWait, false);
 ta4.addEventListener("blur", function() { clearInterval(waitInterval); waitInterval=null;});
 ta4.parentNode.appendChild(charsLeftDiv4);
 
