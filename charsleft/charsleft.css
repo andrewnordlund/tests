@@ -1,0 +1,13 @@
+table {border: thin solid black;}
+td, th {border: thin inset #808080;}
+.hide {
+	display:none;
+}
+.sr-only {
+	clip: rect(1px,1px,1px,1px);
+	height: 1px;
+	margin: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
