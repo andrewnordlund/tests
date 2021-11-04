@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Inputs with Multiple Labels Test Page</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	</head>
+	<body>
+		<header>
+		<h1>Inputs with Multiple Labels Test Page</h1>
+		</header>
+		<main>
+		<form>
+			<div class="formHolder">
+				<label for="initTxt">Field With 1 explicit label:</label><br>
+				<input id="initTxt" type="text">
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS 2020, 2021</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>label</code> text then "type in text".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>label</code> text then "type in text".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>label</code> text then "type in text".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>label</code> text then "type in text".</dd>
+						</dl>
+					</dd>
+					<dt>NVDA 2021.2</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+						</dl>
+					</dd>
+					<dt>Narrator</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>label</code> text then "Edit".</dd>
+
+						</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd>Reads the <code>label</code> text then "text field".</dd>
+						</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd>Reads the <code>label</code> text then "Edit text".</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the <code>label</code> text then "Edit text".</dd>
+								<dt>Safari 15</dt>
+								<dd>Reads the <code>label</code> text then "Edit text".</dd>
+							</dl>
+						</dd>
+				</dl>
+			</details>
+
+			<div class="formHolder">
+				<label for="initTxt2">Field With First explicit label:</label><br>
+				<input id="initTxt2" type="text">
+				<label for="initTxt2">Field With Second explicit label:</label><br>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS 2020, 2021</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "type in text"</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Only reads the second <code>label</code> text, then "type in text"</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "type in text"</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "type in text"</dd>
+						</dl>
+					</dd>
+					<dt>NVDA 2021.2</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "Edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Only reads the second <code>label</code> text, then "Edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "Edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "Edit".</dd>
+						</dl>
+					</dd>
+					<dt>Narrator</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "Edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Only reads the second <code>label</code> text, then "Edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "Edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "Edit".</dd>
+
+						</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd>Reads the first <code>label</code> text then "text field".  Completeley ignores the second <code>label</code>.</dd>
+						</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit text".</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit text".</dd>
+								<dt>Safari 15</dt>
+								<dd>Only reads first explicit <code>label</code> text, then "edit text".  No menthon of second <code>label</code>.</dd>
+							</dl>
+						</dd>
+				</dl>
+			</details>
+			<div class="formHolder">
+				<label for="implicitLabelTxt">Field With one implicit label:<br>
+				<input id="implicitLabelTxt" type="text">
+				</label>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS 2020, 2021</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>label</code> text, then "type in text"</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>label</code> text, then "type in text"</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>label</code> text, then "type in text"</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>label</code> text, then "type in text"</dd>
+						</dl>
+					</dd>
+					<dt>NVDA 2021.2</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+						</dl>
+					</dd>
+					<dt>Narrator</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the <code>label</code> text, then "edit".</dd>
+
+						</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd>Reads the <code>label</code> text then "text field".</dd>
+						</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd>Reads the <code>label</code> text, then "edit text".</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the <code>label</code> text, then "edit text".</dd>
+								<dt>Safari 15</dt>
+								<dd>Reads the <code>label</code> text, then "edit text".</dd>
+							</dl>
+						</dd>
+				</dl>
+			</details>
+
+			<div class="formHolder">
+				<label for="implicitLabelTxt2">Field with implicit label with before:<br>
+				<input id="implicitLabelTxt2" type="text">
+				And after text
+				</label>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS 2020, 2021</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "type in text"</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "type in text"</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "type in text"</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "type in text"</dd>
+						</dl>
+					</dd>
+					<dt>NVDA 2021.2</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+						</dl>
+					</dd>
+					<dt>Narrator</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>label</code> text, then "edit".</dd>
+
+						</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd>Reads the <code>label</code> before, then after, then "text field".</dd>
+						</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd>Reads the <code>label</code> before, then after, then "edit text".</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the <code>label</code> before, then after, then "edit text".</dd>
+								<dt>Safari 15</dt>
+								<dd>Reads the <code>label</code> before, then "and one more item", then "edit text".</dd>
+							</dl>
+						</dd>
+				</dl>
+			</details>
+
+			<div class="formHolder">
+				<p id="lbl1">Aria-label part 1</p>
+				<input aria-labelledby="lbl1 lbl2">
+				<p id="lbl2">Other Aria-label part</p>
+			</div>
+			<details>
+				<summary>Screen Readers Results</summary>
+				<dl>
+					<dt>JAWS 2020, 2021</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "type in text"</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "type in text"</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "type in text"</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "type in text"</dd>
+						</dl>
+					</dd>
+					<dt>NVDA 2021.2</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>"Edit".  It completely ignores the <code>aria-labelledby</code> paragraphs.</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit".</dd>
+						</dl>
+					</dd>
+					<dt>Narrator</dt>
+					<dd>
+						<dl>
+							<dt>Firefox 92</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit".</dd>
+							<dt>Internet Explorer 11</dt>
+							<dd>"Edit".  It completely ignores the <code>aria-labelledby</code> paragraphs.</dd>
+							<dt>Chrome 94</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit".</dd>
+							<dt>Edge 94</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit".</dd>
+
+						</dl>
+					</dd>
+					<dt>iOS Voice Over</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Firefox, and Chrome</dt>
+							<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "text field".</dd>
+						</dl>
+					</dd>
+					<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit text".</dd>
+								<dt>Chrome 95</dt>
+								<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit text".</dd>
+								<dt>Safari 15</dt>
+								<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit text".</dd>
+							</dl>
+						</dd>
+				</dl>
+			</details>
+
+
+</form>
+		<h2>Summary</h2>
+		<ul>
+			<li>Only SRs (Screen Readers) were tested.  No vooice control systems were tested.</li>
+			<li>All tested SR+Browser combos support single <code>&lt;label&gt;</code>s, whether implicit or explicit.</li>
+			<li>Having two explicit <code>&lt;label&gt;</code>s does not work on iOS, or with Internet Explorer, or Safari+VoiceOver on OS X Catalina.</li>
+			<li>Having an <code>&lt;input&gt;</code> in the middle of text (ie: two implicit <code>&lt;label&gt;</code>s) works on everything except VoiceOver desktop + Safari.</li>
+			<li>Having two elements referenced by <code>aria-labelledby</code> works in everything except Internet Explorer in NVDA and Narrator.</li>
+
+		</ul>
+		<h2>Conclusion</h2>
+		<p>It's best to just have 1 <code>&lt;label&gt;</code>.  But if you must have two: try to use 1 <code>&lt;label&gt;</code>, and reference the other with <code>aria-describedby</code>.  If you can't do that, then use <code>aria-labelledby</code> unless you care about Internet Explorer....which you shouldn't.  It's not 2004 anymore.</p>
+		<p>Or if you don't care about Mac users, then two implicit <code>&lt;label&gt;</code>s works.</p>
+	</main>
+	
+
+
+</body></html>
