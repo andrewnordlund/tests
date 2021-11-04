@@ -139,7 +139,7 @@
 						<dd>
 							<dl>
 								<dt>Firefox 94</dt>
-								<dd>Reads the first, then the second <code>label</code> text, then "edit text".</dd>
+								<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit text".</dd>
 								<dt>Chrome 95</dt>
 								<dd>Reads the first, then the second <code>aria-labelledby</code> paragraphs, then "edit text".</dd>
 								<dt>Safari 15</dt>
@@ -360,11 +360,16 @@
 </form>
 		<h2>Summary</h2>
 		<ul>
+			<li>Only SRs (Screen Readers) were tested.  No vooice control systems were tested.</li>
+			<li>All tested SR+Browser combos support single <code>&lt;label&gt;</code>s, whether implicit or explicit.</li>
+			<li>Having two explicit <code>&lt;label&gt;</code>s does not work on iOS, or with Internet Explorer, or Safari+VoiceOver on OS X Catalina.</li>
+			<li>Having an <code>&lt;input&gt;</code> in the middle of text (ie: two implicit <code>&lt;label&gt;</code>s) works on everything except VoiceOver desktop + Safari.</li>
+			<li>Having two elements referenced by <code>aria-labelledby</code> works in everything except Internet Explorer in NVDA and Narrator.</li>
+
 		</ul>
 		<h2>Conclusion</h2>
-		<p>Dos and don'ts:</p>
-		<ol>
-		</ol>
+		<p>It's best to just have 1 <code>&lt;label&gt;</code>.  But if you must have two: try to use 1 <code>&lt;label&gt;</code>, and reference the other with <code>aria-describedby</code>.  If you can't do that, then use <code>aria-labelledby</code> unless you care about Internet Explorer....which you shouldn't.  It's not 2004 anymore.</p>
+		<p>Or if you don't care about Mac users, then two implicit <code>&lt;label&gt;</code>s works.</p>
 	</main>
 	
 
