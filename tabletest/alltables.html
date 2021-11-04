@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+		<title>Table Test</title>
+		<link rel="Stylesheet" type="text/css" href="table.css">
+	</head>
+	<body>
+		<header>
+			<h1>Table Test Page 1</h1>
+		</header>
+		<main>
+			<p>This page has various tables with screen reader results.</p>
+		<div id="contentPane">
+			<section>
+				<h2>Simple table with neigher id/headers nor scope, Top row of Headers</h2>
+				<table>
+					<tr>
+						<th>Column 1</th>
+						<th>Column 2</th>
+						<th>Column 3</th>
+					</tr>
+					<tr>
+						<td>Row 1 column 1</td>
+						<td>Row 1 column 2</td>
+						<td>Row 1 column 3</td>
+					</tr>
+					<tr>
+						<td>Row 2 column 1</td>
+						<td>Row 2 column 2</td>
+						<td>Row 2 column 3</td>
+					</tr>
+					<tr>
+						<td>Row 3 column 1</td>
+						<td>Row 3 column 2</td>
+						<td>Row 3 column 3</td>
+					</tr>
+				</table>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd></dd>
+								<dt>Chrome 95</dt>
+								<dd></dd>
+								<dt>Safari 15</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+			<section>
+				<h2>Simple table with neigher id/headers nor scope, Left Column of Headers</h2>
+				<table>
+					<tr>
+						<th>Row 1</th>
+						<td>Row 1 column 1</td>
+						<td>Row 1 column 2</td>
+						<td>Row 1 column 3</td>
+					</tr>
+					<tr>
+						<th>Row 2</th>
+						<td>Row 2 column 1</td>
+						<td>Row 2 column 2</td>
+						<td>Row 2 column 3</td>
+					</tr>
+					<tr>
+						<th>Row 3</th>
+						<td>Row 3 column 1</td>
+						<td>Row 3 column 2</td>
+						<td>Row 3 column 3</td>
+					</tr>
+				</table>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd></dd>
+								<dt>Chrome 95</dt>
+								<dd></dd>
+								<dt>Safari 15</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+
+			<section>
+				<h2>Simple table with, Top Row of Headers</h2>
+				<table>
+					<tr>
+						<th scope="col">Column 1</th>
+						<th scope="col">Column 2</th>
+						<th scope="col">Column 3</th>
+					<tr>
+						<td>Row 1 column 1</td>
+						<td>Row 1 column 2</td>
+						<td>Row 1 column 3</td>
+					</tr>
+					<tr>
+						<td>Row 2 column 1</td>
+						<td>Row 2 column 2</td>
+						<td>Row 2 column 3</td>
+					</tr>
+					<tr>
+						<td>Row 3 column 1</td>
+						<td>Row 3 column 2</td>
+						<td>Row 3 column 3</td>
+					</tr>
+				</table>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd></dd>
+								<dt>Chrome 95</dt>
+								<dd></dd>
+								<dt>Safari 15</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+
+			<section>
+				<h2>Simple table with Scope, Left Column of Headers</h2>
+				<table>
+					<tr>
+						<th scope="row">Row 1</th>
+						<td>Row 1 column 1</td>
+						<td>Row 1 column 2</td>
+						<td>Row 1 column 3</td>
+					</tr>
+					<tr>
+						<th scope="row">Row 2</th>
+						<td>Row 2 column 1</td>
+						<td>Row 2 column 2</td>
+						<td>Row 2 column 3</td>
+					</tr>
+					<tr>
+						<th scope="row">Row 3</th>
+						<td>Row 3 column 1</td>
+						<td>Row 3 column 2</td>
+						<td>Row 3 column 3</td>
+					</tr>
+				</table>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd></dd>
+								<dt>Chrome 95</dt>
+								<dd></dd>
+								<dt>Safari 15</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+
+			<section>
+				<h2>Simple table with Scope, Left Column and Top Row of Headers</h2>
+				<table>
+					<tr>
+						<td></td>
+						<th scope="col">Column 1</th>
+						<th scope="col">Column 2</th>
+						<th scope="col">Column 3</th>
+					</tr>
+					<tr>
+						<th scope="row">Row 1</th>
+						<td>Row 1 column 1</td>
+						<td>Row 1 column 2</td>
+						<td>Row 1 column 3</td>
+					</tr>
+					<tr>
+						<th>Row 2</th>
+						<td>Row 2 column 1</td>
+						<td>Row 2 column 2</td>
+						<td>Row 2 column 3</td>
+					</tr>
+					<tr>
+						<th>Row 3</th>
+						<td>Row 3 column 1</td>
+						<td>Row 3 column 2</td>
+						<td>Row 3 column 3</td>
+					</tr>
+				</table>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd></dd>
+								<dt>Chrome 95</dt>
+								<dd></dd>
+								<dt>Safari 15</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+
+
+			Scope:
+			<table summary="">
+				<tr>
+					<th scope="col">Col 1</th>
+					<th scope="col">Col 2</th>
+				</tr>
+				<tr>
+					<td>1, 1</td>
+					<td>1, 2</td>
+				</tr>
+				<tr>
+					<td>2, 1</td>
+					<td>2, 2</td>
+				</tr>
+			</table>
+			Scope's and headers:
+			<table summary="this table sucks">
+				<tr>
+					<th id="col1A" scope="col">Col 1</th>
+					<th id="col2A" scope="col">Col 2</th>
+				</tr>
+				<tr>
+					<td headers="col1A">1, 1</td>
+					<td headers="col2A">1, 2</td>
+				</tr>
+				<tr>
+					<td headers="col1A">2, 1</td>
+					<td headers="col2A">2, 2</td>
+				</tr>
+			</table>
+			Ids/Headers:
+			<table summary="This table exists to show how a table properly uses ids and headers, and long summaries.">
+				<tr>
+					<th id="col1B">Col 1</th>
+					<th id="col2B">Col 2</th>
+				</tr>
+				<tr>
+					<td headers="col1B">1, 1</td>
+					<td headers="col2B">1, 2</td>
+				</tr>
+				<tr>
+					<td headers="col1B">2, 1</td>
+					<td headers="col2B">2, 2</td>
+				</tr>
+			</table>
+			
+		</div>
+	</body>
+</html>
