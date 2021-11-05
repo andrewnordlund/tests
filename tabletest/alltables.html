@@ -46,58 +46,57 @@
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)  The <code>aria-describedby</code> is ignored, and the <code>aria-labelledby</code> is read.</dd>
 								<dt>Chrome 94</dt>
-								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.</dd>
 								<dt>Edge 94</dt>
-								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.</dd>
 							</dl>
 						</dd>
 						<dt>NVDA 2021.2</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd>Reads column header when moving left and right.</dd>
+								<dd>Reads column header when moving left and right.  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd>Reads column header when moving left and right.</dd>
+								<dd>Reads column header when moving left and right.  The <code>aria-describedby</code> and <code>aria-labelledby</code> are both ignored.</dd>
 								<dt>Chrome 94</dt>
-								<dd>Reads column header when moving left and right.</dd>
+								<dd>Reads column header when moving left and right.  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.</dd>
 								<dt>Edge 94</dt>
-								<dd>Reads column header when moving left and right.</dd>
+								<dd>Reads column header when moving left and right.  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.</dd>
 							</dl>
 						</dd>
 						<dt>Narrator</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>)</dd>
+								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>).  The <code>aria-describedby</code> is ignored, and the <code>aria-labelledby</code> is read.</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>)</dd>
+								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>). The <code>aria-describedby</code> and <code>aria-labelledby</code> are both ignored.</dd>
 								<dt>Chrome 94</dt>
-								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>)</dd>
+								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>).  The <code>aria-describedby</code> is ignored, and the <code>aria-labelledby</code> is read.</dd>
 								<dt>Edge 94</dt>
-								<dd>When navigating left and right, the header contents are read.  Header contents are not read when getting position (<kbd>Control+Shift+Alt+/</kbd>)
-	</dd>	
+								<dd>When navigating left and right, the header contents are read.  Header contents are not read when getting position (<kbd>Control+Shift+Alt+/</kbd>).  The <code>aria-describedby</code> is ignored, and the <code>aria-labelledby</code> is read.</dd>
 							</dl>
 						</dd>
 						<dt>iOS Voice Over</dt>
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd>Reads the headings as you move left and right as though they were programmatically associated.  Full support.</dd>
+								<dd>Reads the headings as you move left and right as though they were programmatically associated.  Full support.  The <code>aria-describedby</code> and <code>aria-labelledby</code> are completely ignored.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 94</dt>
-								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")</dd>
+								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.  The <code>aria-labelledby</code> text shows up in the rotor.</dd>
 								<dt>Chrome 95</dt>
-								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")</dd>
+								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.  The <code>aria-labelledby</code> text shows up in the rotor</dd>
 								<dt>Safari 15</dt>
-								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")</dd>
+								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")  Reads the <code>aria-describedby</code> and <code>aria-labelledby</code> parts.  The <code>aria-labelledby</code> text shows up in the rotor</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -920,6 +919,7 @@
 					<li>NVDA and JAWS are pretty consistent across the board.  They work with implicit headings, even when there's a row and column header.</li>
 					<li>For complex tables, there was no appreciable difference between using <code>scope=(col|row)group</code> and <code>id/headers</code>.</li>
 					<li>Traversing complex tables with JAWS and Firefox and Edge can be wonky; though JAWS 2021 seems to have fixed the bug in Edge.  Looking ahead to Firefox 94 in Nightly, it still hasn't been fixed there.</li>
+					<li>The <code>aria-describedby</code> and <code>aria-labelledby</code> are well supported in Mac OS X and Windows and completely ignored in iOS 14.
 			</section>
 			<section id="recommendations">
 				<h2>Recommendations</h2>
