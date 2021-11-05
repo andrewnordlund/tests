@@ -18,24 +18,24 @@
 				<h2>Simple table with neigher id/headers nor scope, Top row of Headers</h2>
 				<table>
 					<tr>
-						<th>Column 1</th>
-						<th>Column 2</th>
-						<th>Column 3</th>
+						<th>Coffee</th>
+						<th>Sandwiches</th>
+						<th>Scones</th>
 					</tr>
 					<tr>
-						<td>Row 1 column 1</td>
-						<td>Row 1 column 2</td>
-						<td>Row 1 column 3</td>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
 					</tr>
 					<tr>
-						<td>Row 2 column 1</td>
-						<td>Row 2 column 2</td>
-						<td>Row 2 column 3</td>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
 					</tr>
 					<tr>
-						<td>Row 3 column 1</td>
-						<td>Row 3 column 2</td>
-						<td>Row 3 column 3</td>
+						<td>31</td>
+						<td>32</td>
+						<td>33</td>
 					</tr>
 				</table>
 				<details>
@@ -92,11 +92,11 @@
 						<dd>
 							<dl>
 								<dt>Firefox 94</dt>
-								<dd></dd>
+								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")</dd>
 								<dt>Chrome 95</dt>
-								<dd></dd>
+								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")</dd>
 								<dt>Safari 15</dt>
-								<dd></dd>
+								<dd>Reads the heading as if it were associated when moving left and right.  When moving to a new row, it announces the row and the cell contents, but not the heading text  (Ex: "Row 3 of 4 33.")</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -106,22 +106,22 @@
 				<h2>Simple table with neigher id/headers nor scope, Left Column of Headers</h2>
 				<table>
 					<tr>
-						<th>Row 1</th>
-						<td>Row 1 column 1</td>
-						<td>Row 1 column 2</td>
-						<td>Row 1 column 3</td>
+						<th>Coffee</th>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
 					</tr>
 					<tr>
-						<th>Row 2</th>
-						<td>Row 2 column 1</td>
-						<td>Row 2 column 2</td>
-						<td>Row 2 column 3</td>
+						<th>Cupcakes</th>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
 					</tr>
 					<tr>
-						<th>Row 3</th>
-						<td>Row 3 column 1</td>
-						<td>Row 3 column 2</td>
-						<td>Row 3 column 3</td>
+						<th>Scones</th>
+						<td>31</td>
+						<td>32</td>
+						<td>33</td>
 					</tr>
 				</table>
 				<details>
@@ -178,11 +178,11 @@
 						<dd>
 							<dl>
 								<dt>Firefox 94</dt>
-								<dd></dd>
+								<dd>When moving left and right, the column number is read along with the cell contents (ex: "13 Column 3 of 4").  When moving from row, the new row, contents and header contents are all read.  (Ex: "row 2 of 3 cupcakes, 23")  Good support.</dd>
 								<dt>Chrome 95</dt>
-								<dd></dd>
+								<dd>It treats the first <code>&lt;th&gt;</code> as the header for the first column, the second <code>&lt;th&gt;</code> as the header for the second column, etc, when moving right and left.  It does properly interpret the <code>&lt;th&gt;</code>s when moving up and down.</dd>
 								<dt>Safari 15</dt>
-								<dd></dd>
+								<dd>When moving left and right, the column number is read along with the cell contents (ex: "13 Column 3 of 4").  When moving from row, the new row, contents and header contents are all read.  (Ex: "row 2 of 3 cupcakes, 23")  Note that the <code>&lt;th&gt;</code> in the top row is considered to be a header for the left row.  Partial support.</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -190,26 +190,26 @@
 			</section>
 
 			<section>
-				<h2>Simple table with, Top Row of Headers</h2>
+				<h2>Simple table with, Top Row of Headers with '<code>scope="col"</code>'</h2>
 				<table>
 					<tr>
-						<th scope="col">Column 1</th>
-						<th scope="col">Column 2</th>
-						<th scope="col">Column 3</th>
+						<th scope="col">Coffee</th>
+						<th scope="col">Sandwiches</th>
+						<th scope="col">Scones</th>
 					<tr>
-						<td>Row 1 column 1</td>
-						<td>Row 1 column 2</td>
-						<td>Row 1 column 3</td>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
 					</tr>
 					<tr>
-						<td>Row 2 column 1</td>
-						<td>Row 2 column 2</td>
-						<td>Row 2 column 3</td>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
 					</tr>
 					<tr>
-						<td>Row 3 column 1</td>
-						<td>Row 3 column 2</td>
-						<td>Row 3 column 3</td>
+						<td>31</td>
+						<td>32</td>
+						<td>33</td>
 					</tr>
 				</table>
 				<details>
@@ -266,11 +266,11 @@
 						<dd>
 							<dl>
 								<dt>Firefox 94</dt>
-								<dd></dd>
+								<dd>Reads the heading when moving left and right, but not up and down.  Full support.</dd>
 								<dt>Chrome 95</dt>
-								<dd></dd>
+								<dd>Reads the heading when moving left and right, but not up and down.  Full support.</dd>
 								<dt>Safari 15</dt>
-								<dd></dd>
+								<dd>Reads the heading when moving left and right, but not up and down.  Full support.</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -281,22 +281,22 @@
 				<h2>Simple table with Scope, Left Column of Headers</h2>
 				<table>
 					<tr>
-						<th scope="row">Row 1</th>
-						<td>Row 1 column 1</td>
-						<td>Row 1 column 2</td>
-						<td>Row 1 column 3</td>
+						<th scope="row">Coffee</th>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
 					</tr>
 					<tr>
-						<th scope="row">Row 2</th>
-						<td>Row 2 column 1</td>
-						<td>Row 2 column 2</td>
-						<td>Row 2 column 3</td>
+						<th scope="row">Cupcakes</th>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
 					</tr>
 					<tr>
-						<th scope="row">Row 3</th>
-						<td>Row 3 column 1</td>
-						<td>Row 3 column 2</td>
-						<td>Row 3 column 3</td>
+						<th scope="row">Scones</th>
+						<td>31</td>
+						<td>32</td>
+						<td>33</td>
 					</tr>
 				</table>
 				<details>
@@ -353,11 +353,11 @@
 						<dd>
 							<dl>
 								<dt>Firefox 94</dt>
-								<dd></dd>
+								<dd>Proplery associates the <code>&lt;th&gt;</code> as the header for the row.  Full support.</dd>
 								<dt>Chrome 95</dt>
-								<dd></dd>
+								<dd>It treats the first <code>&lt;th&gt;</code> as the header for the first column, the second <code>&lt;th&gt;</code> as the header for the second column, etc, when moving right and left.  It does properly interpret the <code>&lt;th&gt;</code>s when moving up and down.  Poor support.</dd>
 								<dt>Safari 15</dt>
-								<dd></dd>
+								<dd>Properly associates heading with cell.  However, it still treats the top left <code>&lt;th&gt;</code> as an implicit row header.  Partial support.</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -365,31 +365,31 @@
 			</section>
 
 			<section>
-				<h2>Simple table with Scope, Left Column and Top Row of Headers</h2>
+				<h2>Simple table with Scope, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
 				<table>
 					<tr>
 						<td></td>
-						<th scope="col">Column 1</th>
-						<th scope="col">Column 2</th>
-						<th scope="col">Column 3</th>
+						<th scope="col">Coffee</th>
+						<th scope="col">Sandwiches</th>
+						<th scope="col">Scones</th>
 					</tr>
 					<tr>
-						<th scope="row">Row 1</th>
-						<td>Row 1 column 1</td>
-						<td>Row 1 column 2</td>
-						<td>Row 1 column 3</td>
+						<th scope="row">Mondays</th>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
 					</tr>
 					<tr>
-						<th>Row 2</th>
-						<td>Row 2 column 1</td>
-						<td>Row 2 column 2</td>
-						<td>Row 2 column 3</td>
+						<th scope="row">Tuesdays</th>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
 					</tr>
 					<tr>
-						<th>Row 3</th>
-						<td>Row 3 column 1</td>
-						<td>Row 3 column 2</td>
-						<td>Row 3 column 3</td>
+						<th scope="row">Wednesdays</th>
+						<td>31</td>
+						<td>32</td>
+						<td>33</td>
 					</tr>
 				</table>
 				<details>
@@ -446,11 +446,11 @@
 						<dd>
 							<dl>
 								<dt>Firefox 94</dt>
-								<dd></dd>
+								<dd>When moving left and right, it announces the <code>&lt;th&gt;</code> for that column.  When moving up and down, it announces the <code>&lt;th&gt;</code> for that row.  Announces top, left cell as "Empty".  Full support.</dd>
 								<dt>Chrome 95</dt>
-								<dd></dd>
+								<dd>Associates the first <code>&lt;th&gt;</code> as the header for the left column.  So the top, left cell (a <code>&lt;td&gt;</code><code>&lt;/td&gt;</code> is read as "Mondays blank").  As moving through the top row of <code>&lt;th&gt;</code>s, it reads the contents twice.  As moving down through the left-most column of <code>&lt;th&gt;</code>s, it reads each contents twice.  For the rest of the <code>&lt;td&gt;</code>s, it works as expected: it announces the row heading when moving up and down, and the column heading when moving left and right.</dd>
 								<dt>Safari 15</dt>
-								<dd></dd>
+								<dd>Associates the first <code>&lt;th&gt;</code> as the header for the left column.  So the top, left cell (a <code>&lt;td&gt;</code><code>&lt;/td&gt;</code> is read as "Mondays blank").  As moving through the top row of <code>&lt;th&gt;</code>s, it reads the contents twice.  As moving down through the left-most column of <code>&lt;th&gt;</code>s, it reads each contents twice.  For the rest of the <code>&lt;td&gt;</code>s, it works as expected: it announces the row heading when moving up and down, and the column heading when moving left and right.</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -458,51 +458,108 @@
 			</section>
 
 
-			Scope:
-			<table summary="">
-				<tr>
-					<th scope="col">Col 1</th>
-					<th scope="col">Col 2</th>
-				</tr>
-				<tr>
-					<td>1, 1</td>
-					<td>1, 2</td>
-				</tr>
-				<tr>
-					<td>2, 1</td>
-					<td>2, 2</td>
-				</tr>
-			</table>
-			Scope's and headers:
-			<table summary="this table sucks">
-				<tr>
-					<th id="col1A" scope="col">Col 1</th>
-					<th id="col2A" scope="col">Col 2</th>
-				</tr>
-				<tr>
-					<td headers="col1A">1, 1</td>
-					<td headers="col2A">1, 2</td>
-				</tr>
-				<tr>
-					<td headers="col1A">2, 1</td>
-					<td headers="col2A">2, 2</td>
-				</tr>
-			</table>
-			Ids/Headers:
-			<table summary="This table exists to show how a table properly uses ids and headers, and long summaries.">
-				<tr>
-					<th id="col1B">Col 1</th>
-					<th id="col2B">Col 2</th>
-				</tr>
-				<tr>
-					<td headers="col1B">1, 1</td>
-					<td headers="col2B">1, 2</td>
-				</tr>
-				<tr>
-					<td headers="col1B">2, 1</td>
-					<td headers="col2B">2, 2</td>
-				</tr>
-			</table>
+<section>
+				<h2>Simple table with <code>id/headers</code>, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
+				<table>
+					<tr>
+						<td></td>
+						<th id="coffee">Coffee</th>
+						<th id="sandwiches">Sandwiches</th>
+						<th id="scones">Scones</th>
+					</tr>
+					<tr>
+						<th id="mon">Mondays</th>
+						<td headers="mon coffee">11</td>
+						<td headers="mon sandwiches">12</td>
+						<td headers="mon scones">13</td>
+					</tr>
+					<tr>
+						<th id="tues">Tuesdays</th>
+						<td headers="tues coffee">21</td>
+						<td headers="tues sandwiches">22</td>
+						<td headers="tues scones">23</td>
+					</tr>
+					<tr>
+						<th id="wed">Wednesdays</th>
+						<td headers="wed coffee">31</td>
+						<td headers="wed sandwiches">32</td>
+						<td headers="wed scones">33</td>
+					</tr>
+				</table>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd>Everything works as expected.  Full support.</dd>
+								<dt>Chrome 95</dt>
+								<dd>The <code>&lt;td&gt;</code> all read as expected.  When moving left and right through the top row, it reads each heading twice.  Same thing when moving up and down through the left row of <code>&lt;th&gt;</code>s.  When moving left to the first column, it reads "Monday" first, then the <code>&lt;th&gt;</code> text.  (ex: "Mondays Wednesdays, column 1 of 4").  It reads the empty <code>&lt;td&gt;</code></dd> as "blank" when first entering the table.  After that it treats "Monday" as its header: "row 1 of 4 Mondays blank, column 1 of 4".
+								<dt>Safari 15</dt>
+								<dd>Everything works as expected, with one exception: the empty <code>&lt;td&gt;</code> in the top-left.  When moving up from "Monday" it reads "Row 1 of 4, Mondays, Blank, column 1 of 4."  In all other instances (left from "Coffee" or when starting to read the table, it reads "blank, colum 1 of 4".</dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+
+			<section>
+				<h2>Summary</h2>
+				<ol>
+					<li>When using OS X, Firefox has the best support.  Chrome is all over the map.  And Safari is decent, but still lacking.</li>
+					<li>When using OS X, if you have any row headings, it's best to stick with <code>id/headers</code>.  <code>scope</code> attributes should be best left to column headers.</li>
+			</section>
+			<section>
+				<h2>Recommendations</h2>
+			</section>
 			
 		</div>
 	</body>
