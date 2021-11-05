@@ -45,13 +45,13 @@
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 								<dt>Chrome 94</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 								<dt>Edge 94</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right.  Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 							</dl>
 						</dd>
 						<dt>NVDA 2021.2</dt>
@@ -190,7 +190,7 @@
 			</section>
 
 			<section>
-				<h2>Simple table with, Top Row of Headers with '<code>scope="col"</code>'</h2>
+				<h2>Simple table with, Top Row of Headers with <code>scope="col"</code></h2>
 				<table>
 					<tr>
 						<th scope="col">Coffee</th>
@@ -219,13 +219,13 @@
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right. Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right. Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 								<dt>Chrome 94</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right. Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 								<dt>Edge 94</dt>
-								<dd>Reads column header when moving left and right. (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
+								<dd>Reads column header when moving left and right. Reads the header when saying current cell (<kbd>Ctrl + Alt + Numpad 5</kbd>)</dd>
 							</dl>
 						</dd>
 						<dt>NVDA 2021.2</dt>
@@ -457,7 +457,7 @@
 				</details>
 			</section>
 			<section>
-				<h2>Simple table with Scope, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
+				<h2>Table with Scope, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
 				<table>
 					<tr>
 						<td></td>
@@ -551,7 +551,7 @@
 
 
 <section>
-				<h2>Simple table with <code>id/headers</code>, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
+				<h2>Table with <code>id/headers</code>, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
 				<table>
 					<tr>
 						<td></td>
@@ -634,7 +634,7 @@
 								<dt>Firefox 94</dt>
 								<dd>Everything works as expected.  Full support.</dd>
 								<dt>Chrome 95</dt>
-								<dd>The <code>&lt;td&gt;</code> all read as expected.  When moving left and right through the top row, it reads each heading twice.  Same thing when moving up and down through the left row of <code>&lt;th&gt;</code>s.  When moving left to the first column, it reads "Monday" first, then the <code>&lt;th&gt;</code> text.  (ex: "Mondays Wednesdays, column 1 of 4").  It reads the empty <code>&lt;td&gt;</code></dd> as "blank" when first entering the table.  After that it treats "Monday" as its header: "row 1 of 4 Mondays blank, column 1 of 4".
+								<dd>The <code>&lt;td&gt;</code> all read as expected.  When moving left and right through the top row, it reads each heading twice.  Same thing when moving up and down through the left row of <code>&lt;th&gt;</code>s.  When moving left to the first column, it reads "Monday" first, then the <code>&lt;th&gt;</code> text.  (ex: "Mondays Wednesdays, column 1 of 4").  It reads the empty <code>&lt;td&gt;</code> as "blank" when first entering the table.  After that it treats "Monday" as its header: "row 1 of 4 Mondays blank, column 1 of 4".</dd>
 								<dt>Safari 15</dt>
 								<dd>Everything works as expected, with one exception: the empty <code>&lt;td&gt;</code> in the top-left.  When moving up from "Monday" it reads "Row 1 of 4, Mondays, Blank, column 1 of 4."  In all other instances (left from "Coffee" or when starting to read the table, it reads "blank, colum 1 of 4".</dd>
 							</dl>
@@ -649,9 +649,12 @@
 					<li>When using OS X, Firefox has the best support.  Chrome is all over the map.  And Safari is decent, but still lacking.</li>
 					<li>When using OS X, if you have any row headings, it's best to stick with <code>id/headers</code>.  <code>scope</code> attributes should be best left to column headers.</li>
 					<li>There's pretty decent support for iOS 14 when there's a single row of <code>&lt;th&gt;</code>s. Then things get mildly wonky with a column of row headers.</li>
+					<li>Narrator sucks.</li>
+					<li>NVDA and JAWS are pretty consistent across the board.  They work with implicit headings, even when there's a row and column header.</li>
 			</section>
 			<section id="recommendations">
 				<h2>Recommendations</h2>
+				<p>There was lots that wasn't tested here, like more complex tables with multiple rows and columns of headers.  My old rule-of-thumb that if each <code>&lt;td&gt;</code> only has 1 <code>&lt;th&gt;</code>, then use <code>scope</code>, else use <code>id/headers</code> seems to be now outdated.  In fact, using <code>scope</code> with a row and column of headers works better with Narrator and IE.  Other than that, <code>id/headers</code> offers no advantages.  This suprised me.  Perhaps with more complex tables, <code>id/headers</code> will be more useful.</p>
 			</section>
 			
 		</div>
