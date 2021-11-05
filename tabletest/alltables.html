@@ -844,7 +844,7 @@
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span.  Ex: When moving from Ownership to Scenario it reads "row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right it reads the column headers (Exmaple: "B Scenario column 4 very unlikely".) When moving up and down it reads the row headers.  (Example: "Rent Canada row 4 very unlikely.")</dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span.  Ex: When moving from Ownership to Scenario it reads "row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right it reads the column headers (Exmaple: "B Scenario column 4 very unlikely".) When moving up and down it reads the row headers.  (Example: "Rent Canada row 4 very unlikely.") Also note that when moving up and down, sometimes the cursor jumps to another column.  Very confusing.</dd>
 								<dt>Internet Explorer 11</dt>
 								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
 								<dt>Chrome 94</dt>
@@ -917,11 +917,12 @@
 					<li>There's pretty decent support for iOS 14 when there's a single row of <code>&lt;th&gt;</code>s. Then things get mildly wonky with a column of row headers.</li>
 					<li>Narrator sucks.</li>
 					<li>NVDA and JAWS are pretty consistent across the board.  They work with implicit headings, even when there's a row and column header.</li>
-					<li>For complex tables,
+					<li>For complex tables, there was no appreciable difference between using <code>scope=(col|row)group</code> and <code>id/headers</code>.</li>
+					<li>Traversing complex tables with JAWS and Firefox and Edge can be wonky; though JAWS 2021 seems to have fixed the bug in Edge.  Looking ahead to Firefox 94 in Nightly, it still hasn't been fixed there.</li>
 			</section>
 			<section id="recommendations">
 				<h2>Recommendations</h2>
-				<p>There was lots that wasn't tested here, like more complex tables with multiple rows and columns of headers.  My old rule-of-thumb that if each <code>&lt;td&gt;</code> only has 1 <code>&lt;th&gt;</code>, then use <code>scope</code>, else use <code>id/headers</code> seems to be now outdated.  In fact, using <code>scope</code> with a row and column of headers works better with Narrator and IE.  Other than that, <code>id/headers</code> offers no advantages.  This suprised me.  Perhaps with more complex tables, <code>id/headers</code> will be more useful.</p>
+				<p>There was lots that wasn't tested here, like more complex tables with multiple rows and columns of headers.  My old rule-of-thumb that if each <code>&lt;td&gt;</code> only has 1 <code>&lt;th&gt;</code>, then use <code>scope</code>, else use <code>id/headers</code> seems to be now outdated.  In fact, using <code>scope</code> with a row and column of headers works better with Narrator and IE. (But both Narrator and IE suck.)  Other than that, <code>id/headers</code> offers no advantages.  This suprised me.  So, do whatever's easiest for you to code.</p>
 			</section>
 			
 		</div>
