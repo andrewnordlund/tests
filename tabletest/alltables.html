@@ -15,8 +15,9 @@
 			<p>This page has various tables with screen reader results and <a href="#recommendations">recommendations</a>.</p>
 		<div id="contentPane">
 			<section>
-				<h2>Simple table with neigher id/headers nor scope, Top row of Headers</h2>
-				<table>
+				<h2 id="simple1">Simple table with neigher id/headers nor scope, Top row of Headers</h2>
+				<p id="desc1">The top row is food times being sold.  The rows describe how many were sold per arbitrary time interval.</p>
+				<table aria-labelledby="simple1" aria-describedby="desc1">
 					<tr>
 						<th>Coffee</th>
 						<th>Sandwiches</th>
