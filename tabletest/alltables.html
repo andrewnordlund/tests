@@ -439,7 +439,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd>When moving into the <code>&lt;table&gt;</code>, the top-left empty <code>&lt;td&gt;</code> is skipped.  As each <code>&lt;th&gt;</code> it's read as "colum/row" header.  Then when moving left and right, only the <code>&lt;td&gt;</code> contents are read.  With "row" selected in the rotor, moving up and down reads the row header with the cell contents is read.  But the only time the column headers are read is when they're selected.</dd>
+								<dd>When moving into the <code>&lt;table&gt;</code>, the top-left empty <code>&lt;td&gt;</code> is skipped.  When moving left and right along the top row, "Coffee" is announced as "coffee row header". The rest of the column headers are not read as headers at all.  Just the contents and coordinates (ex: "Sandwiches, column 3"). (When moving through the left-most column, "Mondays" is always announced as "row header" and never "column header".)  Then when moving left and right, only the <code>&lt;td&gt;</code> contents are read.  With "row" selected in the rotor, moving up and down reads the row header with the cell contents is read.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
