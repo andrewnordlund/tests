@@ -12,7 +12,7 @@
 			<h1>Table Test Page 1</h1>
 		</header>
 		<main>
-			<p>This page has various tables with screen reader results.</p>
+			<p>This page has various tables with screen reader results and <a href="#recommendations">recommendations</a>.</p>
 		<div id="contentPane">
 			<section>
 				<h2>Simple table with neigher id/headers nor scope, Top row of Headers</h2>
@@ -58,11 +58,11 @@
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd></dd>
+								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>)</dd>
 								<dt>Internet Explorer 11</dt>
 								<dd></dd>
 								<dt>Chrome 94</dt>
-								<dd></dd>
+								<dd>Only reads out cell contents whether through navigation or getting position (<kbd>Control+Shift+Alt+/</kbd>)</dd>
 								<dt>Edge 94</dt>
 								<dd></dd>
 							</dl>
@@ -558,7 +558,7 @@
 					<li>When using OS X, if you have any row headings, it's best to stick with <code>id/headers</code>.  <code>scope</code> attributes should be best left to column headers.</li>
 					<li>There's pretty decent support for iOS 14 when there's a single row of <code>&lt;th&gt;</code>s. Then things get mildly wonky with a column of row headers.</li>
 			</section>
-			<section>
+			<section id="recommendations">
 				<h2>Recommendations</h2>
 			</section>
 			
