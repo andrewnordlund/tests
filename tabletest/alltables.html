@@ -644,6 +644,237 @@
 			</section>
 
 			<section>
+				<h2>Complex table with <code>scope=(col|row)group</code></h2>
+				<table>
+					<col>
+					<col>
+					<colgroup span="3"></colgroup>
+					<caption> Ownership scenarios, Canada vs USA</caption>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">Country</th>
+							<th scope="col" rowspan="2">Ownership</th>
+							<th scope="colgroup" colspan="3">Scenario</th>
+						</tr>
+						<tr>
+							<th scope="col">A</th>
+							<th scope="col">B</th>
+							<th scope="col">C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="rowgroup" rowspan="2">Canada</th>
+							<th scope="row">Purchase</th>
+							<td>likely</td>
+							<td>very unlikely</td>
+							<td>n/a</td>
+						</tr>
+						<tr>
+							<th scope="row">Rent</th>
+							<td>unlikely</td>
+							<td>very unlikely</td>
+							<td>very unlikely</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+						 	<th scope="rowgroup" rowspan="2">USA</th>
+						 	<th scope="row">Purchase</th>
+						 	<td>unlikely</td>
+						 	<td>very unlikely</td>
+							<td>very unlikely</td>
+						</tr>
+						<tr>
+							<th scope="row">Rent</th>
+							<td>likely</td>
+							<td>very likely</td>
+							<td>n/a</td>
+						</tr>
+					</tbody>
+				</table> 
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd></dd>
+								<dt>Chrome 95</dt>
+								<dd></dd>
+								<dt>Safari 15</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+
+				<section>
+				<h2>Complex table with <code>id/headers</code></h2>
+				<table>
+					<col>
+					<col>
+					<colgroup span="3"></colgroup>
+					<caption> Ownership scenarios, Canada vs USA</caption>
+					<thead>
+						<tr>
+							<th id="country" rowspan="2">Country</th>
+							<th id="ownership" rowspan="2">Ownership</th>
+							<th id="scenario" colspan="3">Scenario</th>
+						</tr>
+						<tr>
+							<th id="a" scope="col">A</th>
+							<th id="b" scope="col">B</th>
+							<th id="c" scope="col">C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th id="canada"rowspan="2">Canada</th>
+							<th id="purchase1">Purchase</th>
+							<td headers="scenario a usa purchase1">likely</td>
+							<td headers="scenario b usa purchase1">very unlikely</td>
+							<td headers="scenario c usa purchase1">n/a</td>
+						</tr>
+						<tr>
+							<th id="rent1">Rent</th>
+							<td headers="scenario a usa rent1">unlikely</td>
+							<td headers="scenario b usa rent1">very unlikely</td>
+							<td headers="scenario c usa rent1">very unlikely</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+						 	<th id="usa" rowspan="2">USA</th>
+						 	<th id="purchase2">Purchase</th>
+						 	<td headers="scenario a usa purchase2">unlikely</td>
+						 	<td headers="scenario b usa purchase2">very unlikely</td>
+							<td headers="scenario c usa purchase2">very unlikely</td>
+						</tr>
+						<tr>
+							<th id="rent2">Rent</th>
+							<td headers="scenario a usa rent2">likely</td>
+							<td headers="scenario b usa rent2">very likely</td>
+							<td headers="scenario c usa rent2">n/a</td>
+						</tr>
+					</tbody>
+				</table> 
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd></dd>
+								<dt>Chrome 95</dt>
+								<dd></dd>
+								<dt>Safari 15</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+
+
+			<section>
 				<h2>Summary</h2>
 				<ol>
 					<li>When using OS X, Firefox has the best support.  Chrome is all over the map.  And Safari is decent, but still lacking.</li>
