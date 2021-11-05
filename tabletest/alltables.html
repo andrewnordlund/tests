@@ -85,7 +85,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>Reads the headings as you move left and right as though they were programmatically associated.  Full support.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -171,7 +171,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>Reads the new header content when moving to a new row, as though the header was programmatically associated.  Full support.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -259,7 +259,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>Reads new header when moving from column to column.  Full support.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -346,7 +346,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>Reads each <code>&lt;th&gt;</code> as "row header".  Moving from row to row, it reads out the new row's header contents.  However, when moving to a <code>&lt;th&gt;</code> from the left, it reads out "Coffee, coffee" first (ie: "Coffee coffee scones, row header, column 1".  Or with "rows" selected in the rotor, when moving from the second row of <code>&lt;td&gt;</code>s to the first, it reads "Coffee coffee" then the contents of the <code>&lt;td&gt;</code>.  Partial support.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -439,7 +439,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>When moving into the <code>&lt;table&gt;</code>, the top-left empty <code>&lt;td&gt;</code> is skipped.  As each <code>&lt;th&gt;</code> it's read as "colum/row" header.  Then when moving left and right, only the <code>&lt;td&gt;</code> contents are read.  With "row" selected in the rotor, moving up and down reads the row header with the cell contents is read.  But the only time the column headers are read is when they're selected.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -533,7 +533,7 @@
 						<dd>
 							<dl>
 								<dt>Safari, Firefox, and Chrome</dt>
-								<dd></dd>
+								<dd>When moving into the <code>&lt;table&gt;</code>, the top-left empty <code>&lt;td&gt;</code> is skipped.  As each <code>&lt;th&gt;</code> it's read as "colum/row" header.  Then when moving left and right, only the <code>&lt;td&gt;</code> contents are read.  With "row" selected in the rotor, moving up and down reads the row header with the cell contents is read.  But the only time the column headers are read is when they're selected.</dd>
 							</dl>
 						</dd>
 						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
@@ -556,6 +556,7 @@
 				<ol>
 					<li>When using OS X, Firefox has the best support.  Chrome is all over the map.  And Safari is decent, but still lacking.</li>
 					<li>When using OS X, if you have any row headings, it's best to stick with <code>id/headers</code>.  <code>scope</code> attributes should be best left to column headers.</li>
+					<li>There's pretty decent support for iOS 14 when there's a single row of <code>&lt;th&gt;</code>s. Then things get mildly wonky with a column of row headers.</li>
 			</section>
 			<section>
 				<h2>Recommendations</h2>
