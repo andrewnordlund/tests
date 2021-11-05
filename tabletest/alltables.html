@@ -696,43 +696,58 @@
 				<details>
 					<summary>Screen Readers Results</summary>
 					<dl>
-						<dt>JAWS 2020, 2021</dt>
+						<dt>JAWS 2021</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates not including the span.  Ex: when moving from Ownership to Scenario, it reads "Scenario column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it does not accuratetly read the position.  For example, in Scenario A Canada Purchase, it reads "Scenario C likely Column 3." Then moving one to the right, it reads "very unlikely column 4".  When moving up and down, it reads the row headers, but the column focus jumps all over the place.  Very confusing.</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
 								<dt>Chrome 94</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers.</dd>
 								<dt>Edge 94</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers.</dd>
+							</dl>
+						</dd>
+						<dt>JAWS 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates not including the span.  Ex: when moving from Ownership to Scenario, it reads "Scenario column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it does not accuratetly read the position.  For example, in Scenario A Canada Purchase, it reads "Scenario C likely Column 3." Then moving one to the right, it reads "very unlikely column 4".  When moving up and down, it reads the row headers, but the column focus jumps all over the place.  Very confusing.</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
+								<dt>Chrome 94</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
+								<dt>Edge 94</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers.  Also note that when moving up and down, sometimes the cursor jumps to another column.  Very confusing.  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
 							</dl>
 						</dd>
 						<dt>NVDA 2021.2</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span.  Ex: When moving from Ownership to Scenario it reads "row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right it reads the column headers (Exmaple: "B Scenario column 4 very unlikely".) When moving up and down it reads the row headers.  (Example: "Rent Canada row 4 very unlikely.")</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span.  Ex: When moving from Ownership to Scenario it reads "row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right, it reads all column headers. ("Example: Senario C column 5 n/a".)  When moving up and down, it reads all headers.  (Example: "USA Rent row 6 Scenario C column 4/na")</dd>
 								<dt>Chrome 94</dt>
-								<dd></dd>
+								<dd>When reading through the <code>&lt;th&gt;</code>s, it reads the contents (twice), the co-ordinates; how many rows or columns it spans, and sometimes something else.  For example when moving from Ownership to Scenario, it reads "row 1 Scenario A column 3 through 5 Scenario".  When moving from Country to Canada it reads "Canada, Purchase row 3 through 4 Canada."  When traversing the <code>&lt;td&gt;</code>s, left and right, it reads all column headers. ("Example: Senario C column 5 n/a".)  When moving up and down, it reads all headers.  (Example: "USA Rent row 6 Scenario C column 4/na")</dd>
+
 								<dt>Edge 94</dt>
-								<dd></dd>
+								<dd>When reading through the <code>&lt;th&gt;</code>s, it reads the contents (twice), the co-ordinates; how many rows or columns it spans, and sometimes something else.  For example when moving from Ownership to Scenario, it reads "row 1 Scenario A column 3 through 5 Scenario".  When moving from Country to Canada it reads "Canada, Purchase row 3 through 4 Canada."  When traversing the <code>&lt;td&gt;</code>s, left and right, it reads all column headers. ("Example: Senario C column 5 n/a".)  When moving up and down, it reads all headers.  (Example: "USA Rent row 6 Scenario C column 4/na")</dd>
 							</dl>
+
 						</dd>
 						<dt>Narrator</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd></dd>
+								<dd>In the <code>&lt;td&gt;</code>s, when navigating around it doesn't read out any of the <code>&lt;th&gt;</code>s.  Ex: if you're in the bottom right <code>&lt;td&gt;</code> and move one left, it'll read out "column 4 of 5, very likely edit".  Then if you move up one, it will read "row 5 of 6, very unlikely edit." Then if you move up one more it will read "row 4 of 6, very unlikely, edit." When you're on a <code>&lt;th&gt;</code> that has a <code>(row|col)span</code>, it reads out how many rows or columns it spans.  For example if you move from "Ownership" to "Scenario" it reads "Scenario, merged, column 3 of 5, spans 3 columns".</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd></dd>
+								<dd>In the <code>&lt;td&gt;</code>s, when navigating around it reads out all the pertinent <code>&lt;th&gt;</code>s that apply to that <code>&lt;td&gt;</code> that didn't apply to the last one.  Ex: if you're in the bottom right <code>&lt;td&gt;</code> and move one left, it'll read out "very likely, Cap B column 4 of 5".  Then if you move up one, it will read "very unlikely, row header purchase, 5 of 6." Then if you move up one more it will read "very unlikely, row header Canada, Rent, row 4 of 6" When you're on a <code>&lt;th&gt;</code> that has a <code>(row|col)span</code>, it reads out how many rows or columns it spans.  For example if you move from "Ownership" to "Scenario" it reads "Scenario, column header, column 3 of 5, spans 3 columns".</dd>
 								<dt>Chrome 94</dt>
-								<dd></dd>
+								<dd>When a <code>&lt;th&gt;</code> spans more than 1 column or row, it announces how many it spans.  As for the <code>&lt;td&gt;</code>s, it only reads the contents and co-ordinates of the <code>&lt;td&gt;</code>.  It never announces the header contents.</dd>
 								<dt>Edge 94</dt>
-								<dd></dd>
+								<dd>When a <code>&lt;th&gt;</code> spans more than 1 column or row, it announces how many it spans.  As for the <code>&lt;td&gt;</code>s, things get wierd.  The arrow keys don't work as expected. For examlple, <kbd>Ctrl+Alt+Up</kbd> can move from one column to another.  For example, from "Rent" in the last row, that moves the cursor to "USA" instead of "Purchase".  This makes it difficult to test what headers are read when moving through the cells.  It seems moving right and left reads the "A", "B", "C" headers, but not "Scenario".  From what I can tell, moving up and down doesn't read out any headers.</dd>
 	
 							</dl>
 						</dd>
@@ -811,42 +826,62 @@
 				<details>
 					<summary>Screen Readers Results</summary>
 					<dl>
-						<dt>JAWS 2020, 2021</dt>
+						<dt>JAWS 2021</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span.  Ex: When moving from Ownership to Scenario it reads "row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right it reads the column headers (Exmaple: "B Scenario column 4 very unlikely".) When moving up and down it reads the row headers.  (Example: "Rent Canada row 4 very unlikely.")</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
 								<dt>Chrome 94</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
 								<dt>Edge 94</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
+
 							</dl>
+						</dd>
+						<dt>JAWS 2020</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span.  Ex: When moving from Ownership to Scenario it reads "row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right it reads the column headers (Exmaple: "B Scenario column 4 very unlikely".) When moving up and down it reads the row headers.  (Example: "Rent Canada row 4 very unlikely.")</dd>
+								<dt>Internet Explorer 11</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
+								<dt>Chrome 94</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns, column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers. When traversing a <code>&lt;th&gt;</code> that spans more than one row or column, you have to do the keystroke more than once  Example: from Coountry press <kbd>Ctrl+Alt+Down</kbd> to get to Canada.  Pressing that again keeps you at Canada.  It reads different rows though ("Canada cell 1 of row spanning 2 rows row 3" -&gt; "Canada cell 2 of row spanning 2 rows row 4".  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
+								<dt>Edge 94</dt>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads out the co-ordinates including the span.  Ex: when moving from Ownership to Scenario, it reads "A Scenario spans 3 columns column 3".  When traversing the <code>&lt;td&gt;</code>s left and right, it reads the column headers.  When moving up and down, it reads the row headers.  Also note that when moving up and down, sometimes the cursor jumps to another column.  Very confusing.  When reading out the position, it reads all headers.  Ex: "Column 3 row 4, Scenario A, Canada Rent, unlikely."</dd>
+
+							</dl>
+						</dd>
+
 						<dt>NVDA 2021.2</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd></dd>
+								<dd>When traversing through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span.  Ex: When moving from Ownership to Scenario it reads "row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right it reads the column headers (Exmaple: "B Scenario column 4 very unlikely".) When moving up and down it reads the row headers.  (Example: "Rent Canada row 4 very unlikely.")</dd>
 								<dt>Internet Explorer 11</dt>
-								<dd></dd>
+								<dd>When traversing left and right through the <code>&lt;th&gt;</code>s, it reads the co-ordinates including the span, along with the left most.  Ex: When moving from Ownership to Scenario it reads "Country row 1 column 3 through 5 Scenario." When moving down through <code>&lt;th&gt;</code>s, it reads the row span and contents.  Ex: "row 3 through 4 Canada". When traversing the <code>&lt;td&gt;</code>s, left and right, it reads all column headers. ("Example: Senario C column 5 n/a".)  When moving up and down, it reads the left-most header.  (Example: "Canada row 3 very unlikely")</dd>
 								<dt>Chrome 94</dt>
-								<dd></dd>
+								<dd>When reading through the <code>&lt;th&gt;</code>s, it reads the contents (twice), the co-ordinates; how many rows or columns it spans, and sometimes something else.  For example when moving from Ownership to Scenario, it reads "row 1 Scenario A column 3 through 5 Scenario".  When moving from Country to Canada it reads "Canada, Purchase row 3 through 4 Canada."  When traversing the <code>&lt;td&gt;</code>s, left and right, it reads all column headers. ("Example: Senario C column 5 n/a".)  When moving up and down, it reads all headers.  (Example: "USA Rent row 6 Scenario C column 4/na")</dd>
+
 								<dt>Edge 94</dt>
-								<dd></dd>
+								<dd>When reading through the <code>&lt;th&gt;</code>s, it reads the contents (twice), the co-ordinates; how many rows or columns it spans, and sometimes something else.  For example when moving from Ownership to Scenario, it reads "row 1 Scenario A column 3 through 5 Scenario".  When moving from Country to Canada it reads "Canada, Purchase row 3 through 4 Canada."  When traversing the <code>&lt;td&gt;</code>s, left and right, it reads all column headers. ("Example: Senario C column 5 n/a".)  When moving up and down, it reads all headers.  (Example: "USA Rent row 6 Scenario C column 4/na")</dd>
 							</dl>
 						</dd>
 						<dt>Narrator</dt>
 						<dd>
 							<dl>
 								<dt>Firefox 92</dt>
-								<dd></dd>
+								<dd>In the <code>&lt;td&gt;</code>s, when navigating around it doesn't read out any of the <code>&lt;th&gt;</code>s.  Ex: if you're in the bottom right <code>&lt;td&gt;</code> and move one left, it'll read out "column 4 of 5, very likely edit".  Then if you move up one, it will read "row 5 of 6, very unlikely edit." Then if you move up one more it will read "row 4 of 6, very unlikely, edit." When you're on a <code>&lt;th&gt;</code> that has a <code>(row|col)span</code>, it reads out how many rows or columns it spans.  For example if you move from "Ownership" to "Scenario" it reads "Scenario, merged, column 3 of 5, spans 3 columns".</dd>
+
 								<dt>Internet Explorer 11</dt>
-								<dd></dd>
+								<dd>In the <code>&lt;td&gt;</code>s, when navigating around it reads out all the pertinent <code>&lt;th&gt;</code>s that apply to that <code>&lt;td&gt;</code> that didn't apply to the last one.  Ex: if you're in the bottom right <code>&lt;td&gt;</code> and move one left, it'll read out "very likely, column header Cap B column 4 of 5".  Then if you move up one, it will read "very unlikely, row header purchase, 5 of 6." Then if you move up one more it will read "very unlikely, row header Canada, Rent, row 4 of 6" When you're on a <code>&lt;th&gt;</code> that has a <code>(row|col)span</code>, it reads out how many rows or columns it spans.  For example if you move from "Ownership" to "Scenario" it reads "Scenario, column header, column 3 of 5, spans 3 columns".</dd>
+
 								<dt>Chrome 94</dt>
-								<dd></dd>
+								<dd>When a <code>&lt;th&gt;</code> spans more than 1 column or row, it announces how many it spans.  As for the <code>&lt;td&gt;</code>s, it only reads the contents and co-ordinates of the <code>&lt;td&gt;</code>.  It never announces the header contents.</dd>
 								<dt>Edge 94</dt>
-								<dd></dd>
+								<dd>When a <code>&lt;th&gt;</code> spans more than 1 column or row, it announces how many it spans.  As for the <code>&lt;td&gt;</code>s, things get wierd.  The arrow keys don't work as expected. For examlple, <kbd>Ctrl+Alt+Up</kbd> can move from one column to another.  For example, from "Rent" in the last row, that moves the cursor to "USA" instead of "Purchase".  This makes it difficult to test what headers are read when moving through the cells.  It seems moving right and left reads the "A", "B", "C" headers, but not "Scenario".  From what I can tell, moving up and down doesn't read out any headers.</dd>
 	
 							</dl>
 						</dd>
@@ -882,6 +917,7 @@
 					<li>There's pretty decent support for iOS 14 when there's a single row of <code>&lt;th&gt;</code>s. Then things get mildly wonky with a column of row headers.</li>
 					<li>Narrator sucks.</li>
 					<li>NVDA and JAWS are pretty consistent across the board.  They work with implicit headings, even when there's a row and column header.</li>
+					<li>For complex tables,
 			</section>
 			<section id="recommendations">
 				<h2>Recommendations</h2>
