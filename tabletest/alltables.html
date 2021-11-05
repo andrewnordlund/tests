@@ -365,6 +365,98 @@
 			</section>
 
 			<section>
+				<h2>Table with neither scope no id/headers, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
+				<table>
+					<tr>
+						<td></td>
+						<th>Coffee</th>
+						<th>Sandwiches</th>
+						<th>Scones</th>
+					</tr>
+					<tr>
+						<th>Mondays</th>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
+					</tr>
+					<tr>
+						<th>Tuesdays</th>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
+					</tr>
+					<tr>
+						<th>Wednesdays</th>
+						<td>31</td>
+						<td>32</td>
+						<td>33</td>
+					</tr>
+				</table>
+				<details>
+					<summary>Screen Readers Results</summary>
+					<dl>
+						<dt>JAWS 2020, 2021</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>NVDA 2021.2</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+							</dl>
+						</dd>
+						<dt>Narrator</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 92</dt>
+								<dd></dd>
+								<dt>Internet Explorer 11</dt>
+								<dd></dd>
+								<dt>Chrome 94</dt>
+								<dd></dd>
+								<dt>Edge 94</dt>
+								<dd></dd>
+	
+							</dl>
+						</dd>
+						<dt>iOS Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Safari, Firefox, and Chrome</dt>
+								<dd>When moving into the <code>&lt;table&gt;</code>, the top-left empty <code>&lt;td&gt;</code> is skipped.  As each <code>&lt;th&gt;</code> it's read as "colum/row" header.  Then when moving left and right, only the <code>&lt;td&gt;</code> contents are read.  With "row" selected in the rotor, moving up and down reads the row header with the cell contents is read.  But the only time the column headers are read is when they're selected.</dd>
+							</dl>
+						</dd>
+						<dt>OS X (10.15.7 - Catalina) Voice Over</dt>
+						<dd>
+							<dl>
+								<dt>Firefox 94</dt>
+								<dd>When moving left and right, it announces the <code>&lt;th&gt;</code> for that column.  When moving up and down, it announces the <code>&lt;th&gt;</code> for that row.  Announces top, left cell as "Empty".  Full support.</dd>
+								<dt>Chrome 95</dt>
+								<dd>Associates the first <code>&lt;th&gt;</code> as the header for the left column.  So the top, left cell (a <code>&lt;td&gt;</code><code>&lt;/td&gt;</code> is read as "Mondays blank").  As moving through the top row of <code>&lt;th&gt;</code>s, it reads the contents twice.  As moving down through the left-most column of <code>&lt;th&gt;</code>s, it reads each contents twice.  For the rest of the <code>&lt;td&gt;</code>s, it works as expected: it announces the row heading when moving up and down, and the column heading when moving left and right.</dd>
+								<dt>Safari 15</dt>
+								<dd>Associates the first <code>&lt;th&gt;</code> as the header for the top-left <code>&lt;td&gt;</code><code>&lt;/td&gt;</code> - but only when moving up.  So the top, left cell (a <code>&lt;td&gt;</code><code>&lt;/td&gt;</code> is read as "Mondays blank")  When moving there from the right, it reads "blank, column 1 of 4". For the rest of the <code>&lt;td&gt;</code>s, it works as expected: it announces the row heading when moving up and down, and the column heading when moving left and right.</dd>
+							</dl>
+						</dd>
+					</dl>
+				</details>
+			</section>
+			<section>
 				<h2>Simple table with Scope, Left Column and Top Row of <code>&lt;th&gt;</code>s</h2>
 				<table>
 					<tr>
