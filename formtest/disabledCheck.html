@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1" name="viewport">
+		<title>Disabled Checkbox Testing Page</title>
+		<style type="text/css">
+.fieldHolder {
+	border: thin solid black;
+	width: 50%;
+}
+.fieldHolder label {
+	display: block;
+}
+
+		</style>
+	</head>
+	<body>
+		<header><h1>Disabled Checkbox Testing Page</h1></header>
+
+		<main>
+		<h2>Form Stuff</h2>
+		<form method="GET" action="#">
+
+		<div class="fieldHolder">
+			<label for="txt1">Write some text</label>
+			<input type="text" id="txt1" name="txt1">
+		</div>
+		<div class="fieldHolder">
+			<label for="txt2">Write some more text</label>
+			<input type="text" id="txt2" name="txt2" readonly>
+		</div>
+		<div class="fieldHolder">
+			<input type="checkbox" id="chk1"> <label for="chk1">Check this maybe</label>
+		</div>
+		<div class="fieldHolder">
+			<input type="checkbox" id="chk2" onclick="return false;"> <label for="chk2">Check this also maybe</label>
+		</div>
+		<div class="fieldHolder">
+			<input type="checkbox" id="chk3" disabled> <label for="chk3">Check this maybe</label>
+		</div>
+		<div class="fieldHolder">
+			<input type="checkbox" id="chk3" disabled tabindex="0"> <label for="chk3">Check this maybe</label>
+		</div>
+		<div class="fieldHolder">
+			<label for="txt3">Write even more text</label>
+			<input type="text" id="txt3" name="txt3">
+		</div>
+			<input type="submit">
+		</form>
+		</main>
+	</body>
+</html>
