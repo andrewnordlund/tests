@@ -38,7 +38,8 @@ pre {
 					<title id="titleThingy">This is the title</title>
 				</svg>
 				-->
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" style="overflow:visible;">
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" style="overflow:visible;" aria-labelledby="titleThingy">
+  <title id="titleThingy">My shape</title> <!-- NVDA+Firefox won't read this untill there's an role=img in the in the <svg> -->
 
   <path d="M 10 10 L 90 90 L 180 10 Z" stroke="black" fill="none" aria-label="The path"/>
   <!-- Points -->
@@ -46,10 +47,41 @@ pre {
   <text x="100" y="30">This is some text.</text>
   </g>
   <circle cx="10" cy="10" r="2" fill="red" aria-label="The Circle"/>
-  <title id="titleThingy">My shape</title> <!-- NVDA+Firefox won't read this untill there's an role=img in the in the <svg> -->
 </svg>
 				
+<dl>
+	<dt>JAWS</dt>
+	<dd>
+		<dl>
+			<dt>Firefox</dt>
+			<dd>"The path Graphic This is some text.  Graphic The Circle"<br>
+				The <code>aria-label</code>s of the individual shapes and the <code>&lt;text&gt;</code> contents, but not the <code>&lt;title&gt;</code> referenced in <code>aria-labelledby</code>
+Graphic
+			<dd>""</dd>
+			<dt>Chrome</dt>
+			<dd>"My Shape graphic"<br>
+				The <code>&lt;title&gt;</code> referenced in <code>aria-labelledby</code> (whether it's there or not) but <strong>not</strong> the <code>&lt;text&gt;</code> contents.
+			</dd>
+		</dl>
+	</dd>
+
+	<dt>NVDA</dt>
+	<dd>
+		<dl>
+			<dt>Firefox</dt>
+			<dd>"My shape  graphic    My shape     This is some text."<br>
+				The <code>&lt;title&gt;</code> referenced in <code>aria-labelledby</code> (whether it's there or not) and the <code>&lt;text&gt;</code> contents.
+			</dd>
+			<dt>Chrome</dt>
+			<dd>"graphic    My shape"<br>
+				The <code>&lt;title&gt;</code> referenced in <code>aria-labelledby</code> (whether it's there or not) but <strong>not</strong> the <code>&lt;text&gt;</code> contents.
+			</dd>
+		</dl>
+	</dd>
+
+</dl>
 			</div>
+			<!--
 		<div>
 			<h2>Test <code>aria-labelledy=titleID</code></h2>
 			<p>Download the image for the selected geographic location by clicking the 
@@ -77,6 +109,7 @@ pre {
 			button.</p>
 			<p><strong>Result:</strong>  works.</p>
 		</div>
+			-->
 		</main>
 	</body>
 </html>
