@@ -74,22 +74,27 @@
 					<dd>
 						<dl>
 							<dt>Firefox</dt>
-						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to <code>&lt;fieldset&gt;</code>, but it is read when aplied to <code>&lt;legend.&gt;</code> as part of the <code>&lt;legend.&gt;</code> text.</dd>
+						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to <code>&lt;fieldset&gt;</code>, but it is read when aplied to <code>&lt;legend&gt;</code> as part of the <code>&lt;legend&gt;</code> text.</dd>
 
 						<dt>Chrome</dt>
-						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend.&gt;</code>.</dd>
+						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend&gt;</code>.</dd>
 					</dd>
 					<dt>JAWS 2021</dt>
 					<dd>
 						<dl>
 						<dt>Firefox</dt>
-						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to <code>&lt;fieldset&gt;</code>, but it is read when aplied to <code>&lt;legend.&gt;</code> as part of the <code>&lt;legend.&gt;</code> text.  (Note: JAWS is not reading the content of <code>&lt;p tabindex="0"&gt;</code> in forms mode.)</dd>
+						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to <code>&lt;fieldset&gt;</code>, but it is read when aplied to <code>&lt;legend&gt;</code> as part of the <code>&lt;legend&gt;</code> text.  (Note: JAWS is not reading the content of <code>&lt;p tabindex="0"&gt;</code> in forms mode.)</dd>
 
 						<dt>Chrome</dt>
-						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend.&gt;</code>.</dd>
+						<dd>In browse mode, the psuedo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend&gt;</code>.</dd>
 						</dl>
 					</dd>
 				</dd>
+			</section>
+			<section>
+				<h2>Conclusions and Recommendations</h2>
+				<p>With the exception of <code>&lt;fieldset&gt;</code>s and <code>&lt;legend&gt;</code>s, adding text content with CSS actually enjoys robust support as of early 2022!  But <a href="https://www.w3.org/TR/WCAG20-TECHS/F3.html">WCAG Common Failure F3</a> still exists. I don't want to tell anyone to disgregard that Common Failure.  There may be other tests I'm not running, like voice control, or custom stylesheets.</p>
+				<p>Also don't add <code>tabindex="0"</code> to non-interactive content just to expose it to Screen Readers in Forms mode.  It doesn't always work!</p>
 			</section>
 		<main>
 		</main>
