@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1" name="viewport">
+		<title>CSS Content Test</title>
+		<link rel="Stylesheet" href="cssContent.css" type="text/css">
+<style>
+</style>
+	</head>
+	<body>
+		<header>
+		<h1>CSS Content Test</h1>
+		</header>
+		<main>
+			<section>
+				<h2>Explainer</h2>
+				<p>According to <a href="https://www.w3.org/TR/WCAG20-TECHS/F3.html">WCAG Common Failure F3</a> you shouldn't use CSS to inject important content.  This page is to test that.</p>
+				<h3>Content on plain content</h3>
+				<p id="p1" class="c1">This is a basic paragraph with a <code>::before</code>.</p>
+
+				<h3>Content on non-form tabable content with <code>tabindex=0</code></h3>
+				<p id="p2" tabindex="0" class="c1">This is a tabable paragraph with some <code>::before</code> content</p>
+
+				<h3>Content with link with content</h3>
+				<p id="p3">This is a paragraph with a <a href="#" id="a1" class="c1">a link with <code>::before</code> content</a>.</p>
+
+				<h3>Content with a button</h3>
+				<button id="b1" class="c1">A Button</button>
+
+				<h3>Text input with content</h3>
+				<label for="txt1" id="lbl1" class="c1">Enter some text</label>
+				<input id="txt1">
+
+				<h3>Fieldset with with content</h3>
+				<fieldset class="c1">
+					<legend>Pick one</legend>
+					<input id="r1" name="rb" type="radio"><label for="r1">Option 1</label>
+					<input id="r2" name="rb" type="radio"><label for="r2">Option 2</label>
+					<input id="r3" name="rb" type="radio"><label for="r3">Option 3</label>
+				</fieldset>
+				<h3>Fieldset with legend with content</h3>
+				<fieldset>
+					<legend class="c1">Pick some</legend>
+					<input id="c1" type="checkbox"><label for="c1">Option 1</label>
+					<input id="c2" type="checkbox"><label for="c2">Option 2</label>
+					<input id="c3" type="checkbox"><label for="c3">Option 3</label>
+				</fieldset>
+
+				<h3>Submit button with content</h3>
+				<input type="submit" class="c1" value="Click me">
+			</section>
+
+			<section>
+				<h2>Screen Reader Results</h2>
+				<dl>
+					<dt>VoiceOver Mac OS X</dt>
+					<dd>
+						<dl>
+							<dt>Safari, Chrome, Firefox</dt>
+							<dd>In browse mode (control+option+arrow keys) the psuedo-content is always read if it is visible ("star stuff...".)  When tabbing, it's read when it's visible, except on <code>&lt;fieldset&gt;</code>.  But it is read as part of the <code>&lt;legend&gt;</code>.</dd>
+						</dl>
+					</dd>
+					<dt>VoiceOver oOS</dt>
+					<dd>
+						<dl>
+							<dt>Safari</dt>
+							<dd></dd>
+						</dl>
+					</dd>
+					<dt>NVDA</dt>
+					<dd>
+						<dl>
+							<dt>Safari</dt>
+							<dd></dd>
+							<dt>Chrome</dt>
+							<dd></dd>
+							<dt>Firefox</dt>
+							<dd></dd>
+						</dl>
+					</dd>
+					<dt>JAWS</dt>
+					<dd>
+						<dl>
+							<dt>Safari</dt>
+							<dd></dd>
+							<dt>Chrome</dt>
+							<dd></dd>
+							<dt>Firefox</dt>
+							<dd></dd>
+						</dl>
+					</dd>
+				</dd>
+			</section>
+		<main>
+		</main>
+	</body>
+</html>
