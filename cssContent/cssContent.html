@@ -17,7 +17,7 @@
 		<main>
 			<section>
 				<h2>Explainer</h2>
-				<p>According to <a href="https://www.w3.org/TR/WCAG20-TECHS/F3.html">WCAG Common Failure F3</a> you shouldn't use CSS to inject important content.  This page is to test that.</p>
+				<p>According to <a href="https://www.w3.org/TR/WCAG20-TECHS/F87.html">WCAG Common Failure F87</a> you shouldn't use CSS to inject important content.  This page is to test that.</p>
 				<h3>Content on plain content</h3>
 				<p id="p1" class="c1">This is a basic paragraph with a <code>::before</code>.</p>
 
@@ -93,7 +93,9 @@
 			</section>
 			<section>
 				<h2>Conclusions and Recommendations</h2>
-				<p>With the exception of <code>&lt;fieldset&gt;</code>s and <code>&lt;legend&gt;</code>s, adding text content with CSS actually enjoys robust support as of early 2022!  But <a href="https://www.w3.org/TR/WCAG20-TECHS/F3.html">WCAG Common Failure F3</a> still exists. I don't want to tell anyone to disgregard that Common Failure.  There may be other tests I'm not running, like voice control, or custom stylesheets.</p>
+				<p>With the exception of <code>&lt;fieldset&gt;</code>s and <code>&lt;legend&gt;</code>s, adding text content with CSS actually enjoys robust support as of early 2022!  But <a href="https://www.w3.org/TR/WCAG20-TECHS/F87.html">WCAG Common Failure F87</a> still exists. I don't want to tell anyone to disgregard that Common Failure.  There may be other tests I'm not running, like voice control, or custom stylesheets.</p>
+				<p>Incidentally, the User Agent Support notes for F87 says: <q cite="https://www.w3.org/WAI/WCAG20/Techniques/ua-notes/failures#F87">:before and :after are not supported by IE7 and lower</q>.  In 2022, whow's even using IE, let along IE7 or below?</p>
+				<p>Then again, the Common Failure text says:<q cite="https://www.w3.org/TR/WCAG20-TECHS/F87.html">For users who need to customize or turn off style information in order to view content according to their needs, assistive technologies may not be able to access the information that is inserted using CSS. </q>.  So this isn't even about screen readers. I wonder how many real-world examples there are of this.  So many websites use CSS styles to hide and reveal content that turning off styling is going to have major implications.  In fact, this pattern is so common in forms, that no customizable system worth its salt would ignore <code>::before</code> and <code>::after</code> content.</p>
 				<p>Also don't add <code>tabindex="0"</code> to non-interactive content just to expose it to Screen Readers in Forms mode.  It doesn't always work!</p>
 			</section>
 		<main>
