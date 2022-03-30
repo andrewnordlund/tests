@@ -9,19 +9,38 @@
 		<!-- <link rel="Stylesheet" type="text/css" href="addFieldTest.css"> -->
 	</head>
 	<body>
-		<h1>Forms Mode Add-in Testing Page</h1>
-
-		<div>
-			<p>First go into forms mode:</p>
-		</div>
+		<heading>
+			<h1>Forms Mode Add-in Testing Page</h1>
+			<div>
+				<p>First go into forms mode:</p>
+			</div>
+			<!--
+			<div>
+				<ul role="menubar">
+					<!-- Rule 2A: "File" label via aria-labelledby   -  ->
+					<li role="menuitem" aria-haspopup="true" aria-labelledby="fileLabel" tabindex="0"><span id="fileLabel">File</span>
+						<ul role="menu">
+							<!-- Rule 2C: "New" label via Namefrom:contents -  ->
+							<li role="menuitem" aria-haspopup="false"  tabindex="0">New</li>
+							<li role="menuitem" aria-haspopup="false" tabindex="0">Open…</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			-->
+		</heading>
 
 		<div id="formDiv">
 			<h2>Sample Form</h2>
 			<div class="formHolder">
-				<form id="form1" action="addFieldTest.html" method="GET">
+				<form id="form1" action="formsModeTest.html" method="GET">
 				<div class="fieldHolder">
 					<label for="txt1">Some data:</label>
 					<input type="text" id="txt1" name="txt1">	
+				</div>
+				<div class="fieldHolder">
+					<label for="txt1">A password:</label>
+					<input type="password" id="ps1" name="ps1" value="asdf">	
 				</div>
 				<div class="fieldHolder">
 					<span id="handClappingDDLbl">Do you know the sound of one hand clapping?</span><br>
@@ -51,8 +70,18 @@
 					<p>These are details.</p>
 					<p>These are some more details.</p>
 				</details>
+				<fieldset>
+					<legend>Pick one</legend>
+					<div class="fieldHolder">
+						<label><input type="radio" id="r1" name="rbtns"> One</label>
+					</div>
+					<div class="fieldHolder">
+						<label><input type="radio" id="r2" name="rbtns"> Two</label>
+					</div>
+				</fieldset>
+				<p>This is some very important information to consider before doing submitting the form.</p>
 				<div class="fieldHolder" id="extraFields">
-					<button>Test button</button>
+					<button type="button">Test button</button>
 				</div>
 				<div class="fieldHolder" id="submitBtn1Holder">
 					<input type="submit" value="Submit" id="submitBtn1">
