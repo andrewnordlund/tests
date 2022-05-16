@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1" name="viewport">
+		<title>Disabled Submit Button Page</title>
+		<link rel="Stylesheet" href="disabledSubmitBtn.css" type="text/css">
+	</head>
+	<body>
+		<header><h1>Disabled Submit Button Page</h1></header>
+
+		<main>
+		<h2>Form Stuff</h2>
+		<form method="GET" action="#">
+
+		<div class="fieldHolder">
+			<label for="firstname">First name</label>
+			<input type="text" id="firstname" name="firstname">
+		</div>
+		<div class="fieldHolder">
+			<label for="lastname">Last name</label>
+			<input type="text" id="lastname" name="lastname">
+		</div>
+		<div class="fieldHolder">
+			<label for="email">Email Address</label>
+			<input type="text" id="email" name="email">
+		</div>
+		<fieldset>
+			<legend>Phone numbers</legend>
+			<template id="phoneTemplate">
+			<div class="fieldHolder phoneSection">
+				<label for="phone">Phone number</label>
+				<input type="text" id="phone" name="phone">
+				<label for="phoneType">Type</label>
+				<select id="phoneType" name="phoneType">
+					<option>Mobile</option>
+					<option>Land-line</option>
+					<option>Work</option>
+					<option>Fax</option>
+					<option>Pager</option>
+					<option>Party Line</option>
+					<option>Other</option>
+				</select>
+				<button id="minusPhone" class="minusPhoneBtn" aria-label="Remove phone number" disabled>
+				<button id="addPhone" class="addPhoneBtn" aria-label="Add phone number">+</button>
+			</div>
+			</template>
+		</fieldset>
+		<fieldset>
+			<legend>Mailing Address</legend>
+			<div class="fieldHolder">
+				<label for="address1">Address (Line 1)</label>
+				<input type="text" id="address1" name="address1">
+			</div>
+			<div class="fieldHolder">
+				<label for="address2">Address (Line 2)</label>
+				<input type="text" id="address2" name="address2">
+			</div>
+			<div class="fieldHolder">
+				<label for="city">City</label>
+				<input type="text" id="city" name="city">
+			</div>
+			<div class="fieldHolder">
+				<label for="province">Province</label>
+				<input type="text" id="province" name="province">
+			</div>
+			<div class="fieldHolder">
+				<label for="postalCode">Postal Code</label>
+				<input type="text" id="postalCode" name="postalCode">
+			</div>
+		</fieldset>
+		<p id="tcs">It is important, before filling this form out that you understand the <a href="#tcs">terms and conditions</a> of using this site.  Blah blah blah.  Blah blah blah blah.</p>
+		<button id="submitBtn1" type="button" disabled>Submit</button>
+		</form>
+		<p id="privacy">Furthermore, we only request information that we need to fulfill our business purposes.  We're not out to spy on you or anything like that.  Blah blah blah blah.  Consider this to be your <a href="#privacy">privacy notice</a>.</p>
+		</main>
+		<footer>
+			<h2>Links of note</h2>
+			<ul>
+				<li><a href="https://www.nordburg.ca">Nordburg.ca</a></li>
+				<li><a href="https://www.google.com">Google</a></li>
+				<li><a href="https://www.ecosia.org/">Ecosia</a> (Plant trees whilst you search.)</li>
+				<li><a href="https://www.slashdot.org">Slashdot</a></li>
+			</ul>
+		</footer>
+		<script src="disabledSubmitBtn.js"></script>
+	</body>
+</html>

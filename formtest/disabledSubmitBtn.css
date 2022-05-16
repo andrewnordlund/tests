@@ -1,0 +1,21 @@
+body {
+	background-color: white;
+	color: black;
+}
+.fieldHolder {
+	border: thin solid black;
+	width: 100%;
+	padding: 0.3em;
+}
+.fieldHolder label {
+	display: block;
+	font-weight: 700;
+}
+fieldset {
+	padding-left: 0;
+}
+button[disabled] {
+	border: thin dotted #FFFFFA;
+	background-color: #FEFEFE;
+	color: #EEEEEE;
+}
