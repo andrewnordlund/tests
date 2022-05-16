@@ -24,6 +24,8 @@ function init () {
 	fcs["postalCode"].addEventListener("change", checkPC, false);
 	fcs["email"].addEventListener("change", checkEmail, false);
 
+	fcs["submitBtn1"].addEventListener("click", function(){alert("Ouch!");}, false);
+
 	addPhone();
 } // End of init
 
