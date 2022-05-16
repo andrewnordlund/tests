@@ -3,7 +3,6 @@ body {
 	color: black;
 }
 .fieldHolder {
-	border: thin solid black;
 	width: 100%;
 	padding: 0.3em;
 }
@@ -13,9 +12,38 @@ body {
 }
 fieldset {
 	padding-left: 0;
+	border-right: none;
+	border-bottom: none;
+	border-top: none;
+	margin: 1em auto;
+}
+legend {
+	font-size: 120%;
+	font-weight: 700;
 }
 button[disabled] {
 	border: thin dotted #FFFFFA;
 	background-color: #FEFEFE;
 	color: #EEEEEE;
+}
+.hide {
+	display: none;
+}
+.phoneNumber {
+	margin: 0.3em auto;
+}
+.phoneNumber label {
+	display: inline-block;
+	margin: auto 0.5em;
+	font-weight: bold;
+}
+.phoneNumber button {
+	border-style: groove;
+	line-height: 150%;
+	border-radius: 0.5em;
+	display: inline-block;
+	height: 100%;
+	margin: 0 0.3em;
+	width: 2em;
+	text-align: center;
 }

@@ -25,8 +25,10 @@
 			<label for="email">Email Address</label>
 			<input type="text" id="email" name="email">
 		</div>
-		<fieldset>
+		<fieldset id="phoneNumbersFS">
 			<legend>Phone numbers</legend>
+			<span class="hide" id="rmLbl">Remove phone number</span>
+			<span class="hide" id="addLbl">Add phone number</span>
 			<template id="phoneTemplate">
 			<div class="fieldHolder phoneSection">
 				<label for="phone">Phone number</label>
@@ -70,7 +72,9 @@
 			</div>
 		</fieldset>
 		<p id="tcs">It is important, before filling this form out that you understand the <a href="#tcs">terms and conditions</a> of using this site.  Blah blah blah.  Blah blah blah blah.</p>
+		
 		<button id="submitBtn1" type="button" disabled>Submit</button>
+		
 		</form>
 		<p id="privacy">Furthermore, we only request information that we need to fulfill our business purposes.  We're not out to spy on you or anything like that.  Blah blah blah blah.  Consider this to be your <a href="#privacy">privacy notice</a>.</p>
 		</main>
