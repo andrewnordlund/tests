@@ -37,7 +37,7 @@ button[disabled] {
 	margin: auto 0.5em;
 	font-weight: bold;
 }
-.phoneNumber button {
+.phoneNumber button:not([disabled]) {
 	border-style: groove;
 	line-height: 150%;
 	border-radius: 0.5em;
