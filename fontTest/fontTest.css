@@ -1,4 +1,5 @@
 li {
 	font-weight: 700;
 	color: green;
+	       filter: opacity(0.4) drop-shadow(0 0 0 green);
 }
