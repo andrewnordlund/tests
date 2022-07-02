@@ -1,0 +1,21 @@
+.fieldHolder {
+	margin: 1.13em auto;
+}
+.errorMsg {
+	color: #AA0000;
+	border: thin solid #AA0000;
+	border-radius: .5em;
+	width: 10em;
+	padding: 1em;
+	margin: 1.3em 0;
+	background-color: #FFDDDD;
+}
+.errorList {
+	color: #AA0000;
+	border: thin solid #AA0000;
+	border-radius: .5em;
+	width: 100em;
+	padding: 1em;
+	margin: 1.3em 0;
+	background-color: #FFDDDD;
+}
