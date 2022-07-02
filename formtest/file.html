@@ -15,22 +15,21 @@
 		<header><h1>Custom Select</h1></header>
 
 		<main>
-		<!--
 		<details><summary>This is a summary</summary>
 			<div>
 				<p>And these are details</p>
 			</div>
 		</details>
-		-->
 		<h2>Option Tests</h2>
 		<form method="GET" action="#">
 
 		<div class="fieldHolder1">
 			<label for="file" tabindex="0">Choose file(s):</label><br>
-			<input type="file" id="file" name="file" accept="image/*,.pdf" multiple style="opacity:0;">
+			<input type="file" id="file" name="file" accept="image/*,.pdf" multiple style="opacity:0;" aria-describedby="descP">
 
 			<input type="submit">
 		</form>
+		<p id="descP">This is some extra description.  Will it be read by the input? Not yet in Firefox 104 (Nightly).</p>
 		</main>
 	</body>
 </html>
