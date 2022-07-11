@@ -7,6 +7,7 @@
 		<meta content="width=device-width,initial-scale=1" name="viewport">
 		<title>CSS Content Test</title>
 		<link rel="Stylesheet" href="cssContent.css" type="text/css">
+		<link rel="Stylesheet" href="../style/tests.css" type="text/css">
 <style>
 </style>
 	</head>
@@ -59,46 +60,46 @@
 					<dt>VoiceOver Mac OS X</dt>
 					<dd>
 						<dl>
-							<dt>Safari, Chrome, Firefox</dt>
-							<dd>In browse mode (control+option+arrow keys) the pseudo-content is always read if it is visible ("star stuff...".)  When tabbing, it's read when it's visible, except on <code>&lt;fieldset&gt;</code>.  But it is read as part of the <code>&lt;legend&gt;</code>.</dd>
+							<dt class="full-support">Safari, Chrome, Firefox</dt>
+							<dd>In browse mode (<kbd>control+option+arrow keys</kbd>) the pseudo-content is always read if it is visible ("star stuff...".)  When tabbing, it's read when it's visible, except on <code>&lt;fieldset&gt;</code>.  But it is read as part of the <code>&lt;legend&gt;</code>.</dd>
 						</dl>
 					</dd>
 					<dt>VoiceOver oOS</dt>
 					<dd>
 						<dl>
-							<dt>Safari</dt>
+							<dt class="most-support">Safari</dt>
 							<dd>In browse mode (swipe left/right) the pseudo-content is always read if it is visible ("star stuff...".)  When using the rotor (links/form controls), it's read when it's visible, except on <code>&lt;fieldset&gt;</code> even when it's part of the <code>&lt;legend&gt;</code>.  But this is a VoiceOver iOS issue; the <code>&lt;legend&gt;</code> is never read when swiping up/down with rotor on Form Controls.</dd>
 						</dl>
 					</dd>
 					<dt>NVDA 2021.3.1</dt>
 					<dd>
 						<dl>
-							<dt>Firefox</dt>
+							<dt class="full-support">Firefox</dt>
 							<dd>In browse mode, the pseudo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to <code>&lt;fieldset&gt;</code>, but it is read when aplied to <code>&lt;legend&gt;</code> as part of the <code>&lt;legend&gt;</code> text.</dd>
 
-							<dt>Chrome and Edge</dt>
+							<dt class="most-support">Chrome and Edge</dt>
 							<dd>In browse mode, the pseudo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend&gt;</code>.</dd>
 					</dd>
 					<dt>JAWS 2021</dt>
 					<dd>
 						<dl>
-							<dt>Firefox</dt>
+							<dt class="full-support">Firefox</dt>
 							<dd>In browse mode, the pseudo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to <code>&lt;fieldset&gt;</code>, but it is read when aplied to <code>&lt;legend&gt;</code> as part of the <code>&lt;legend&gt;</code> text.  (Note: JAWS is not reading the content of <code>&lt;p tabindex="0"&gt;</code> in forms mode.)</dd>
 
-							<dt>Chrome</dt>
+							<dt class="most-support">Chrome</dt>
 							<dd>In browse mode, the pseudo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start star stuff pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend&gt;</code>.</dd>
-							<dt>Edge</dt>
+							<dt class="most-support">Edge</dt>
 							<dd><dd>In browse mode, the pseudo-content is always read if it's visible.  When you get to the <code>&lt;fieldset&gt;</code>, first it reads "group start pick one" then when you press <kbd>down arrow-key</kbd> it says "star stuff".  When it's applied to the <code>&lt;legend&gt;</code> you hear "grouping start pick some" without having to hit <kbd>down arrow-key</kbd>.  In Forms Mode (tabbing through the page) it's read in all places except with it's applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend&gt;</code>.</dd></dd>
 						</dl>
 					</dd>
 					<dt>Narrator</dt>
 					<dd>
 						<dl>
-							<dt>Firefox 98</dt>
+							<dt class="partial-support">Firefox 98</dt>
 							<dd>In regular mode whilst reading the whole document top to bottom: the pseudo-content is always read if it's visible.  When reading one line at a time (<kbd>Ins+O</kbd>) then the pseudo-content is <strong>not</strong> read in anything except for links.  When tabbing through the page, when it gets to the paragraph with <code>tabindex="0"</code> none of the content is read.  The Pseudo-content is read when it part of the link text or a form element's <code>&lt;label&gt;</code>.  When you get to the <code>&lt;fieldset&gt;</code>s, as you land on the radio buttons or checkboxes, the <code>&lt;legend&gt;</code> text is not read at all.</dd>
-							<dt>Chrrome</dt>
-							<dd>When reading line by line (<kbd>Ins+O</kbd>), the pseudo-content is always read.  When you get to the <code>&lt;fieldset&gt;</code> with the pseudo-code on the <code>&lt;fieldset&gt;</code>, the pseudo-content is read first, then the <code>&lt;legend&gt;</code> text.  When tabbing through the page, it does read the pseudo-content, except for the <code>&lt;fieldset&gt;</code>s, where the <code>&lt;legend&gt;</code> text is not read at all (like with Firefox)</dd>
-							<dt>Edge</dt>
+							<dt class="partial-support">Chrome</dt>
+							<dd>When reading line by line (<kbd>Ins+O</kbd>), the pseudo-content is always read.  When you get to the <code>&lt;fieldset&gt;</code> with the pseudo-content on the <code>&lt;fieldset&gt;</code>, the pseudo-content is read first, then the <code>&lt;legend&gt;</code> text.  When tabbing through the page, it does read the pseudo-content, except for the <code>&lt;fieldset&gt;</code>s, where the <code>&lt;legend&gt;</code> text is not read at all (like with Firefox)</dd>
+							<dt class="odd-behavior">Edge</dt>
 							<dd>When reading the whole document top to bottom, the pseudo-content is always read if visible.  Interestingly enough, when reading one line at a time (<kbd>Ins+O</kbd>), Narrator only reads the first thing in the next line.  So if there's a link in a paragraph, it will only read the paragraph text up to, but not including the link.  Even when trying to read the whole current line (<kbd>Ins+I</kbd>), it won't actually read the whole line.  As a result content added with <code>::before</code> will be read; but only that content; except when the first thing in the line is a form element (button or input).  In "Content with a button" and "Text input with content" above, the pseudo content is read.  When you get to the <code>&lt;fieldset&gt;</code> with the pseudo-content, first it reads the pseudo-content, then the <code>&lt;legend&gt;</code> text, then the radio buttons.  When you get to the <code>&lt;fieldset&gt;</code> with the <code>&lt;legend&gt;</code> with the pseudo-content, it doesn't read the actual <code>&lt;legend&gt;</code> text; <em>just</em> the pseudo-content.  When tabbing through the page, the pseudo-content is always read except when applied to either <code>&lt;fieldset&gt;</code> or <code>&lt;legend&gt;</code>.  (Interestingly enough, when viewing a list of all links, you bookmarklets are listed as links on the page.)</dd>
 						</dl>
 					</dd>
