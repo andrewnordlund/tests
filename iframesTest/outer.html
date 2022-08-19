@@ -7,15 +7,22 @@
 iframe {
 	border: thick solid red;
 }
+/*
 iframe:focus, p:focus {
 	border: thick solid blue !important;
+}
+		*/
+header {
+	height: 30em;
 }
 		</style>
 	</head>
 	<body>
+		<header>
 		<h1>This is a test of an outer frame</h1>
+		</header>
 		<p tabindex="0"> Trying...</p>
-		<iframe id="theFrame" src="http://hrsdc-rhdcc.sondages-surveys.ca/surveys/AlexandraHickey/jm-general/?collector=158797&l=en" style="width: 700px; height: 300px; :focus: border: thin solid green;"></iframe>
+		<iframe id="theFrame" src="inner.html" style="width: 700px; height: 300px; :focus: border: thin solid green;" scrolling="No" autofullscreen="" loading="lazy" frameborder="0"></iframe>
 		<div>
 			<p><a href="inner.html">Go to inner</a>.</p>
 		</div>
