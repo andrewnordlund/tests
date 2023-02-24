@@ -1,0 +1,24 @@
+.class1 {
+	font-size: 0.9em;
+	width: 80px;
+}
+.class2 {
+	font-size: 100%;
+	width: 8em;
+}
+.class3 {
+	font-size: 12px;
+}
+.class4 {
+	font-size: 12pt;
+}
+div div {
+	color: #ffffff;
+	background-color: #cc0000;
+	margin: 5px;
+	width: 10em;
+}
+:root {
+  touch-action: pan-x pan-y;
+  height: 100% 
+}
