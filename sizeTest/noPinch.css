@@ -1,4 +1,5 @@
-:root {
-  touch-action: none; /*pan-x pan-y;*/
+/*:root {/*/
+p {
+  touch-action: pan-x pan-y;
   height: 100% 
 }
