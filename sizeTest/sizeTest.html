@@ -9,7 +9,8 @@
 
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+		<meta content="width=device-width,initial-scale=1" name="viewport">
 		
 		
 		
@@ -30,19 +31,21 @@ A. What you really need is a page that:
 2. Fails at a lower resolution at 200%
 	- meaning it prolly fails just over 200% at my resolution
 
-B. Also a page that ctrl +/- doesn't work.  
+B. Also a page that ctrl +/- doesn't work.  			done:  noZoom.html
 
-C. Also a page where pinch zooming is turned off.	done:  noPinch.html
+C. Also a page where pinch zooming is turned off.		done:  noPinch.html
+
+D. Also a page where screen size and resolution is dependent:	done: resolution-dependent.html
 
 -->
 		<header>
 		<h1>Size Test Page</h1>
 		</header>
 		<div id="mainContent">
-			<div class="class1">Bad Way<br>Width: pxadfasdfasf</div>
-			<div class="class2">Good Way<br>Width: emadfadffadfasfd</div>
-			<div class="class3">Blah 3<br>Blahblahblah</div>
-			<div class="class4">Blah 4<br>Blahblahblah</div>
+			<div class="class1">Bad Way<br>Width: pxadfasdfasf<br>Font-size: 0.9em;<br>width: 80px;</div>
+			<div class="class2">Good Way<br>Width: emadfadffadfasfd<br>font-size:100%;<br>width:8em;</div>
+			<div class="class3">Blah 3<br>Blahblahblah<br>font-size: 12px;</div>
+			<div class="class4">Blah 4<br>Blahblahblah<br>font-size: 12pt;</div>
 		</div>
 		<p>Can you pinch zoom this?</p>
 		<footer>

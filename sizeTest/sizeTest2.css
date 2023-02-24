@@ -1,0 +1,30 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+header {
+	height: 20vh;
+	width: 100%;
+	position: absolute;
+	top:0vh;
+}
+main {
+	border-top: thin solid #808080;
+	width: 100%;
+	position: absolute;
+	top:20vh;
+	height: 60vh;
+	overflow: hidden;
+}
+footer {
+	border-top: thin solid #808080;
+	height: 20vh;
+	position: absolute;
+	top: 80vh;
+	width: 100%;
+}
+.h2 {
+	font-size: 140%;
+	font-weight: 700;
+}
+
