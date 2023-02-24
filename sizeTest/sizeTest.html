@@ -3,6 +3,7 @@
 	<head>
 		<title>Size Test Page</title>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link rel="Stylesheet" type="text/css" href="sizeTest.css">
 	</head>
 	<body>
@@ -14,6 +15,16 @@ Things I gotta test:
 * set size with vh
 * set size with %
 
+
+A. What you really need is a page that:
+1. Passes as 200% at my resolution
+2. Fails at a lower resolution at 200%
+	- meaning it prolly fails just over 200% at my resolution
+
+B. Also a page that ctrl +/- doesn't work.  
+
+C. Also a page where pinch zooming is turned off.
+
 -->
 		<header>
 		<h1>Size Test Page</h1>
@@ -24,6 +35,7 @@ Things I gotta test:
 			<div class="class3">Blah 3<br>Blahblahblah</div>
 			<div class="class4">Blah 4<br>Blahblahblah</div>
 		</div>
+		<p>Can you pinch zoom this?</p>
 		<footer>
 			
 		</footer>
