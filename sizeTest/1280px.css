@@ -1,0 +1,25 @@
+body {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+main {
+	margin-left:0;
+	width: 1280px;
+	background-color: #808080;
+	height: 100vh;
+	padding-top: 1em;
+}
+#sizeDivHolder {
+	width: 15rem;
+	margin-top: 1rem;
+}
+#sizeDivHolder, #sizeDiv {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#sizeDiv {
+	padding: 0.3rem;
+}
