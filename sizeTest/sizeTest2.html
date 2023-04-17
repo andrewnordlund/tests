@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Size Test Page</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+		<link rel="Stylesheet" type="text/css" href="sizeTest2.css">
+	</head>
+	<body>
+		<header>
+			<p>This is the header part.  There could be a banner here or something.</p>
+		</header>
+		<main>
+			<p>This is the main part.</p>
+			<h1 id="wb-cont" property="name" tabindex="-1">What's Wrong With Accessibility Mode?</h1>
+		
+			<div id="mainArticleContents">
+			<h2>Background</h2>
+		<p>Some web-based applications are built with an option to turn on something called "Accessibility Mode".  This article deals with why that model is fundamentally flawed. I write this as a certified Web Accessibility Specialist by the IAAP (International Association of Accessibility Professionals), and the Technical Advisor for a group that performs accessibility audits on websites and web-based apps. We use <a href="https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_overview&showtechniques=111&levels=aaa&technologies=flash%2Csl">WCAG 2.1 Levels A/AA</a> conformance to determine accessibility.</p>
+
+		<p class="h2">Essay continued elsewhere.</p>
+			<!--
+		<p>We generally object to this for several reasons explained below.</p>
+
+			<h3>What does "Accessibility Mode" even mean?</h3>
+			<p>This is huge.  It could be as simple as "there's a thicker, <em>more</em> visible focus indicator."  (A visible focus indicator is required, and provided by default by the browser. "Accessibility mode" could make it even more visible.  A more visible focus indicator will likely be required in <a href="https://www.w3.org/TR/WCAG22/#focus-visible-enhanced">WCAG 2.2</a>.)</p>
+			<p>Or it could add a bunch of ARIA.  It could mean that all kinds of styling is taken out.  It could mean that it's all black and white with large print.  It could even mean that semantic HTML was used so as to give everybody an interface that works.  It could mean any number of things.  I'll deal with some of these things below.</p>
+
+			<h3><strong>What it <em>really</em> means</strong></h3>
+			<p>When an application has an "Accessibility Mode", it generally means it was put together by people who didn't exactly graduate at the top of their class.  You're not dealing with quality.  You're not working with the cream of the crop.  If you paid more than about $1.99 for it, you're probably not getting your money's worth.  It's probably fraught with other problems.</p>
+			<p>HTML isn't exactly rocket science.</p>
+			<h3>What Some May Think It Means and Why They're Wrong</h3>
+			<h4>If it means a more visible focus indicator?</h4>
+			<p>Okay, so you don't want a big obtuse focus indicator on everyone's screen.  There's nothing wrong with that design perference.  And this is about the extent of what "Accessibility Mode" should mean.</p>
+			<p>However, the disability group that this most solves for are low vision users.  But a lot of people in this group don't identify as having a disability!  So they'd be less likely to seek out an accessible mode.  Furthermore, they'd be looking for something like "Focus indicator settings" rather than "Accessibility Mode."  They'd see that and think "No. That's not what I'm looking for.  That's for other people."</p>
+
+
+			<h4>If Accessibility means "Some extra ARIA"</h4>
+			<p>Since ARIA doesn't affect how things look or act for non-AT users, then having an Accessibility Mode means that the developers intentionally added ARIA for AT users, then made the conscious decision to remove it unless someone asks for it. And then they actually spent the time to do so!  If the interface needs ARIA, then just leave it in for everybody!!  This is like building a removeable wheelchair ramp to a building beside stairs, but only putting the ramp out when someone specifically asks for it.  It's cruel, unnecessary, and expensive.  And insulting.</p>
+
+			<h4>If it's all black and white with large print</h4>
+			<p>(I saw this on a Metrolinx website once.  Ironically you needed to use your mouse to access the "accessible pages".)  Anyway, if this is what someone thinks "Accessibility" means, then they're about 30 years behind the times.  This is just a big, elaborate, expensive way of admitting they know nothing about what accessibility means on the web, and how to achieve it.</p>
+
+			<p>Furthermore, large print can be done with any browser these days.  It is up to the developers to 1) use proper sizing techniques in the CSS (percentages, ems, etc.), and 2) not use <code>&lt;table&gt;</code>s for layout.</p>
+
+			<h4>If it means that semantic HTML was used in order to give everybody an interface that works</h4>
+			<p>In other words the site is written with "<code>&lt;div&gt;</code> soup" or layout <code>&lt;table&gt;</code>s with CSS; or Angular, React or some other JavaScript framework; or platform like MS Dynamics/PowerApps. And then "Accessible Mode" rebuilds the page with basic, proper HTML tags like <code>&lt;p&gt;</code>s, <code>&lt;label&gt;</code>/<code>&lt;input&gt;</code>/<code>&lt;select&gt;</code>s, <code>&lt;fieldset&gt;</code>/<code>&lt;legend&gt;</code>s, etc.</p>
+			<p>Then why do that work twice?  Why make a good site, and then purposefully make a bad version of the site?  That seems like it would be a lot of work, and therefore expensive.  Just make one site with proper semantic, valid HTML, and leave it at that!  When you have two parallel sites, one is bound to be forgotten. And which one do you think that will be?  99% of the time, it will be the "accessible" version.  #techDebt</p>
+
+
+			<p>Either way, the web is the easiest platform on which to make things accessible.  HTML is accessible by default.  So, having an Accessible Mode is an indication that you're working with people that don't know this, and/or don't know how to write proper code. Or a platform that can't create accessible content.  (I'm sorry you wasted your money.)</p>
+			<p>I'm not an expert in litigation.  Nor am I a lawyer.  But I doubt "we bought a platform that can't create accessible code" would be a defense in a lawsuit.</p>
+
+			<p>(Yes, there are parts of accessibility that have nothing to do with valid and proper HTML, like minimum contrast ratios.  It's details like that that require accessibility Subject Matter Experts (SMEs).)</p>
+			
+
+
+			<h3>An "Accessibility Mode" option requires people to self-identify, or at the very least, to take extra steps.</h3>
+			<p>Part of the <a href="JodhanDecision20101129.pdf">Jodhan v Canada [PDF 607 kB]</a> ruling was that providing different processes for Persons with Disabilities was 1) not equal access; and 2) harmed the dignity of the person.  (It was suggested that blind users could just ask someone else for help, or go down to the Service Canada Centre in person to do government business.  All the judges - trial and appeal - said "Nope!".)  Asking PWD to take extra steps does harm to the individual.</p>
+			<p><a href="https://www.healthline.com/health/spoon-theory-chronic-illness-explained-like-never-before#2">Spoon Theory</a> basically says that PWD typically have more tasks than energy in a day.  They have considerations that we don't, and we just take for granted.  Try just coming to work whilst wearing a blind-fold.  You can't drive.  So you take the bus.  If you manage to get to the bus stop (hey, how do you know where the bus stop is if you can't see the sign?) and a bus pulls up, how do you know if it's the bus you want?  And on it goes.</p>
+
+			<p>The least we can do as technologists, engineers, programmers, etc. is to do the bare minimum of our jobs so others don't have to jump through hoops to make up for our laziness.  Accessibility Modes are the opposite of that.  It means that some designers, engineers, actually went out of their way to build a bad site, or didn't know how to build a good site.</p>
+			
+
+			<h3>The option to turn on Accessibility Mode must be self-evident, reachable, and early in the UI</h3>
+			<p>If Accessibility Mode is required for AT/PwD users (and its very existence implies it is), then it needs to be reachable very early on in the process of using the page.  If it's for the blind, it should be within the first few tab stops and near the very top of the page.  If it's for sighted users, it needs to be in an apparent place on any entry page, and also very early in the tab order so keyboard-only users can reach it easily.  Having it on an Options pane/page is no good.  If it's necessary, then how is someone who needs it supposed to get to it?</p>
+
+				<p>And it must be clear what it means.  "Accessibility Mode" as explained above, is so ambiguous as to be meaningless...other than the meaning mentioned earlier:  this was not put together by "A-Players" (as Steve Jobs would have said).</p>
+			
+
+		<p>So, for anyone who's responsible for developing websites (design, programming, etc.):  don't build apps with "Accessibility Mode".</p>
+
+		<p>For anyone who's responsible for procuring software:  If you see a site with an "Accessibility Mode" option, know that that app is not well built.  It was thrown together by amateurs. It's likely fraught with other problems that will cost you significantly down the road.  Like <a href="https://www.cbc.ca/news/canada/ottawa/phoenix-pay-issue-damage-claim-2020-extension-1.6574686">Phoenix</a>.  Do you really want to be responsible for another Phoenix?</p>
+		-->
+
+		</main>
+		<footer>
+			<p>This is the footer section.</p>
+		</footer>
+	</body>
+</html>
