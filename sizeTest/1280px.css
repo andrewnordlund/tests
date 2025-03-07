@@ -10,16 +10,19 @@ main {
 	height: 100vh;
 	padding-top: 1em;
 }
+.rightSize {
+	background-color: green;
+}
 #sizeDivHolder {
 	width: 15rem;
 	margin-top: 1rem;
 }
 #sizeDivHolder, #sizeDiv {
-	margin-left: auto;
+	margin-left: 3%;
 	margin-right: auto;
 	background-color: #FFFFFF;
 	text-align: center;
 }
 #sizeDiv {
-	padding: 0.3rem;
+	/*padding: 0.3rem;*/
 }
